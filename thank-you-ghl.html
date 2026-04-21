@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In | Authority Score Audit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cabin', arial, sans-serif;
+    background: #000;
+    color: #e5e5e5;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  :root {
+    --teal: #1bb0ce;
+    --teal-dark: #158a9e;
+    --teal-border: #2f93b0;
+    --teal-glow: rgba(27, 176, 206, 0.15);
+    --teal-glow-strong: rgba(27, 176, 206, 0.3);
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(27,176,206,0.3); }
+    50% { box-shadow: 0 0 40px rgba(27,176,206,0.5), 0 0 80px rgba(27,176,206,0.15); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes check-draw {
+    from { stroke-dashoffset: 60; }
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes circle-pop {
+    from { opacity: 0; transform: scale(0.4); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(27,176,206,0.5); }
+    70% { box-shadow: 0 0 0 20px rgba(27,176,206,0); }
+    100% { box-shadow: 0 0 0 0 rgba(27,176,206,0); }
+  }
+
+  /* ========== WRAPPER ========== */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ========== TOP BANNER ========== */
+  .top-banner {
+    background: var(--teal);
+    color: #000;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ========== HERO BLOCK ========== */
+  .hero-block {
+    background: linear-gradient(180deg, rgba(27,176,206,0.08) 0%, #000 70%);
+    text-align: center;
+    padding: 28px 16px 0;
+  }
+  .check-circle {
+    width: 72px; height: 72px;
+    margin: 0 auto 16px;
+    background: rgba(27,176,206,0.1);
+    border: 2px solid var(--teal);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    animation: circle-pop 0.5s ease-out, pulse-ring 2s ease-out 0.6s;
+  }
+  .check-circle svg {
+    width: 32px; height: 32px;
+    stroke: var(--teal);
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: check-draw 0.5s ease-out 0.3s forwards;
+  }
+  .hero-headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(32px, 8vw, 58px);
+    font-weight: 900;
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline .teal { color: var(--teal); }
+  .authority-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 4.5vw, 32px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000;
+    background: var(--teal);
+    display: inline-block;
+    padding: 8px 24px;
+    margin-top: 14px;
+    margin-bottom: 0;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15);
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: #999;
+    max-width: 480px;
+    margin: 18px auto 0;
+    line-height: 1.6;
+  }
+  .hero-sub strong { color: #fff; }
+
+  /* ========== COUNTDOWN BLOCK ========== */
+  .countdown-block {
+    text-align: center;
+    padding: 20px 16px 16px;
+    background: #000;
+  }
+  .countdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #e74c3c;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .countdown-label .rd {
+    width: 7px; height: 7px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  .countdown {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .cd-num {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 52px;
+    text-align: center;
+  }
+  .cd-num .n {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    line-height: 1;
+  }
+  .cd-num .l {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cd-sep {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  /* ========== TIMELINE ========== */
+  .timeline-section {
+    padding: 20px 16px 24px;
+    border-top: 1px solid #151515;
+    background: #060606;
+  }
+  .timeline-header {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .timeline-header .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .timeline-header h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4vw, 26px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .timeline {
+    max-width: 520px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 40px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 13px; top: 4px; bottom: 4px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--teal), #1a1a1a);
+  }
+  .tl-step {
+    position: relative;
+    margin-bottom: 14px;
+    animation: fade-up 0.5s ease-out backwards;
+  }
+  .tl-step:nth-child(1) { animation-delay: 0.15s; }
+  .tl-step:nth-child(2) { animation-delay: 0.3s; }
+  .tl-step:nth-child(3) { animation-delay: 0.45s; }
+  .tl-step:nth-child(4) { animation-delay: 0.6s; }
+  .tl-dot {
+    position: absolute;
+    left: -40px; top: 0;
+    width: 28px; height: 28px;
+    background: #0c0c0c;
+    border: 2px solid var(--teal-border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    color: var(--teal);
+  }
+  .tl-step.active .tl-dot {
+    background: var(--teal);
+    color: #000;
+    box-shadow: 0 0 16px var(--teal-glow-strong);
+  }
+  .tl-step h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2px;
+    line-height: 1.3;
+  }
+  .tl-step p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .tl-badge {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 2px 10px;
+    background: rgba(27,176,206,0.06);
+    border: 1px solid rgba(47,147,176,0.3);
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  /* ========== DELIVERABLES / VALUE STACK ========== */
+  .deliver-section {
+    padding: 24px 16px 20px;
+    background: #000;
+    border-top: 3px solid var(--teal);
+  }
+  .deliver-header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .deliver-header .eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .deliver-header h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4.5vw, 28px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .deliver-list {
+    max-width: 560px;
+    margin: 0 auto;
+    list-style: none;
+  }
+  .deliver-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #151515;
+    align-items: flex-start;
+  }
+  .deliver-item:last-child { border-bottom: none; }
+  .deliver-icon {
+    width: 36px; height: 36px;
+    background: rgba(27,176,206,0.06);
+    border: 1px solid rgba(47,147,176,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .deliver-icon svg {
+    width: 16px; height: 16px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 2;
+  }
+  .deliver-text h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1px;
+    line-height: 1.3;
+  }
+  .deliver-text p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+  }
+  .deliver-text .val {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: 0.05em;
+  }
+
+  /* ========== TOTAL VALUE BOX ========== */
+  .value-box {
+    max-width: 400px;
+    margin: 18px auto 0;
+    text-align: center;
+    padding: 28px 24px;
+    border: 1px solid #1e1e1e;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0c0c0c, #080808);
+  }
+  .value-box .vb-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  .value-box .vb-old {
+    font-family: 'Raleway', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.15);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .value-box .vb-free {
+    font-family: 'Raleway', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 6px;
+    background: linear-gradient(90deg, #ffffff, var(--teal), #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+  .value-box .vb-note {
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* ========== PROOF STRIP ========== */
+  .proof-strip {
+    text-align: center;
+    padding: 16px 16px;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+    background: #060606;
+  }
+  .proof-stars {
+    color: #f5b731;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .proof-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .proof-text strong { color: #fff; }
+
+  /* ========== SOCIAL / WHILE YOU WAIT ========== */
+  .social-section {
+    text-align: center;
+    padding: 24px 16px 20px;
+    background: #000;
+  }
+  .social-section h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(16px, 3.5vw, 22px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .social-section p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 14px;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    color: #aaa;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .social-link:hover {
+    border-color: var(--teal-border);
+    color: #fff;
+  }
+  .social-link svg {
+    width: 16px; height: 16px;
+    fill: var(--teal);
+  }
+
+  /* ========== SHARE SECTION ========== */
+  .share-section {
+    padding: 20px 16px 24px;
+    border-top: 1px solid #151515;
+    text-align: center;
+    background: #060606;
+  }
+  .share-box {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    border: 1px solid #1a1a1a;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    background: #0c0c0c;
+  }
+  .share-box h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .share-box p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s;
+  }
+  .share-btn:hover { background: #22c4e5; }
+  .share-btn svg {
+    width: 16px; height: 16px;
+    fill: #000;
+  }
+
+  /* ========== STICKY BAR ========== */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 2px solid var(--teal);
+    padding: 10px 16px;
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+    animation: fade-up 0.6s ease-out 1s backwards;
+  }
+  .sticky-bar .urg-dot {
+    width: 7px; height: 7px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  .sticky-bar .urg-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .sticky-bar .urg-text span { color: var(--teal); }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    text-align: center;
+    padding: 20px 16px 72px;
+    font-size: 10px;
+    color: #222;
+    letter-spacing: 0.05em;
+  }
+  .footer a { color: #444; }
+
+  @media (max-width: 640px) {
+    .hero-headline { font-size: clamp(26px, 8vw, 44px); }
+    .value-box .vb-old { font-size: 32px; }
+    .value-box .vb-free { font-size: 40px; }
+    .social-links { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BANNER ===== -->
+<div class="top-banner">
+  Your Report Is Being Built Right Now. Do Not Close This Page.
+</div>
+
+<!-- ===== HERO BLOCK ===== -->
+<div class="hero-block">
+  <div class="page-wrap">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 12 10 16 18 8"/>
+      </svg>
+    </div>
+
+    <h1 class="hero-headline">
+      YOU'RE IN,<br><span class="teal" id="userName">BOSS</span>.
+    </h1>
+    <p class="authority-line">Be the Authority. Own Every Screen.</p>
+    <p class="hero-sub">
+      Your <strong>Authority Score Audit</strong> is being built right now. We are manually researching your market, your competitors, and your entire digital presence. <strong>This is not automated.</strong> A real human is pulling your report together.
+    </p>
+  </div>
+</div>
+
+<!-- ===== COUNTDOWN ===== -->
+<div class="countdown-block">
+  <div class="countdown-label">
+    <span class="rd"></span>
+    Your Report Arrives In:
+  </div>
+  <div class="countdown" id="countdown">
+    <div class="cd-num"><span class="n" id="cd-h">23</span><span class="l">Hours</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-m">59</span><span class="l">Min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-s">59</span><span class="l">Sec</span></div>
+  </div>
+</div>
+
+<!-- ===== TIMELINE ===== -->
+<div class="timeline-section">
+  <div class="page-wrap">
+    <div class="timeline-header">
+      <div class="eyebrow">Here's What Happens Next</div>
+      <h2>Your Audit in 4 Steps</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-step active">
+        <div class="tl-dot">1</div>
+        <h3>We Got Your Info</h3>
+        <p>Your submission just came through. We know who you are and where you operate.</p>
+        <span class="tl-badge">Just Now</span>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">2</div>
+        <h3>Competitor Research Begins</h3>
+        <p>We identify your top 3 local HVAC competitors and pull their video, ads, reviews, and social presence.</p>
+        <span class="tl-badge">Within 2 Hours</span>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">3</div>
+        <h3>Your Scorecard Gets Built</h3>
+        <p>All five dimensions scored. You vs. them. Every gap identified. Every opportunity mapped.</p>
+        <span class="tl-badge">12 - 20 Hours</span>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">4</div>
+        <h3>Delivered to Your Inbox</h3>
+        <p>A personal video walkthrough of your scores with a custom PDF report. No sales pitch attached.</p>
+        <span class="tl-badge">Within 24 Hours</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DELIVERABLES / VALUE STACK ===== -->
+<div class="deliver-section">
+  <div class="page-wrap">
+    <div class="deliver-header">
+      <div class="eyebrow">What's Inside Your Audit</div>
+      <h2>This Is Not a Generic Report</h2>
+    </div>
+
+    <ul class="deliver-list">
+      <li class="deliver-item">
+        <div class="deliver-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div class="deliver-text">
+          <h3>Custom Authority Scorecard (PDF)</h3>
+          <p>Your scores across all 5 dimensions. Side-by-side against your top 3 HVAC competitors.</p>
+          <span class="val">Value: $250</span>
+        </div>
+      </li>
+      <li class="deliver-item">
+        <div class="deliver-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <div class="deliver-text">
+          <h3>Personal Video Walkthrough</h3>
+          <p>A recorded breakdown walking through every score, every gap, and every opportunity we found.</p>
+          <span class="val">Value: $500</span>
+        </div>
+      </li>
+      <li class="deliver-item">
+        <div class="deliver-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="deliver-text">
+          <h3>Competitor Deep Dive</h3>
+          <p>Full breakdown of your top 3 competitors' video, ads, reviews, and social. What they do. What they don't.</p>
+          <span class="val">Value: $350</span>
+        </div>
+      </li>
+      <li class="deliver-item">
+        <div class="deliver-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="deliver-text">
+          <h3>Gap Analysis + Quick Wins</h3>
+          <p>The exact places where you're losing to competitors. Plus 3 things you can fix this week without spending a dollar.</p>
+          <span class="val">Value: $200</span>
+        </div>
+      </li>
+      <li class="deliver-item">
+        <div class="deliver-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="deliver-text">
+          <h3>Custom 90-Day Authority Roadmap</h3>
+          <p>A step-by-step plan to become the most visible, most trusted HVAC company in your service area.</p>
+          <span class="val">Value: $400</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="value-box">
+      <div class="vb-label">Total Value</div>
+      <div class="vb-old">$1,700</div>
+      <div class="vb-free">FREE</div>
+      <div class="vb-note">No catch. No sales call. Yours to keep.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROOF STRIP ===== -->
+<div class="proof-strip">
+  <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <div class="proof-text">Trusted by <strong>50+ Long Island businesses</strong> &middot; National campaign for <strong>DreamSeat</strong></div>
+</div>
+
+<!-- ===== SOCIAL / WHILE YOU WAIT ===== -->
+<div class="social-section">
+  <h2>While You Wait</h2>
+  <p>See what we've been building for Long Island HVAC companies. Real campaigns. Real results.</p>
+  <div class="social-links">
+    <a href="https://www.instagram.com/thisislongisland" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/thisislongisland" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+  </div>
+</div>
+
+<!-- ===== SHARE ===== -->
+<div class="share-section">
+  <div class="share-box">
+    <h3>Know Another HVAC Owner?</h3>
+    <p>Send them this audit. It's free for them too. We only take a handful per month.</p>
+    <button class="share-btn" onclick="shareAudit()">
+      <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      Share This Audit
+    </button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  &copy; 2026 This Is Long Island Marketing &middot; Northport, NY &middot; <a href="https://thisislongisland.com">thisislongisland.com</a>
+</footer>
+
+<!-- ===== STICKY URGENCY BAR ===== -->
+<div class="sticky-bar">
+  <span class="urg-dot"></span>
+  <span class="urg-text">Your report is being built <span>right now</span></span>
+</div>
+
+<script>
+  // Pull first name from URL params (set by form redirect)
+  var params = new URLSearchParams(window.location.search);
+  var name = params.get('name');
+  if (name) {
+    document.getElementById('userName').textContent = name.toUpperCase();
+  }
+
+  // Countdown timer - 24 hours from page load
+  var end = new Date();
+  end.setHours(end.getHours() + 24);
+  function tick() {
+    var now = new Date();
+    var diff = Math.max(0, end - now);
+    var h = Math.floor(diff / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  function shareAudit() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Free Authority Score Audit for HVAC Companies',
+        text: 'I just signed up for a free Authority Score Audit. They score you against your top 3 competitors on Long Island. Check it out.',
+        url: window.location.origin + '/landing-page-ghl.html'
+      });
+    } else {
+      var url = window.location.origin + '/landing-page-ghl.html';
+      navigator.clipboard.writeText(url).then(function() {
+        var btn = document.querySelector('.share-btn');
+        btn.textContent = 'Link Copied!';
+        setTimeout(function() { btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#000"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round"/></svg> Share This Audit'; }, 2000);
+      });
+    }
+  }
+</script>
+
+</body>
+</html>

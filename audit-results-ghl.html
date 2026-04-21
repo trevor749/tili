@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Authority Score Results | This Is Long Island Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cabin', arial, sans-serif;
+    background: #000;
+    color: #e5e5e5;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  :root {
+    --teal: #1bb0ce;
+    --teal-dark: #158a9e;
+    --teal-border: #2f93b0;
+    --teal-glow: rgba(27, 176, 206, 0.15);
+    --teal-glow-strong: rgba(27, 176, 206, 0.3);
+    --red: #e74c3c;
+    --yellow: #f1c40f;
+    --green: #2ecc71;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(27,176,206,0.3); }
+    50% { box-shadow: 0 0 40px rgba(27,176,206,0.5), 0 0 80px rgba(27,176,206,0.15); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes score-fill {
+    from { width: 0%; }
+  }
+  @keyframes number-glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(27, 176, 206, 0.3); }
+    50% { text-shadow: 0 0 40px rgba(27, 176, 206, 0.6), 0 0 60px rgba(27, 176, 206, 0.2); }
+  }
+  @keyframes ring-pulse {
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(27,176,206,0.4)); }
+    50% { filter: drop-shadow(0 0 20px rgba(27,176,206,0.6)); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes urgent-flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  /* ========== WRAPPER ========== */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ========== TOP BANNER ========== */
+  .top-banner {
+    background: var(--teal);
+    color: #000;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ========== HERO ========== */
+  .hero-block {
+    background: linear-gradient(180deg, rgba(27,176,206,0.08) 0%, #000 60%);
+    text-align: center;
+    padding: 24px 16px 0;
+  }
+  .brand-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(14px, 3vw, 18px);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 0 20px rgba(27,176,206,0.3);
+  }
+  .brand-line span { color: var(--teal); }
+  .results-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(231,76,60,0.1);
+    border: 1.5px solid rgba(231,76,60,0.3);
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 14px;
+    animation: urgent-flash 2s ease-in-out infinite;
+  }
+  .results-badge .dot {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+
+  .hero-headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(28px, 7vw, 48px);
+    font-weight: 900;
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline .teal { color: var(--teal); }
+  .authority-stripe {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4.5vw, 30px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000;
+    background: var(--teal);
+    display: inline-block;
+    padding: 8px 24px;
+    margin-top: 14px;
+    margin-bottom: 0;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15);
+  }
+  .hero-meta {
+    font-size: 12px;
+    color: #555;
+    margin-top: 14px;
+    margin-bottom: 0;
+  }
+
+  /* ========== TOTAL SCORE SECTION ========== */
+  .score-section {
+    text-align: center;
+    padding: 24px 16px 20px;
+    background: #000;
+  }
+  .total-score-ring {
+    width: 240px; height: 240px;
+    margin: 0 auto 16px;
+    position: relative;
+  }
+  .total-score-ring svg {
+    width: 240px; height: 240px;
+    transform: rotate(-90deg);
+    animation: ring-pulse 3s ease-in-out infinite;
+  }
+  .ring-bg {
+    fill: none;
+    stroke: #1a1a1a;
+    stroke-width: 10;
+  }
+  .ring-fill {
+    fill: none;
+    stroke: var(--teal);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    transition: stroke-dashoffset 2s ease-out;
+    filter: drop-shadow(0 0 12px rgba(27, 176, 206, 0.5));
+  }
+  .ring-fill.red { stroke: var(--red); filter: drop-shadow(0 0 12px rgba(231,76,60,0.5)); }
+  .ring-fill.yellow { stroke: var(--yellow); filter: drop-shadow(0 0 12px rgba(241,196,15,0.5)); }
+  .ring-fill.green { stroke: var(--green); filter: drop-shadow(0 0 12px rgba(46,204,113,0.5)); }
+  .total-score-number {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .total-score-number .score {
+    font-family: 'Raleway', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1;
+    animation: number-glow 3s ease-in-out infinite;
+  }
+  .total-score-number .out-of {
+    font-size: 16px;
+    color: #555;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .verdict-badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  .verdict-badge.low { background: rgba(231,76,60,0.15); color: var(--red); border: 2px solid rgba(231,76,60,0.4); }
+  .verdict-badge.mid { background: rgba(241,196,15,0.15); color: var(--yellow); border: 2px solid rgba(241,196,15,0.4); }
+  .verdict-badge.high { background: rgba(46,204,113,0.15); color: var(--green); border: 2px solid rgba(46,204,113,0.4); }
+
+  .score-context {
+    font-size: 14px;
+    color: #888;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .score-context strong { color: #fff; }
+
+  /* ========== AUTHORITY STRIPE CALLOUT ========== */
+  .authority-callout {
+    background: rgba(27,176,206,0.06);
+    border-top: 3px solid var(--teal);
+    border-bottom: 1px solid #151515;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .authority-callout p {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(16px, 4vw, 22px);
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.3;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .authority-callout p .teal { color: var(--teal); }
+
+  /* ========== DIMENSION CARDS ========== */
+  .dim-section {
+    padding: 20px 16px 24px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
+  .dim-section .page-wrap { max-width: 640px; }
+  .dim-header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .dim-header .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .dim-header h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 5vw, 30px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .dim-card {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s;
+  }
+  .dim-card:hover { border-color: var(--teal-border); }
+  .dim-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .dim-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .dim-num {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--teal);
+    opacity: 0.35;
+  }
+  .dim-card-title h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .dim-score {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1;
+  }
+  .dim-score .mx { font-size: 13px; color: #444; font-weight: 700; }
+
+  .dim-bar-track {
+    width: 100%;
+    height: 6px;
+    background: #1a1a1a;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .dim-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    animation: score-fill 1.5s ease-out;
+  }
+
+  .dim-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .det-item {
+    padding: 8px 10px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .det-item .dl {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 2px;
+  }
+  .det-item .dv {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .det-item .dv.red { color: var(--red); }
+  .det-item .dv.yellow { color: var(--yellow); }
+  .det-item .dv.green { color: var(--green); }
+
+  .dim-insight {
+    padding: 10px 14px;
+    background: rgba(27,176,206,0.04);
+    border-left: 3px solid var(--teal);
+    border-radius: 0 8px 8px 0;
+    font-size: 12px;
+    color: #999;
+    line-height: 1.5;
+  }
+  .dim-insight strong { color: var(--teal); }
+
+  /* ========== COMPETITOR TABLE ========== */
+  .comp-section {
+    padding: 20px 16px 24px;
+    background: #000;
+    border-top: 1px solid #151515;
+  }
+  .comp-section .page-wrap { max-width: 640px; }
+  .comp-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .comp-header .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .comp-header h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4.5vw, 26px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .comp-table-wrap {
+    overflow-x: auto;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+  }
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .comp-table th {
+    padding: 10px 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #444;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+    background: #080808;
+  }
+  .comp-table th:first-child { text-align: left; padding-left: 14px; }
+  .comp-table td {
+    padding: 10px 8px;
+    text-align: center;
+    border-bottom: 1px solid #111;
+    color: #888;
+  }
+  .comp-table td:first-child {
+    text-align: left;
+    font-weight: 700;
+    color: #ccc;
+    padding-left: 14px;
+    font-size: 12px;
+  }
+  .comp-table tr.you-row {
+    background: rgba(27,176,206,0.05);
+  }
+  .comp-table tr.you-row td:first-child {
+    color: var(--teal);
+    font-weight: 800;
+  }
+  .comp-table .sc {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+  }
+  .comp-table .total-row td {
+    border-top: 2px solid var(--teal-border);
+    font-weight: 900;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    padding: 14px 8px;
+    background: rgba(27,176,206,0.03);
+  }
+  .comp-table .total-row .yt {
+    color: var(--teal);
+    font-size: 20px;
+  }
+  .comp-table .winner-cell {
+    position: relative;
+  }
+
+  /* ========== QUICK WINS ========== */
+  .wins-section {
+    padding: 20px 16px 24px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
+  .wins-section .page-wrap { max-width: 640px; }
+  .wins-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .wins-header .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .wins-header h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4.5vw, 26px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .win-card {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .win-card:hover { border-left-color: #22c4e5; }
+  .win-num {
+    width: 36px; height: 36px;
+    background: rgba(27,176,206,0.08);
+    border: 1px solid rgba(47,147,176,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .win-body h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .win-body p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+  .win-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .win-tag.high { background: rgba(46,204,113,0.1); color: var(--green); border: 1px solid rgba(46,204,113,0.25); }
+  .win-tag.medium { background: rgba(241,196,15,0.1); color: var(--yellow); border: 1px solid rgba(241,196,15,0.25); }
+
+  /* ========== CTA BLOCK ========== */
+  .cta-block {
+    padding: 28px 16px 20px;
+    background: #080808;
+    border-top: 3px solid var(--teal);
+    text-align: center;
+  }
+  .cta-block h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5.5vw, 38px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .cta-block h2 .teal { color: var(--teal); }
+  .cta-sub {
+    font-size: 14px;
+    color: #777;
+    max-width: 480px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+  }
+
+  .cta-checks {
+    max-width: 400px;
+    margin: 0 auto 16px;
+    text-align: left;
+  }
+  .cta-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 6px;
+  }
+  .cta-check .ck {
+    color: var(--teal);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .cta-btn {
+    display: block;
+    max-width: 520px;
+    margin: 0 auto 8px;
+    padding: 20px 24px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+  }
+  .cta-btn:hover { background: #22c4e5; transform: translateY(-2px); }
+  .cta-urg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .cta-urg .rd {
+    width: 6px; height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  .cta-guarantee {
+    font-size: 11px;
+    color: #444;
+  }
+
+  /* ========== COUNTDOWN ========== */
+  .countdown-wrap {
+    text-align: center;
+    padding: 14px 16px;
+    background: #000;
+    border-top: 1px solid #151515;
+  }
+  .countdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .countdown {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .cd-num {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 48px;
+    text-align: center;
+  }
+  .cd-num .n {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    line-height: 1;
+  }
+  .cd-num .l {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cd-sep {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    text-align: center;
+    padding: 24px 16px 72px;
+    font-size: 10px;
+    color: #222;
+    letter-spacing: 0.05em;
+  }
+  .footer a { color: #444; }
+
+  /* ========== STICKY BAR ========== */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #1a1a1a;
+    padding: 10px 16px;
+    display: flex; justify-content: center; align-items: center; gap: 12px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-text { font-size: 13px; font-weight: 700; color: #fff; display: none; }
+  .sticky-text .teal { color: var(--teal); }
+  .sticky-btn {
+    padding: 12px 28px;
+    background: var(--teal); color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border: none; border-radius: 8px; cursor: pointer;
+    white-space: nowrap;
+  }
+  .sticky-btn:hover { background: #22c4e5; }
+  .sticky-x {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: #444; font-size: 18px; cursor: pointer;
+  }
+
+  @media (min-width: 641px) {
+    .sticky-text { display: block; }
+  }
+  @media (max-width: 640px) {
+    .hero-headline { font-size: clamp(24px, 7vw, 38px); }
+    .total-score-ring { width: 190px; height: 190px; }
+    .total-score-ring svg { width: 190px; height: 190px; }
+    .total-score-number .score { font-size: 56px; }
+    .dim-details { grid-template-columns: 1fr; }
+    .comp-table { font-size: 11px; }
+    .comp-table th, .comp-table td { padding: 8px 6px; }
+    .win-card { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BANNER ===== -->
+<div class="top-banner" id="topBanner">
+  YOUR AUTHORITY SCORE RESULTS ARE IN. THIS IS NOT GOOD.
+</div>
+
+<!-- ===== HERO ===== -->
+<div class="hero-block">
+  <div class="brand-line">This Is <span>Long Island</span> Marketing</div>
+  <div class="results-badge">
+    <span class="dot"></span>
+    Your Results Are Ready
+  </div>
+
+  <h1 class="hero-headline">
+    <span class="teal" id="bizName">[Business Name]</span><br>
+    Authority Score Report
+  </h1>
+  <p class="authority-stripe">SCORED. RANKED. EXPOSED.</p>
+  <div class="hero-meta">Prepared <span id="auditDate">March 29, 2026</span> &middot; Service Area: <span id="serviceArea">[Town, NY]</span></div>
+</div>
+
+<!-- ===== TOTAL SCORE ===== -->
+<section class="score-section">
+  <div class="total-score-ring">
+    <svg viewBox="0 0 240 240">
+      <circle class="ring-bg" cx="120" cy="120" r="90"/>
+      <circle class="ring-fill" id="scoreRing" cx="120" cy="120" r="90"/>
+    </svg>
+    <div class="total-score-number">
+      <div class="score" id="totalScore">--</div>
+      <div class="out-of">OUT OF 100</div>
+    </div>
+  </div>
+  <div class="verdict-badge" id="verdict">--</div>
+  <p class="score-context" id="scoreContext"></p>
+</section>
+
+<!-- ===== AUTHORITY CALLOUT ===== -->
+<div class="authority-callout">
+  <p id="authorityCallout">Your competitors are <span class="teal">outscoring you</span> in the places that matter most. Every day you wait, they get further ahead.</p>
+</div>
+
+<!-- ===== DIMENSION SCORES ===== -->
+<section class="dim-section">
+  <div class="page-wrap">
+    <div class="dim-header">
+      <div class="eyebrow">Score Breakdown</div>
+      <h2>5 Dimensions. Every One Matters.</h2>
+    </div>
+    <div id="dimensionCards"></div>
+  </div>
+</section>
+
+<!-- ===== COMPETITOR TABLE ===== -->
+<section class="comp-section">
+  <div class="page-wrap">
+    <div class="comp-header">
+      <div class="eyebrow">Head To Head</div>
+      <h2>You vs. Your Top 3 Competitors</h2>
+    </div>
+    <div class="comp-table-wrap">
+      <table class="comp-table" id="compTable">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th id="compYouName">You</th>
+            <th id="comp1Name">Comp #1</th>
+            <th id="comp2Name">Comp #2</th>
+            <th id="comp3Name">Comp #3</th>
+          </tr>
+        </thead>
+        <tbody id="compBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK WINS ===== -->
+<section class="wins-section">
+  <div class="page-wrap">
+    <div class="wins-header">
+      <div class="eyebrow">Fix These Now</div>
+      <h2>3 Quick Wins You Can Do This Week</h2>
+    </div>
+    <div id="quickWins"></div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-block" id="book">
+  <h2>Book Your <span class="teal">Free Strategy Call</span></h2>
+  <div class="cta-sub">20 minutes. We walk through your scores, show you the gaps, and map out exactly what it takes to own your market.</div>
+
+  <div class="cta-checks">
+    <div class="cta-check"><span class="ck">&#10003;</span> Full Authority Score walkthrough</div>
+    <div class="cta-check"><span class="ck">&#10003;</span> Competitor gap analysis</div>
+    <div class="cta-check"><span class="ck">&#10003;</span> Custom roadmap to dominate your service area</div>
+  </div>
+
+  <a href="YOUR_CALENDLY_OR_GHL_BOOKING_LINK" class="cta-btn">Book Your Free Strategy Call &rarr;</a>
+  <div class="cta-urg"><span class="rd"></span> Only 5 spots left this month</div>
+  <div class="cta-guarantee">Zero obligation. If we can't show you a clear path forward, we'll tell you.</div>
+</section>
+
+<!-- ===== COUNTDOWN ===== -->
+<div class="countdown-wrap">
+  <div class="countdown-label">&#9888; This Offer Expires In:</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-num"><span class="n" id="cd-d">03</span><span class="l">Days</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-h">11</span><span class="l">Hours</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-m">42</span><span class="l">Min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-s">07</span><span class="l">Sec</span></div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  &copy; 2026 This Is Long Island Marketing &middot; Northport, Long Island &middot; <a href="https://thisislongisland.com">thisislongisland.com</a>
+</footer>
+
+<!-- ===== STICKY BAR ===== -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-text">Your score is in. <span class="teal">Let's fix it.</span></span>
+  <button class="sticky-btn" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book Strategy Call &rarr;</button>
+  <button class="sticky-x" onclick="closeStickyBar()">&times;</button>
+</div>
+
+<script>
+// ============================================
+// AUDIT DATA - Replace these values per client
+// ============================================
+var AUDIT = {
+  businessName: "ABC Heating & Cooling",
+  serviceArea: "Commack, NY",
+  date: "March 29, 2026",
+  dimensions: [
+    {
+      name: "Video Presence",
+      score: 6,
+      max: 20,
+      details: [
+        { label: "Facebook Videos", value: "2 (last 6 months)", status: "red" },
+        { label: "Instagram Reels", value: "0", status: "red" },
+        { label: "YouTube Channel", value: "None", status: "red" },
+        { label: "Google Business Videos", value: "0", status: "red" }
+      ],
+      insight: "You have almost no video presence online. Your competitors are posting 2-3 videos per week. <strong>This is your biggest gap and your biggest opportunity.</strong>"
+    },
+    {
+      name: "Ad Activity",
+      score: 8,
+      max: 20,
+      details: [
+        { label: "Active Meta Ads", value: "1 campaign", status: "yellow" },
+        { label: "Google Ads", value: "Basic search only", status: "yellow" },
+        { label: "Ad Creative Quality", value: "Stock photos", status: "red" },
+        { label: "Retargeting", value: "Not set up", status: "red" }
+      ],
+      insight: "You're spending money on ads but without video creative or retargeting, you're paying more per lead than you need to. <strong>Your cost per lead could drop 40-60% with video ads.</strong>"
+    },
+    {
+      name: "Google Profile Strength",
+      score: 14,
+      max: 20,
+      details: [
+        { label: "Review Count", value: "47 reviews", status: "green" },
+        { label: "Average Rating", value: "4.6 stars", status: "green" },
+        { label: "GBP Posts", value: "None in 90 days", status: "red" },
+        { label: "Profile Completeness", value: "80%", status: "yellow" }
+      ],
+      insight: "Your reviews are solid. But you're not posting to your Google Business Profile. <strong>Competitors #1 and #2 post weekly. Google rewards active profiles with higher placement.</strong>"
+    },
+    {
+      name: "Social Consistency",
+      score: 5,
+      max: 20,
+      details: [
+        { label: "Posts (Last 90 Days)", value: "3 posts", status: "red" },
+        { label: "Engagement Rate", value: "Below 1%", status: "red" },
+        { label: "Brand Consistency", value: "Mixed messaging", status: "yellow" },
+        { label: "Platform Coverage", value: "Facebook only", status: "yellow" }
+      ],
+      insight: "3 posts in 90 days tells homeowners you're not active. <strong>The companies winning on Long Island are posting 3-5 times per week with a clear, consistent brand.</strong>"
+    },
+    {
+      name: "Authority Positioning",
+      score: 7,
+      max: 20,
+      details: [
+        { label: "Face on Camera", value: "Never", status: "red" },
+        { label: "Educational Content", value: "None", status: "red" },
+        { label: "Community Presence", value: "Minimal", status: "yellow" },
+        { label: "Trust Signals", value: "License + insurance listed", status: "green" }
+      ],
+      insight: "You have the credentials but no one can see them. <strong>When a homeowner has never seen your face, you're just another name on a list. Video changes that overnight.</strong>"
+    }
+  ],
+  competitors: [
+    { name: "CoolAir Pros", scores: [16, 14, 17, 15, 14], total: 76 },
+    { name: "Island Comfort HVAC", scores: [12, 11, 15, 13, 12], total: 63 },
+    { name: "LI Climate Control", scores: [9, 10, 13, 8, 9], total: 49 }
+  ],
+  quickWins: [
+    {
+      title: "Post to Your Google Business Profile 3x This Week",
+      description: "Take a photo at each job site. Write one sentence about the work. Post it. Google rewards active profiles with better placement in local search.",
+      impact: "high"
+    },
+    {
+      title: "Record a 60-Second 'Meet the Owner' Video",
+      description: "Stand in front of your van or in a customer's home (with permission). Introduce yourself. Say what you do and who you serve. Post it to Facebook and Instagram.",
+      impact: "high"
+    },
+    {
+      title: "Ask Your Last 5 Customers for a Google Review",
+      description: "Send a text with a direct link to your Google review page. You're at 47 reviews. Getting to 50+ puts you in a different tier locally.",
+      impact: "medium"
+    }
+  ]
+};
+
+// ============================================
+// RENDER
+// ============================================
+function getColor(score, max) {
+  var pct = score / max;
+  if (pct < 0.4) return 'red';
+  if (pct < 0.7) return 'yellow';
+  return 'green';
+}
+function getHex(color) {
+  if (color === 'red') return '#e74c3c';
+  if (color === 'yellow') return '#f1c40f';
+  return '#2ecc71';
+}
+
+function render() {
+  var d = AUDIT;
+  var youScores = d.dimensions.map(function(dim) { return dim.score; });
+  var total = youScores.reduce(function(a, b) { return a + b; }, 0);
+
+  // Top banner dynamic text
+  if (total < 40) {
+    document.getElementById('topBanner').textContent = 'YOUR AUTHORITY SCORE RESULTS ARE IN. THIS IS NOT GOOD.';
+  } else if (total < 70) {
+    document.getElementById('topBanner').textContent = 'YOUR AUTHORITY SCORE RESULTS ARE IN. YOU HAVE GAPS TO CLOSE.';
+  } else {
+    document.getElementById('topBanner').textContent = 'YOUR AUTHORITY SCORE RESULTS ARE IN. STRONG FOUNDATION. LET\'S BUILD ON IT.';
+  }
+
+  // Hero
+  document.getElementById('bizName').textContent = d.businessName;
+  document.getElementById('serviceArea').textContent = d.serviceArea;
+  document.getElementById('auditDate').textContent = d.date;
+
+  // Total score ring (radius=90, circumference ~565)
+  var pct = total / 100;
+  var circumference = 2 * Math.PI * 90;
+  var offset = circumference * (1 - pct);
+  var ring = document.getElementById('scoreRing');
+  ring.classList.add(getColor(total, 100));
+  setTimeout(function() { ring.style.strokeDashoffset = offset; }, 300);
+  document.getElementById('totalScore').textContent = total;
+
+  // Verdict
+  var verdict = document.getElementById('verdict');
+  var context = document.getElementById('scoreContext');
+  if (total < 40) {
+    verdict.textContent = 'NEEDS IMMEDIATE ATTENTION';
+    verdict.className = 'verdict-badge low';
+    context.innerHTML = 'Your authority score is <strong>well below</strong> your top competitors. Homeowners in your area are seeing other companies first. The good news: <strong>the gaps are fixable</strong>, and we know exactly where to start.';
+  } else if (total < 70) {
+    verdict.textContent = 'ROOM TO GROW';
+    verdict.className = 'verdict-badge mid';
+    context.innerHTML = 'You have a foundation, but <strong>key gaps are costing you calls</strong>. Your competitors are outpacing you in the areas that matter most to homeowners making fast decisions.';
+  } else {
+    verdict.textContent = 'STRONG POSITION';
+    verdict.className = 'verdict-badge high';
+    context.innerHTML = 'You\'re ahead of most competitors. <strong>Fine-tuning these remaining gaps</strong> could make you the undisputed leader in your service area.';
+  }
+
+  // Authority callout dynamic
+  var callout = document.getElementById('authorityCallout');
+  if (total < 40) {
+    callout.innerHTML = 'Your competitors are <span class="teal">crushing you</span> in the places that matter most. Every day you wait, they get further ahead. This is fixable. But not forever.';
+  } else if (total < 70) {
+    callout.innerHTML = 'You have the foundation. But your competitors are <span class="teal">pulling away</span>. The gaps below are costing you jobs every single week.';
+  } else {
+    callout.innerHTML = 'You are in a <span class="teal">strong position</span>. But "good enough" is how leaders become followers. Let\'s close the remaining gaps and lock in your dominance.';
+  }
+
+  // Dimension cards
+  var cardsHtml = '';
+  d.dimensions.forEach(function(dim, i) {
+    var color = getColor(dim.score, dim.max);
+    var hex = getHex(color);
+    var barPct = (dim.score / dim.max) * 100;
+
+    var detHtml = '';
+    dim.details.forEach(function(det) {
+      detHtml += '<div class="det-item"><div class="dl">' + det.label + '</div><div class="dv ' + det.status + '">' + det.value + '</div></div>';
+    });
+
+    cardsHtml += '<div class="dim-card" style="animation:fade-up 0.5s ease-out ' + (i * 0.1) + 's backwards">' +
+      '<div class="dim-card-top">' +
+        '<div class="dim-card-title"><span class="dim-num">0' + (i+1) + '</span><h3>' + dim.name + '</h3></div>' +
+        '<div class="dim-score" style="color:' + hex + '">' + dim.score + ' <span class="mx">/' + dim.max + '</span></div>' +
+      '</div>' +
+      '<div class="dim-bar-track"><div class="dim-bar-fill" style="width:' + barPct + '%;background:' + hex + '"></div></div>' +
+      '<div class="dim-details">' + detHtml + '</div>' +
+      '<div class="dim-insight">' + dim.insight + '</div>' +
+    '</div>';
+  });
+  document.getElementById('dimensionCards').innerHTML = cardsHtml;
+
+  // Competitor table
+  var dimNames = d.dimensions.map(function(dim) { return dim.name; });
+  document.getElementById('compYouName').textContent = d.businessName;
+  document.getElementById('comp1Name').textContent = d.competitors[0].name;
+  document.getElementById('comp2Name').textContent = d.competitors[1].name;
+  document.getElementById('comp3Name').textContent = d.competitors[2].name;
+
+  var bodyHtml = '';
+  dimNames.forEach(function(name, i) {
+    var youScore = youScores[i];
+    var youHex = getHex(getColor(youScore, 20));
+    // find max score in row to mark winner
+    var allScores = [youScore];
+    d.competitors.forEach(function(c) { allScores.push(c.scores[i]); });
+    var maxInRow = Math.max.apply(null, allScores);
+
+    bodyHtml += '<tr class="you-row">' +
+      '<td>' + name + '</td>' +
+      '<td class="sc" style="color:' + youHex + '">' + youScore + (youScore === maxInRow ? ' &#9733;' : '') + '</td>';
+    d.competitors.forEach(function(comp) {
+      var cs = comp.scores[i];
+      var cHex = getHex(getColor(cs, 20));
+      bodyHtml += '<td class="sc" style="color:' + cHex + '">' + cs + (cs === maxInRow && youScore !== maxInRow ? ' &#9733;' : '') + '</td>';
+    });
+    bodyHtml += '</tr>';
+  });
+  // Total row
+  var allTotals = [total];
+  d.competitors.forEach(function(c) { allTotals.push(c.total); });
+  var maxTotal = Math.max.apply(null, allTotals);
+
+  bodyHtml += '<tr class="total-row"><td>TOTAL</td><td class="yt">' + total + '</td>';
+  d.competitors.forEach(function(comp) {
+    var style = comp.total === maxTotal ? 'color:#2ecc71;' : '';
+    bodyHtml += '<td style="' + style + '">' + comp.total + '</td>';
+  });
+  bodyHtml += '</tr>';
+  document.getElementById('compBody').innerHTML = bodyHtml;
+
+  // Quick wins
+  var winsHtml = '';
+  d.quickWins.forEach(function(win, i) {
+    winsHtml += '<div class="win-card" style="animation:fade-up 0.5s ease-out ' + (i * 0.1) + 's backwards">' +
+      '<div class="win-num">' + (i+1) + '</div>' +
+      '<div class="win-body">' +
+        '<h3>' + win.title + '</h3>' +
+        '<p>' + win.description + '</p>' +
+        '<span class="win-tag ' + win.impact + '">' + win.impact + ' impact</span>' +
+      '</div>' +
+    '</div>';
+  });
+  document.getElementById('quickWins').innerHTML = winsHtml;
+}
+
+render();
+
+// Countdown timer - 3 days from now
+var end = new Date();
+end.setDate(end.getDate() + 3);
+end.setHours(23, 59, 59, 0);
+function tick() {
+  var now = new Date();
+  var diff = Math.max(0, end - now);
+  var dd = Math.floor(diff / 86400000);
+  var hh = Math.floor((diff % 86400000) / 3600000);
+  var mm = Math.floor((diff % 3600000) / 60000);
+  var ss = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(dd).padStart(2, '0');
+  document.getElementById('cd-h').textContent = String(hh).padStart(2, '0');
+  document.getElementById('cd-m').textContent = String(mm).padStart(2, '0');
+  document.getElementById('cd-s').textContent = String(ss).padStart(2, '0');
+}
+tick();
+setInterval(tick, 1000);
+
+// Sticky bar
+var stickyBar = document.getElementById('stickyBar');
+var dismissed = false;
+function closeStickyBar() { dismissed = true; stickyBar.classList.remove('visible'); }
+window.addEventListener('scroll', function() {
+  if (dismissed) return;
+  if (window.scrollY > 300) stickyBar.classList.add('visible');
+  else stickyBar.classList.remove('visible');
+});
+</script>
+
+</body>
+</html>

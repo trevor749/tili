@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Leads Report | This Is Long Island Marketing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cabin', arial, sans-serif;
+    background: #000;
+    color: #e5e5e5;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  :root {
+    --teal: #1bb0ce;
+    --teal-dark: #158a9e;
+    --teal-border: #2f93b0;
+    --teal-glow: rgba(27, 176, 206, 0.15);
+    --teal-glow-strong: rgba(27, 176, 206, 0.3);
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(27,176,206,0.3); }
+    50% { box-shadow: 0 0 40px rgba(27,176,206,0.5), 0 0 80px rgba(27,176,206,0.15); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  /* ========== WRAPPER ========== */
+  .page-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ========== TOP BANNER ========== */
+  .top-banner {
+    background: var(--teal);
+    color: #000;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ========== HERO BLOCK ========== */
+  .hero-block {
+    background: linear-gradient(180deg, rgba(27,176,206,0.08) 0%, #000 70%);
+    text-align: center;
+    padding: 28px 16px 0;
+  }
+  .brand-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(16px, 3.5vw, 22px);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(27,176,206,0.3);
+  }
+  .brand-line span { color: var(--teal); }
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(27,176,206,0.08);
+    border: 1.5px solid rgba(27,176,206,0.25);
+    border-radius: 50px;
+    padding: 8px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 18px;
+  }
+
+  .hero-headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(32px, 8vw, 58px);
+    font-weight: 900;
+    line-height: 1.12;
+    color: #fff;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline .teal { color: var(--teal); }
+  .authority-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000;
+    background: var(--teal);
+    display: inline-block;
+    padding: 10px 28px;
+    margin-top: 18px;
+    margin-bottom: 0;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15);
+  }
+  .watch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(27,176,206,0.08);
+    border: 1.5px solid rgba(27,176,206,0.25);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 20px 0 20px;
+  }
+  .watch-badge svg { flex-shrink: 0; color: var(--teal); }
+
+  /* ========== VSL ========== */
+  .vsl-wrap {
+    position: relative;
+    max-width: 560px;
+    margin: 0 auto 16px;
+    background: #050505;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    cursor: pointer;
+    border: 2px solid rgba(27,176,206,0.4);
+    box-shadow: 0 12px 60px rgba(0,0,0,0.6);
+  }
+  .vsl-wrap:hover { border-color: var(--teal); }
+  .vsl-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+  .play-btn {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 72px; height: 72px;
+    background: var(--teal);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  .play-btn:hover { transform: translate(-50%,-50%) scale(1.08); }
+  .play-btn svg { width: 28px; height: 28px; fill: #000; margin-left: 3px; }
+
+  /* ========== CTA BLOCK ========== */
+  .cta-block {
+    text-align: center;
+    padding: 0 16px 20px;
+    background: #000;
+  }
+  .cta-main {
+    display: block;
+    max-width: 520px;
+    margin: 0 auto 6px;
+    padding: 20px 24px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .cta-main:hover { background: #22c4e5; transform: translateY(-2px); }
+  .cta-sub {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 16px;
+  }
+
+  /* ========== COUNTDOWN ========== */
+  .countdown-wrap {
+    text-align: center;
+    padding: 14px 16px;
+    background: #000;
+  }
+  .countdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #e74c3c;
+    margin-bottom: 8px;
+  }
+  .countdown {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .cd-num {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 48px;
+    text-align: center;
+  }
+  .cd-num .n {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    line-height: 1;
+  }
+  .cd-num .l {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cd-sep {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+  }
+
+  /* ========== SOCIAL PROOF STRIP ========== */
+  .proof-strip {
+    text-align: center;
+    padding: 18px 16px;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+    background: #060606;
+  }
+  .proof-stars {
+    color: #f5b731;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .proof-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .proof-text strong { color: #fff; }
+
+  /* ========== BIG CLAIM ========== */
+  .big-claim {
+    text-align: center;
+    padding: 28px 16px;
+    background: #000;
+  }
+  .big-claim h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 5vw, 34px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .big-claim h2 .teal { color: var(--teal); }
+  .big-claim p {
+    font-size: 14px;
+    color: #777;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ========== AGITATION CARDS ========== */
+  .agit-section {
+    padding: 24px 16px 28px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
+  .agit-section .page-wrap { max-width: 600px; }
+  .agit-card {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #aaa;
+  }
+  .agit-card strong { color: #fff; font-weight: 700; }
+  .agit-card.loud {
+    background: rgba(27,176,206,0.06);
+    border-left-color: var(--teal);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* ========== STAT ROW ========== */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .stat-box {
+    text-align: center;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 18px 8px;
+  }
+  .stat-num {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(18px, 4vw, 28px);
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  /* ========== FORM SECTION ========== */
+  .form-block {
+    padding: 28px 16px 24px;
+    background: #080808;
+    border-top: 3px solid var(--teal);
+    text-align: center;
+  }
+  .form-block h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .form-sub {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 18px;
+  }
+  .form-checks {
+    max-width: 400px;
+    margin: 0 auto 18px;
+    text-align: left;
+  }
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 8px;
+  }
+  .form-check .ck {
+    color: var(--teal);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .form-card {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #0e0e0e;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 24px 20px;
+  }
+  .fg { margin-bottom: 10px; }
+  .fg input {
+    width: 100%;
+    padding: 14px 16px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .fg input::placeholder { color: #444; }
+  .fg input:focus { border-color: var(--teal); }
+  .form-cta {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 14px;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s;
+  }
+  .form-cta:hover { background: #22c4e5; }
+  .form-urg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .form-urg .rd {
+    width: 6px; height: 6px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  .form-disc {
+    font-size: 11px;
+    color: #444;
+    margin-top: 10px;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    text-align: center;
+    padding: 24px 16px 72px;
+    font-size: 10px;
+    color: #222;
+    letter-spacing: 0.05em;
+  }
+  .footer a { color: #444; }
+
+  /* ========== STICKY BAR ========== */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #1a1a1a;
+    padding: 10px 16px;
+    display: flex; justify-content: center; align-items: center; gap: 12px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-text { font-size: 13px; font-weight: 700; color: #fff; display: none; }
+  .sticky-btn {
+    padding: 12px 28px;
+    background: var(--teal); color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border: none; border-radius: 8px; cursor: pointer;
+    white-space: nowrap;
+  }
+  .sticky-btn:hover { background: #22c4e5; }
+  .sticky-x {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: #444; font-size: 18px; cursor: pointer;
+  }
+
+  @media (min-width: 641px) {
+    .sticky-text { display: block; }
+  }
+  @media (max-width: 640px) {
+    .hero-headline { font-size: clamp(26px, 8vw, 44px); }
+    .stat-row { grid-template-columns: 1fr; gap: 8px; }
+    .stat-box { padding: 14px 16px; display: flex; align-items: center; gap: 12px; justify-content: center; }
+    .stat-num { margin-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BANNER ===== -->
+<div class="top-banner">
+  Attention HVAC Companies: Your Competitors Are Running Ads. You're Not. That's a Problem.
+</div>
+
+<!-- ===== HERO BLOCK ===== -->
+<div class="hero-block">
+  <div class="brand-line">Attention All <span>Long Island</span> HVAC Companies</div>
+  <div class="live-badge">
+    Free HVAC Leads Report
+  </div>
+
+  <h1 class="hero-headline">
+    Their AC dies at 9pm...<br>
+    <span class="teal">and they're not calling you?</span><br>
+    We fix that.
+  </h1>
+  <p class="authority-line">Be the authority. Own every screen.</p>
+
+  <div class="watch-badge">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    Watch This First &middot; 90 Seconds
+  </div>
+
+  <!-- VSL -->
+  <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
+    <div class="play-btn" id="playBtn">
+      <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CTA BLOCK ===== -->
+<div class="cta-block">
+  <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    Show Me Who's Taking My Leads &rarr;
+  </button>
+  <div class="cta-sub">Free. No sales call. Ready in 24 hours.</div>
+</div>
+
+<!-- ===== COUNTDOWN ===== -->
+<div class="countdown-wrap">
+  <div class="countdown-label">&#9888; Spots Close In:</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-num"><span class="n" id="cd-d">03</span><span class="l">Days</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-h">11</span><span class="l">Hours</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-m">42</span><span class="l">Min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-s">07</span><span class="l">Sec</span></div>
+  </div>
+</div>
+
+<!-- ===== SOCIAL PROOF STRIP ===== -->
+<div class="proof-strip">
+  <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <div class="proof-text">Trusted by <strong>50+ Long Island businesses</strong> &middot; National campaign for <strong>DreamSeat</strong></div>
+</div>
+
+<!-- ===== BIG CLAIM ===== -->
+<div class="big-claim">
+  <h2>Your Competitor Got <span class="teal">47 Calls</span> Last Month From People In Your Zip Code.</h2>
+  <p>They never heard your name. That's not bad luck. That's a decision you haven't made yet.</p>
+</div>
+
+<!-- ===== AGITATION CARDS ===== -->
+<div class="agit-section">
+  <div class="page-wrap">
+    <div class="agit-card">
+      Right now there is an HVAC company in your service area running video ads on Facebook. Their face is showing up in your customers' feeds before they even know they have a problem. <strong>They never heard of you.</strong>
+    </div>
+    <div class="agit-card loud">
+      That is not bad luck. That is not a slow season. That is a competitor who made one decision you haven't made yet.
+    </div>
+    <div class="agit-card">
+      And <strong>that decision is costing you jobs every single week</strong> whether you see it or not.
+    </div>
+  </div>
+</div>
+
+<!-- ===== STAT ROW ===== -->
+<div class="stat-row">
+  <div class="stat-box">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Businesses Served</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num">DreamSeat</div>
+    <div class="stat-label">National Client</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num">Nassau + Suffolk</div>
+    <div class="stat-label">Full Coverage</div>
+  </div>
+</div>
+
+<!-- ===== FORM ===== -->
+<div class="form-block" id="apply">
+  <h2>See Who's Taking Your Leads. Free.</h2>
+  <div class="form-sub">Personal breakdown ready within 24 hours. No sales call. No strings.</div>
+
+  <div class="form-checks">
+    <div class="form-check"><span class="ck">&#10003;</span> Every competitor running ads in your zip code</div>
+    <div class="form-check"><span class="ck">&#10003;</span> Where they're showing up (Facebook, Google, Instagram)</div>
+    <div class="form-check"><span class="ck">&#10003;</span> Exactly what it would take to close the gap</div>
+  </div>
+
+  <div class="form-card">
+    <form id="auditForm" onsubmit="handleSubmit(event)">
+      <div class="fg"><input type="text" name="first_name" placeholder="First Name" required></div>
+      <div class="fg"><input type="text" name="business_name" placeholder="Business Name" required></div>
+      <div class="fg"><input type="tel" name="phone" placeholder="Phone Number" required></div>
+      <div class="fg"><input type="email" name="email" placeholder="Email Address" required></div>
+      <div class="fg"><input type="text" name="service_area" placeholder="Primary Service Area (Town or Zip)" required></div>
+      <button type="submit" class="form-cta">Show Me Who's Taking My Leads &rarr;</button>
+      <div class="form-urg"><span class="rd"></span> Only 7 spots left this month</div>
+    </form>
+    <div class="form-disc">No payment. No sales call. No strings. Your report is ready within 24 hours.</div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  &copy; 2026 This Is Long Island Marketing &middot; Northport, Long Island &middot; <a href="https://thisislongisland.com">thisislongisland.com</a>
+</footer>
+
+<!-- ===== STICKY BAR ===== -->
+<div class="sticky-bar" id="stickyBar">
+  <span class="sticky-text">Your competitors are already showing up. Are you?</span>
+  <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Get Your Free Report &rarr;</button>
+  <button class="sticky-x" onclick="closeStickyBar()">&times;</button>
+</div>
+
+<script>
+  function playVideo() {
+    var w = document.getElementById('videoWrapper');
+    w.innerHTML = '<iframe src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var data = new FormData(e.target);
+    var obj = {};
+    data.forEach(function(v, k) { obj[k] = v; });
+    var btn = e.target.querySelector('.form-cta');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    btn.style.animation = 'none';
+    setTimeout(function() {
+      window.location.href = 'thank-you-ghl.html?name=' + encodeURIComponent(obj.first_name);
+    }, 800);
+  }
+
+  // Countdown timer - 3 days from now
+  var end = new Date();
+  end.setDate(end.getDate() + 3);
+  end.setHours(23, 59, 59, 0);
+  function tick() {
+    var now = new Date();
+    var diff = Math.max(0, end - now);
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Sticky bar
+  var stickyBar = document.getElementById('stickyBar');
+  var dismissed = false;
+  function closeStickyBar() { dismissed = true; stickyBar.classList.remove('visible'); }
+  window.addEventListener('scroll', function() {
+    if (dismissed) return;
+    if (window.scrollY > 400) stickyBar.classList.add('visible');
+    else stickyBar.classList.remove('visible');
+  });
+</script>
+</body>
+</html>
