@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>This Is Long Island — A Long Island Media Company</title>
-<meta name="description" content="Built on Long Island. Proven on Long Island. Now booking the Athletes Make The Best Workforce Studio.">
+<title>Athletes Make The Best™ Workforce Studio | This Is Long Island</title>
+<meta name="description" content="The pilot Student-Athlete Workforce Studio. Now booking on Long Island. Sign up today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Raleway:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
@@ -43,6 +43,14 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes pulse-glow-gold {
+    0%, 100% { box-shadow: 0 0 30px rgba(245,183,49,0.4), 0 0 60px rgba(245,183,49,0.2); }
+    50% { box-shadow: 0 0 60px rgba(245,183,49,0.7), 0 0 140px rgba(245,183,49,0.3); }
+  }
   @keyframes pulse-glow-teal {
     0%, 100% { box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15); }
     50% { box-shadow: 0 0 50px rgba(27,176,206,0.6), 0 0 120px rgba(27,176,206,0.25); }
@@ -70,7 +78,7 @@
   .nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 50;
-    padding: 18px 28px;
+    padding: 16px 28px;
     display: flex; justify-content: space-between; align-items: center;
     background: rgba(5,5,5,0.7);
     backdrop-filter: blur(14px);
@@ -78,7 +86,7 @@
   }
   .nav-brand {
     font-family: 'Anton', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -93,33 +101,34 @@
     box-shadow: 0 0 10px var(--teal);
   }
   .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
     letter-spacing: 0.2em;
-    color: var(--gold);
-    padding: 8px 18px;
-    border: 1px solid rgba(245,183,49,0.4);
+    color: #000;
+    background: var(--gold);
+    padding: 10px 20px;
     border-radius: 4px;
     transition: all 0.2s;
   }
-  .nav-cta:hover { background: var(--gold); color: #000; }
+  .nav-cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
   .nav-cta .rd {
     display: inline-block;
     width: 6px; height: 6px;
-    background: var(--gold);
+    background: #000;
     border-radius: 50%;
-    margin-right: 8px;
-    vertical-align: middle;
     animation: pulse-dot 1.6s ease-in-out infinite;
   }
 
   /* ========================================================
-     HERO
+     HERO (the event IS the hero)
   ======================================================== */
   .hero {
     position: relative;
     min-height: 100vh;
-    padding: 120px 24px 80px;
+    padding: 110px 24px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -145,7 +154,7 @@
     width: 900px; height: 900px;
     background:
       radial-gradient(ellipse, rgba(27,176,206,0.22) 0%, transparent 60%),
-      radial-gradient(ellipse at 30% 70%, rgba(245,183,49,0.15) 0%, transparent 55%);
+      radial-gradient(ellipse at 30% 70%, rgba(245,183,49,0.18) 0%, transparent 55%);
     transform: translate(-50%, -50%);
     filter: blur(50px);
     animation: aurora 20s ease-in-out infinite;
@@ -157,43 +166,46 @@
   .hero > *:nth-child(3) { animation-delay: 0.25s; }
   .hero > *:nth-child(4) { animation-delay: 0.35s; }
   .hero > *:nth-child(5) { animation-delay: 0.45s; }
+  .hero > *:nth-child(6) { animation-delay: 0.55s; }
+  .hero > *:nth-child(7) { animation-delay: 0.65s; }
 
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
     letter-spacing: 0.3em;
     color: #fff;
     padding: 9px 22px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(245,183,49,0.08);
+    border: 1px solid rgba(245,183,49,0.3);
     border-radius: 50px;
     backdrop-filter: blur(10px);
   }
   .hero-eyebrow .rd {
     width: 7px; height: 7px;
-    background: var(--teal);
+    background: var(--gold);
     border-radius: 50%;
-    box-shadow: 0 0 12px var(--teal);
+    box-shadow: 0 0 12px var(--gold);
     animation: pulse-dot 1.6s ease-in-out infinite;
   }
   .hero-eyebrow .div {
     width: 1px; height: 10px;
     background: rgba(255,255,255,0.2);
   }
+  .hero-eyebrow .gold { color: var(--gold); }
 
   .hero h1 {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(80px, 18vw, 220px);
-    line-height: 0.82;
+    font-size: clamp(56px, 12vw, 168px);
+    line-height: 0.84;
     color: #fff;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.025em;
     text-transform: uppercase;
-    margin-bottom: 18px;
-    max-width: 1200px;
+    margin-bottom: 12px;
+    max-width: 1240px;
   }
   .hero h1 .line { display: block; }
   .hero h1 .accent {
@@ -205,13 +217,19 @@
     animation: shimmer 4s linear infinite;
     font-style: italic;
   }
-  .hero h1 .period { color: var(--gold); -webkit-text-fill-color: var(--gold); }
+  .hero h1 .tm {
+    font-size: 0.32em;
+    vertical-align: super;
+    color: var(--gold);
+    -webkit-text-fill-color: var(--gold);
+    margin-left: -0.12em;
+  }
 
   .hero-tagline {
     display: inline-flex;
     align-items: center;
     gap: 18px;
-    margin: 14px 0 26px;
+    margin: 22px 0 26px;
   }
   .hero-tagline .bar {
     height: 1px;
@@ -223,7 +241,7 @@
     font-family: 'Raleway', sans-serif;
     font-style: italic;
     font-weight: 800;
-    font-size: clamp(15px, 2.2vw, 20px);
+    font-size: clamp(15px, 2.2vw, 22px);
     letter-spacing: 0.06em;
     color: var(--teal);
     text-transform: uppercase;
@@ -233,30 +251,72 @@
   .hero p.lead {
     font-family: 'Inter', sans-serif;
     font-size: clamp(15px, 1.8vw, 19px);
-    color: #c5c5c5;
-    max-width: 640px;
-    margin: 0 auto 40px;
+    color: #cfcfcf;
+    max-width: 680px;
+    margin: 0 auto 30px;
     line-height: 1.7;
     font-weight: 400;
   }
   .hero p.lead strong { color: #fff; font-weight: 700; }
 
+  /* Event meta tags row */
+  .meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .meta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: #fff;
+    backdrop-filter: blur(8px);
+  }
+  .meta-tag .rd {
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--teal);
+  }
+  .meta-tag.gold {
+    background: rgba(245,183,49,0.1);
+    border-color: rgba(245,183,49,0.35);
+    color: var(--gold);
+  }
+  .meta-tag.gold .rd { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+
+  /* CTAs */
+  .hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
   .hero-cta {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 22px 44px;
-    background: var(--teal);
+    gap: 12px;
+    padding: 24px 52px;
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
     color: #000;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    animation: pulse-glow-teal 3s ease-in-out infinite;
-    transition: transform 0.15s, background 0.2s;
+    animation: pulse-glow-gold 3s ease-in-out infinite;
+    transition: transform 0.15s;
     position: relative;
     overflow: hidden;
   }
@@ -264,13 +324,22 @@
     content: '';
     position: absolute; top: 0; left: -100%;
     width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
     transition: left 0.6s;
   }
-  .hero-cta:hover { background: var(--teal-bright); transform: translateY(-3px); }
+  .hero-cta:hover { transform: translateY(-3px); }
   .hero-cta:hover::after { left: 100%; }
   .hero-cta .arrow { display: inline-block; transition: transform 0.2s; }
   .hero-cta:hover .arrow { transform: translateX(5px); }
+
+  .hero-cta-sub {
+    margin-top: 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--mute);
+  }
+  .hero-cta-sub .gold { color: var(--gold); }
 
   .scroll-hint {
     position: absolute;
@@ -299,7 +368,7 @@
     background: #000;
     overflow: hidden;
     white-space: nowrap;
-    padding: 18px 0;
+    padding: 16px 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
   }
@@ -309,11 +378,12 @@
     white-space: nowrap;
     will-change: transform;
   }
+  .marquee.reverse .marquee-track { animation: scroll-right 35s linear infinite; }
   .marquee-track span {
     display: inline-block;
     padding: 0 26px;
     font-family: 'Anton', sans-serif;
-    font-size: clamp(26px, 4.5vw, 42px);
+    font-size: clamp(24px, 4.5vw, 40px);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #fff;
@@ -328,49 +398,38 @@
   }
 
   /* ========================================================
-     FEATURED EVENT
+     THE WHAT (event details cards)
   ======================================================== */
-  .featured {
+  .what {
     padding: 100px 24px;
     background: #050505;
     position: relative;
-    overflow: hidden;
   }
-  .featured::before {
-    content: '';
-    position: absolute; top: 50%; left: 50%;
-    width: 1000px; height: 1000px;
-    background: radial-gradient(circle, rgba(245,183,49,0.08) 0%, transparent 60%);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-  .featured-inner {
+  .what-inner {
     max-width: 1080px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
   }
-  .featured-eyebrow {
+  .eyebrow {
     text-align: center;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
   }
-  .featured-eyebrow .line {
+  .eyebrow .line {
     width: 50px; height: 1px;
-    background: var(--gold);
+    background: var(--teal);
   }
-  .featured-eyebrow span {
+  .eyebrow span {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.3em;
-    color: var(--gold);
+    color: var(--teal);
   }
-  .featured h2 {
+  .section-h {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(40px, 7vw, 88px);
+    font-size: clamp(38px, 6.5vw, 78px);
     color: #fff;
     text-align: center;
     line-height: 0.95;
@@ -378,253 +437,202 @@
     letter-spacing: -0.01em;
     text-transform: uppercase;
   }
-  .featured h2 .accent {
-    color: var(--gold);
-    font-style: italic;
-  }
-  .featured-sub {
+  .section-h .teal { color: var(--teal); font-style: italic; }
+  .section-h .gold { color: var(--gold); font-style: italic; }
+  .section-sub {
     text-align: center;
     color: var(--mute);
     font-size: 15px;
-    max-width: 580px;
-    margin: 0 auto 50px;
+    max-width: 620px;
+    margin: 0 auto 48px;
     line-height: 1.7;
   }
 
-  .event-card {
-    background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
-    border: 1.5px solid rgba(27,176,206,0.35);
-    border-radius: 6px;
-    padding: 48px 40px;
-    position: relative;
-    box-shadow: 0 0 80px rgba(27,176,206,0.12);
-    max-width: 880px;
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 920px;
     margin: 0 auto;
   }
-  .event-card::before,
-  .event-card::after {
+  .what-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #c0c0c0;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .what-card:hover {
+    border-color: rgba(27,176,206,0.4);
+    transform: translateY(-3px);
+  }
+  .what-card::before {
     content: '';
-    position: absolute;
-    width: 28px; height: 28px;
-    border: 2px solid var(--teal);
+    position: absolute; top: 0; left: 0; width: 3px; height: 0;
+    background: var(--teal);
+    transition: height 0.3s ease;
   }
-  .event-card::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
-  .event-card::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+  .what-card:hover::before { height: 100%; }
+  .what-card strong { color: #fff; font-weight: 700; }
+  .what-card .em-underline {
+    background: linear-gradient(180deg, transparent 60%, rgba(27,176,206,0.35) 60%);
+    padding: 0 2px;
+  }
+  .what-card.full {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, rgba(27,176,206,0.12) 0%, rgba(27,176,206,0.04) 100%);
+    border-color: rgba(27,176,206,0.3);
+    text-align: center;
+    padding: 36px 32px;
+  }
+  .what-card.full p {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: clamp(22px, 3.2vw, 30px);
+    line-height: 1.25;
+    color: #fff;
+  }
 
-  .event-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    margin-bottom: 24px;
+  /* ========================================================
+     PARTNERS
+  ======================================================== */
+  .partners {
+    background: #060606;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 90px 24px;
   }
-  .event-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 18px;
-    background: rgba(27,176,206,0.08);
-    border: 1px solid rgba(27,176,206,0.25);
+  .partners-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+  .partner-card {
+    padding: 36px 28px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: #050505;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .partner-card:hover { background: #0a0a0a; }
+  .partner-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: var(--teal);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .partner-card:hover::after { transform: scaleX(1); }
+  .partner-card .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(27,176,206,0.1);
+    border: 1px solid rgba(27,176,206,0.3);
     border-radius: 50px;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.2em;
     color: var(--teal);
+    margin-bottom: 16px;
   }
-  .event-tag .rd {
-    width: 6px; height: 6px;
-    background: var(--teal);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--teal);
-    animation: pulse-dot 1.6s ease-in-out infinite;
+  .partner-card h4 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 2.6vw, 26px);
+    color: #fff;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.1;
   }
-  .event-tag.gold {
-    background: rgba(245,183,49,0.08);
-    border-color: rgba(245,183,49,0.3);
-    color: var(--gold);
+  .partner-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.65;
   }
 
-  .event-title {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(34px, 5.5vw, 64px);
-    color: #fff;
-    line-height: 0.95;
+  .hosted-by {
     text-align: center;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(255,255,255,0.08);
   }
-  .event-title .accent {
+  .hosted-by .lbl {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--mute);
+    margin-bottom: 8px;
+  }
+  .hosted-by .name {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
     background: linear-gradient(135deg, var(--teal) 0%, var(--teal-bright) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic;
-  }
-  .event-title .tm {
-    font-size: 0.4em;
-    vertical-align: super;
-    color: var(--gold);
-    -webkit-text-fill-color: var(--gold);
-    margin-left: -0.1em;
-  }
-
-  .event-tagline {
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
-    font-weight: 800;
-    font-size: clamp(13px, 1.8vw, 17px);
-    letter-spacing: 0.08em;
-    color: var(--teal);
     text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-  .event-tagline .sep {
-    color: var(--gold);
-    margin: 0 8px;
-  }
-
-  .event-desc {
-    text-align: center;
-    color: #c0c0c0;
-    font-size: 15px;
-    line-height: 1.75;
-    max-width: 620px;
-    margin: 0 auto 32px;
-  }
-  .event-desc strong { color: #fff; font-weight: 700; }
-
-  .event-partners {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    justify-content: center;
-    margin-bottom: 36px;
-    padding: 22px 20px;
-    background: rgba(0,0,0,0.4);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .event-partner {
-    text-align: center;
-    flex: 1 1 200px;
-    min-width: 180px;
-  }
-  .event-partner .role {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    color: var(--teal);
-    margin-bottom: 4px;
-  }
-  .event-partner .name {
-    font-family: 'Anton', sans-serif;
-    font-size: 16px;
-    color: #fff;
     letter-spacing: 0.01em;
-    text-transform: uppercase;
-    line-height: 1.15;
   }
-
-  .event-cta-row {
-    text-align: center;
-  }
-  .event-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 22px 50px;
-    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
-    color: #000;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.15s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(245,183,49,0.3);
-  }
-  .event-cta::after {
-    content: '';
-    position: absolute; top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-    transition: left 0.6s;
-  }
-  .event-cta:hover { transform: translateY(-3px); box-shadow: 0 0 60px rgba(245,183,49,0.5); }
-  .event-cta:hover::after { left: 100%; }
-  .event-cta .arrow { display: inline-block; transition: transform 0.2s; }
-  .event-cta:hover .arrow { transform: translateX(5px); }
-
-  .event-cta-sub {
-    margin-top: 14px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    color: var(--mute);
-  }
-  .event-cta-sub .gold { color: var(--gold); }
 
   /* ========================================================
-     ABOUT STRIP (brief)
+     FINAL CTA
   ======================================================== */
-  .about-strip {
-    background: #060606;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 72px 24px;
+  .final-cta {
+    background: #000;
     text-align: center;
+    padding: 110px 24px 120px;
+    position: relative;
+    overflow: hidden;
   }
-  .about-eyebrow {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    color: var(--teal);
-    margin-bottom: 18px;
+  .final-cta::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    width: 1100px; height: 1100px;
+    background:
+      radial-gradient(circle, rgba(245,183,49,0.1) 0%, transparent 55%),
+      radial-gradient(circle at 30% 70%, rgba(27,176,206,0.08) 0%, transparent 50%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
-  .about-strip h3 {
+  .final-cta > * { position: relative; z-index: 1; }
+  .final-cta h2 {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(28px, 4.5vw, 48px);
+    font-size: clamp(52px, 9vw, 130px);
     color: #fff;
-    line-height: 1.05;
-    max-width: 880px;
-    margin: 0 auto 18px;
     text-transform: uppercase;
-    letter-spacing: -0.01em;
+    line-height: 0.88;
+    margin-bottom: 24px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.015em;
   }
-  .about-strip h3 .accent {
-    color: var(--teal);
-    font-style: italic;
-  }
-  .about-strip p {
+  .final-cta h2 .teal { color: var(--teal); font-style: italic; }
+  .final-cta h2 .gold { color: var(--gold); font-style: italic; }
+  .final-cta p {
+    font-family: 'Inter', sans-serif;
     color: #aaa;
-    font-size: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.75;
+    font-size: clamp(15px, 1.8vw, 17px);
+    max-width: 620px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
   }
-  .about-strip p strong { color: #fff; font-weight: 700; }
-
-  .credit-row {
-    margin-top: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.22em;
-    color: rgba(255,255,255,0.4);
-  }
-  .credit-row .sep {
-    color: var(--teal);
-  }
-  .credit-row strong { color: #fff; font-weight: 400; }
 
   /* ========================================================
      FOOTER
@@ -632,19 +640,19 @@
   .footer {
     background: #000;
     text-align: center;
-    padding: 60px 20px 36px;
+    padding: 56px 20px 40px;
     border-top: 1px solid var(--line);
   }
   .footer .tag {
     font-family: 'Anton', sans-serif;
-    font-size: clamp(42px, 7vw, 78px);
+    font-size: clamp(36px, 6vw, 64px);
     background: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     letter-spacing: 0.02em;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     line-height: 0.95;
   }
   .footer-meta {
@@ -652,7 +660,7 @@
     font-size: 12px;
     letter-spacing: 0.22em;
     color: #888;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
   .footer-meta .sep { color: var(--teal); margin: 0 10px; }
   .footer-links {
@@ -677,14 +685,19 @@
   /* ========================================================
      RESPONSIVE
   ======================================================== */
+  @media (max-width: 880px) {
+    .what-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: 1fr; }
+  }
   @media (max-width: 720px) {
-    .nav { padding: 14px 16px; }
-    .nav-cta { font-size: 11px; padding: 6px 12px; letter-spacing: 0.14em; }
-    .nav-brand { font-size: 16px; }
-    .hero { padding: 100px 20px 60px; }
-    .event-card { padding: 36px 24px; }
-    .event-partners { padding: 16px 12px; }
-    .event-partner { flex: 1 1 100%; }
+    .nav { padding: 12px 16px; }
+    .nav-cta { font-size: 11px; padding: 8px 14px; letter-spacing: 0.14em; }
+    .nav-brand { font-size: 14px; }
+    .hero { padding: 90px 20px 60px; }
+    .hero-cta { padding: 20px 36px; font-size: 18px; }
+    .what { padding: 64px 20px; }
+    .partners { padding: 64px 20px; }
+    .final-cta { padding: 80px 20px 90px; }
   }
 </style>
 </head>
@@ -695,36 +708,49 @@
 ============================================================ -->
 <nav class="nav">
   <div class="nav-brand">This Is Long Island<span class="dot"></span></div>
-  <a href="#event" class="nav-cta"><span class="rd"></span>Sign Up</a>
+  <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="nav-cta"><span class="rd"></span>Sign Up</a>
 </nav>
 
 <!-- ============================================================
-     HERO
+     HERO — the event IS the hero
 ============================================================ -->
 <header class="hero">
   <div class="hero-eyebrow">
     <span class="rd"></span>
-    <span>Long Island Media Company</span>
+    <span class="gold">Pilot Launch</span>
     <span class="div"></span>
-    <span>Est. 2026</span>
+    <span>Now Booking On Long Island</span>
   </div>
 
   <h1>
-    <span class="line">This Is</span>
-    <span class="line"><em class="accent">Long Island</em><span class="period">.</span></span>
+    <span class="line">Athletes</span>
+    <span class="line"><em class="accent">Make</em> The Best<span class="tm">™</span></span>
+    <span class="line">Workforce Studio.</span>
   </h1>
 
   <div class="hero-tagline">
     <span class="bar"></span>
-    <span>Built On Long Island <span class="dot">◆</span> Proven On Long Island</span>
+    <span>Play The Game <span class="dot">◆</span> Power Your Future</span>
     <span class="bar r"></span>
   </div>
 
   <p class="lead">
-    A Long Island media company building the brands, stories, and pipelines that move this island forward. <strong>One studio. One mission. One Long Island.</strong>
+    A first-of-its-kind <strong>production studio for student-athletes</strong> built on Long Island. We turn locker-room talent into <strong>real content, real careers, and real revenue.</strong>
   </p>
 
-  <a href="#event" class="hero-cta">See What We're Launching <span class="arrow">→</span></a>
+  <div class="meta-tags">
+    <div class="meta-tag"><span class="rd"></span>Pilot Launch</div>
+    <div class="meta-tag"><span class="rd"></span>Long Island</div>
+    <div class="meta-tag gold"><span class="rd"></span>Student-Athletes</div>
+    <div class="meta-tag"><span class="rd"></span>Brands · Schools · Sponsors</div>
+  </div>
+
+  <div class="hero-cta-row">
+    <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="hero-cta">
+      Sign Up Now <span class="arrow">→</span>
+    </a>
+  </div>
+  <div class="hero-cta-sub">Registration via <span class="gold">Sports Power Infrastructure</span> &middot; Limited spots</div>
 
   <div class="scroll-hint">
     <span>Scroll</span>
@@ -737,15 +763,15 @@
 ============================================================ -->
 <div class="marquee">
   <div class="marquee-track">
-    <span class="accent">Now</span><span class="star">★</span>
-    <span class="dim">Booking</span><span class="star">★</span>
-    <span>Athletes Make The Best</span><span class="star">★</span>
+    <span class="accent">Athletes</span><span class="star">★</span>
+    <span class="dim">Make</span><span class="star">★</span>
+    <span>The Best</span><span class="star">★</span>
     <span class="accent">Workforce Studio</span><span class="star">★</span>
     <span class="dim">Long Island</span><span class="star">★</span>
     <span>Pilot Launch</span><span class="star">★</span>
-    <span class="accent">Now</span><span class="star">★</span>
-    <span class="dim">Booking</span><span class="star">★</span>
-    <span>Athletes Make The Best</span><span class="star">★</span>
+    <span class="accent">Athletes</span><span class="star">★</span>
+    <span class="dim">Make</span><span class="star">★</span>
+    <span>The Best</span><span class="star">★</span>
     <span class="accent">Workforce Studio</span><span class="star">★</span>
     <span class="dim">Long Island</span><span class="star">★</span>
     <span>Pilot Launch</span><span class="star">★</span>
@@ -753,82 +779,100 @@
 </div>
 
 <!-- ============================================================
-     FEATURED EVENT
+     THE WHAT
 ============================================================ -->
-<section class="featured" id="event">
-  <div class="featured-inner">
-    <div class="featured-eyebrow">
-      <span class="line"></span>
-      <span>Now Booking</span>
-      <span class="line"></span>
-    </div>
-    <h2>Our First <span class="accent">Pilot Launch.</span></h2>
-    <p class="featured-sub">
-      A first-of-its-kind production studio for Long Island student-athletes. Reserve your studio date.
+<section class="what">
+  <div class="what-inner">
+    <div class="eyebrow"><span class="line"></span><span>About The Pilot</span><span class="line"></span></div>
+    <h2 class="section-h">Built For The <span class="teal">Athletes</span><br>Long Island Already Produces.</h2>
+    <p class="section-sub">
+      A first-of-its-kind launch from Athletes Make The Best™, Long Island Media, and The SPIN Foundation. Here is what that means in plain English.
     </p>
 
-    <div class="event-card">
-      <div class="event-meta">
-        <div class="event-tag"><span class="rd"></span>Pilot Launch</div>
-        <div class="event-tag gold">$2,960 Deposit</div>
-        <div class="event-tag">Long Island</div>
+    <div class="what-grid">
+      <div class="what-card">
+        Long Island produces some of the best young athletes in the country. They train all year. They post highlights. They graduate. <strong>And then most of them disappear into careers that have nothing to do with the discipline that made them.</strong> That is a leak in the pipeline. We are closing it.
       </div>
 
-      <h3 class="event-title">
-        Athletes <span class="accent">Make</span> The Best<span class="tm">™</span><br>
-        Workforce Studio.
-      </h3>
-
-      <div class="event-tagline">
-        Play The Game <span class="sep">◆</span> Power Your Future
+      <div class="what-card">
+        When a brand books the studio, the team behind Long Island Media (the same crew that has produced for <strong>Chase, Forbes, and DreamSeat</strong>) runs a full broadcast-grade shoot day with hand-picked student-athletes on camera. Your brand. Their authenticity. Real content that runs everywhere.
       </div>
 
-      <p class="event-desc">
-        A first-of-its-kind <strong>production studio for student-athletes</strong> built on Long Island. We turn locker-room talent into real content, real careers, and real revenue. <strong>Book your studio day</strong> to put your brand, school, or program in front of the next generation of pros.
-      </p>
-
-      <div class="event-partners">
-        <div class="event-partner">
-          <div class="role">Workforce + Talent</div>
-          <div class="name">Athletes Make The Best&trade;</div>
-        </div>
-        <div class="event-partner">
-          <div class="role">Production</div>
-          <div class="name">Long Island Media</div>
-        </div>
-        <div class="event-partner">
-          <div class="role">Mission + Community</div>
-          <div class="name">The SPIN Foundation</div>
-        </div>
+      <div class="what-card full">
+        <p>The Workforce Studio turns Long Island student-athletes into <span class="em-underline">paid content creators</span>, brand ambassadors, and on-camera operators for the businesses and sponsors who want to reach them.</p>
       </div>
 
-      <div class="event-cta-row">
-        <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="event-cta">Sign Up Now <span class="arrow">→</span></a>
-        <div class="event-cta-sub"><span class="gold">$2,960</span> deposit secures your date &middot; QuickBooks invoice</div>
+      <div class="what-card full">
+        <p>Athletes get paid. Brands get content that converts. Schools get a workforce pipeline. <span class="em-underline">Long Island wins.</span></p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     ABOUT STRIP
+     MARQUEE 2 (reverse)
 ============================================================ -->
-<section class="about-strip">
-  <div class="about-eyebrow">// Who We Are //</div>
-  <h3>A Media Company Built <span class="accent">For This Island.</span></h3>
-  <p>
-    We tell the stories Long Island is already living, and we build the brands, content, and workforce pipelines that move them forward. <strong>Production, strategy, and the people who get it done.</strong>
-  </p>
-
-  <div class="credit-row">
-    <span><strong>Chase</strong></span>
-    <span class="sep">◆</span>
-    <span><strong>Forbes</strong></span>
-    <span class="sep">◆</span>
-    <span><strong>DreamSeat</strong></span>
-    <span class="sep">◆</span>
-    <span><strong>Fueled By Culture</strong></span>
+<div class="marquee reverse">
+  <div class="marquee-track">
+    <span class="accent">Sign Up Now</span><span class="star">◆</span>
+    <span class="dim">Reserve Your Spot</span><span class="star">◆</span>
+    <span>Pilot Cohort</span><span class="star">◆</span>
+    <span class="accent">Limited Spots</span><span class="star">◆</span>
+    <span class="dim">Long Island</span><span class="star">◆</span>
+    <span>Powered By SPI</span><span class="star">◆</span>
+    <span class="accent">Sign Up Now</span><span class="star">◆</span>
+    <span class="dim">Reserve Your Spot</span><span class="star">◆</span>
+    <span>Pilot Cohort</span><span class="star">◆</span>
+    <span class="accent">Limited Spots</span><span class="star">◆</span>
+    <span class="dim">Long Island</span><span class="star">◆</span>
+    <span>Powered By SPI</span><span class="star">◆</span>
   </div>
+</div>
+
+<!-- ============================================================
+     PARTNERS
+============================================================ -->
+<section class="partners">
+  <div class="partners-inner">
+    <div class="eyebrow"><span class="line"></span><span>The Partnership</span><span class="line"></span></div>
+    <h2 class="section-h">Three Long Island Orgs. <span class="teal">One Studio.</span></h2>
+    <p class="section-sub">Built together. Launched together. Long Island, all the way through.</p>
+
+    <div class="partners-grid">
+      <div class="partner-card">
+        <div class="badge">Workforce + Talent</div>
+        <h4>Athletes Make The Best™</h4>
+        <p>The student-athlete development arm. Sources, trains, and matches athletes to brand partnerships.</p>
+      </div>
+      <div class="partner-card">
+        <div class="badge">Production</div>
+        <h4>Long Island Media</h4>
+        <p>Broadcast-grade production team. Past work for Chase, Forbes, and DreamSeat. Runs every studio day end-to-end.</p>
+      </div>
+      <div class="partner-card">
+        <div class="badge">Mission + Community</div>
+        <h4>The SPIN Foundation</h4>
+        <p>Sports Power Infrastructure Foundation. Funds workforce programming for Long Island student-athletes.</p>
+      </div>
+    </div>
+
+    <div class="hosted-by">
+      <div class="lbl">Hosted On</div>
+      <div class="name">Sports Power Infrastructure</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+<section class="final-cta">
+  <h2>One Studio.<br>One Mission.<br><span class="teal">One Long Island.</span></h2>
+  <p>Spots are limited and this is the pilot cohort. If you want in, sign up before it fills.</p>
+  <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="hero-cta">
+    Sign Up Now <span class="arrow">→</span>
+  </a>
+  <div class="hero-cta-sub" style="margin-top: 18px;">Registration on <span class="gold">Sports Power Infrastructure</span></div>
 </section>
 
 <!-- ============================================================
