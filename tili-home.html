@@ -629,6 +629,210 @@
   }
 
   /* ========================================================
+     RESERVE / BOOKING FORM
+  ======================================================== */
+  .reserve {
+    padding: 100px 24px;
+    background: linear-gradient(180deg, #050505 0%, rgba(27,176,206,0.04) 50%, #050505 100%);
+    border-top: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .reserve::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(27,176,206,0.1) 0%, transparent 60%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .reserve > * { position: relative; z-index: 1; }
+  .reserve-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .reserve .eyebrow span { color: var(--gold); }
+  .reserve .eyebrow .line { background: var(--gold); }
+
+  .form-card {
+    background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+    border: 1.5px solid rgba(27,176,206,0.3);
+    border-radius: 6px;
+    padding: 44px 36px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 0 80px rgba(27,176,206,0.1);
+  }
+  .form-card::before,
+  .form-card::after {
+    content: '';
+    position: absolute;
+    width: 24px; height: 24px;
+    border: 2px solid var(--teal);
+  }
+  .form-card::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+  .form-card::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .form-row.single { grid-template-columns: 1fr; }
+
+  .fg { display: flex; flex-direction: column; }
+  .fg label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--teal);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .fg input,
+  .fg select,
+  .fg textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: #050505;
+    border: 1px solid #1f1f1f;
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .fg input::placeholder,
+  .fg textarea::placeholder { color: #4a4a4a; }
+  .fg input:focus,
+  .fg select:focus,
+  .fg textarea:focus {
+    border-color: var(--teal);
+    background: #080808;
+  }
+  .fg select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231bb0ce' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+  }
+  .fg select option { background: #050505; color: #fff; }
+  .fg textarea { min-height: 90px; resize: vertical; }
+
+  .form-cta {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 20px 32px;
+    background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 100%);
+    color: #000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: pulse-glow-gold 3s ease-in-out infinite;
+    transition: transform 0.15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .form-cta::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: left 0.6s;
+  }
+  .form-cta:hover { transform: translateY(-2px); }
+  .form-cta:hover::after { left: 100%; }
+  .form-cta:disabled { opacity: 0.7; cursor: wait; transform: none; }
+  .form-cta .arrow { display: inline-block; transition: transform 0.2s; }
+  .form-cta:hover .arrow { transform: translateX(4px); }
+
+  .form-disclaimer {
+    margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .form-disclaimer strong { color: #aaa; }
+
+  .partner-link {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+  .partner-link-lbl {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--mute);
+    margin-bottom: 12px;
+  }
+  .partner-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+    border: 1px solid rgba(27,176,206,0.3);
+    border-radius: 50px;
+    transition: all 0.2s;
+  }
+  .partner-link a:hover {
+    background: rgba(27,176,206,0.08);
+    border-color: var(--teal);
+  }
+
+  /* Form success state */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .form-success.show { display: block; animation: float-in 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .form-success .check {
+    width: 64px; height: 64px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: rgba(27,176,206,0.1);
+    border: 2px solid var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-size: 32px;
+  }
+  .form-success h4 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+  .form-success p {
+    font-family: 'Inter', sans-serif;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ========================================================
      FINAL CTA
   ======================================================== */
   .final-cta {
@@ -728,6 +932,8 @@
     .what-card { min-height: 0; }
     .partners-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
     .partner-card { min-height: 0; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-card { padding: 32px 24px; }
   }
   @media (max-width: 720px) {
     .nav { padding: 12px 16px; }
@@ -751,7 +957,7 @@
 ============================================================ -->
 <nav class="nav">
   <div class="nav-brand">This Is Long Island<span class="dot"></span></div>
-  <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="nav-cta"><span class="rd"></span>Sign Up</a>
+  <a href="#reserve" class="nav-cta"><span class="rd"></span>Reserve</a>
 </nav>
 
 <!-- ============================================================
@@ -789,11 +995,11 @@
   </div>
 
   <div class="hero-cta-row">
-    <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="hero-cta">
-      Sign Up Now <span class="arrow">→</span>
+    <a href="#reserve" class="hero-cta">
+      Reserve My Spot <span class="arrow">→</span>
     </a>
   </div>
-  <div class="hero-cta-sub">Registration via <span class="gold">Sports Power Infrastructure</span> &middot; Limited spots</div>
+  <div class="hero-cta-sub">Booking secured on <span class="gold">thisislongisland.com</span> &middot; Limited spots</div>
 
   <div class="scroll-hint">
     <span>Scroll</span>
@@ -857,18 +1063,18 @@
 ============================================================ -->
 <div class="marquee reverse">
   <div class="marquee-track">
-    <span class="accent">Sign Up Now</span><span class="star">◆</span>
-    <span class="dim">Reserve Your Spot</span><span class="star">◆</span>
+    <span class="accent">Reserve Now</span><span class="star">◆</span>
+    <span class="dim">Book Direct</span><span class="star">◆</span>
     <span>Pilot Cohort</span><span class="star">◆</span>
     <span class="accent">Limited Spots</span><span class="star">◆</span>
     <span class="dim">Long Island</span><span class="star">◆</span>
-    <span>Powered By SPI</span><span class="star">◆</span>
-    <span class="accent">Sign Up Now</span><span class="star">◆</span>
-    <span class="dim">Reserve Your Spot</span><span class="star">◆</span>
+    <span>24 Hour Reply</span><span class="star">◆</span>
+    <span class="accent">Reserve Now</span><span class="star">◆</span>
+    <span class="dim">Book Direct</span><span class="star">◆</span>
     <span>Pilot Cohort</span><span class="star">◆</span>
     <span class="accent">Limited Spots</span><span class="star">◆</span>
     <span class="dim">Long Island</span><span class="star">◆</span>
-    <span>Powered By SPI</span><span class="star">◆</span>
+    <span>24 Hour Reply</span><span class="star">◆</span>
   </div>
 </div>
 
@@ -907,15 +1113,113 @@
 </section>
 
 <!-- ============================================================
+     RESERVE / ON-SITE BOOKING FORM
+============================================================ -->
+<section class="reserve" id="reserve">
+  <div class="reserve-inner">
+    <div class="eyebrow"><span class="line"></span><span>Reserve Your Spot</span><span class="line"></span></div>
+    <h2 class="section-h">Book The Pilot. <span class="gold">Right Here.</span></h2>
+    <p class="section-sub">Fill out the form and we get back to you within 24 hours to confirm your spot and walk through next steps. Limited cohort, first come first served.</p>
+
+    <div class="form-card">
+      <form id="reserveForm" onsubmit="handleReserveSubmit(event)">
+        <div class="form-row">
+          <div class="fg">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="Your first name" required>
+          </div>
+          <div class="fg">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Your last name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="fg">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@business.com" required>
+          </div>
+          <div class="fg">
+            <label>Phone</label>
+            <input type="tel" name="phone" placeholder="(631) 555-0123" required>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="fg">
+            <label>Business / School / Organization</label>
+            <input type="text" name="organization" placeholder="Your business, school, or org name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="fg">
+            <label>I Am A...</label>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="local-brand">Local Long Island Brand</option>
+              <option value="school">School / Athletic Department</option>
+              <option value="national-sponsor">National Sponsor / Brand</option>
+              <option value="foundation">Sports Foundation / Nonprofit</option>
+              <option value="athlete">Student-Athlete</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label>How Soon?</label>
+            <select name="timeline" required>
+              <option value="" disabled selected>Pick a timeline</option>
+              <option value="asap">As soon as possible</option>
+              <option value="30">Within 30 days</option>
+              <option value="60">Within 60 days</option>
+              <option value="exploring">Exploring options</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="fg">
+            <label>What Do You Want To Get Out Of The Studio?</label>
+            <textarea name="goals" placeholder="A few sentences about your brand, audience, or what you want to build" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="form-cta">
+          Reserve My Spot <span class="arrow">→</span>
+        </button>
+
+        <div class="form-disclaimer">
+          <strong>No payment now.</strong> We confirm your spot first. The $2,960 deposit invoice goes out via QuickBooks once we lock your date together.
+        </div>
+      </form>
+
+      <!-- Success state -->
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h4>You're On The List.</h4>
+        <p>We received your reservation request. Expect a confirmation email and a call from our team within 24 hours to lock your date.</p>
+      </div>
+
+      <div class="partner-link">
+        <div class="partner-link-lbl">Want the full event details?</div>
+        <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener">
+          View On Sports Power Infrastructure <span style="margin-left:4px;">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      FINAL CTA
 ============================================================ -->
 <section class="final-cta">
   <h2>One Studio.<br>One Mission.<br><span class="teal">One Long Island.</span></h2>
-  <p>Spots are limited and this is the pilot cohort. If you want in, sign up before it fills.</p>
-  <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener" class="hero-cta">
-    Sign Up Now <span class="arrow">→</span>
+  <p>Spots are limited and this is the pilot cohort. If you want in, reserve before it fills.</p>
+  <a href="#reserve" class="hero-cta">
+    Reserve My Spot <span class="arrow">→</span>
   </a>
-  <div class="hero-cta-sub" style="margin-top: 18px;">Registration on <span class="gold">Sports Power Infrastructure</span></div>
+  <div class="hero-cta-sub" style="margin-top: 18px;">Booking secured on <span class="gold">thisislongisland.com</span></div>
 </section>
 
 <!-- ============================================================
@@ -929,10 +1233,65 @@
   <div class="footer-links">
     <a href="mailto:hello@thisislongisland.com">hello@thisislongisland.com</a>
     &nbsp;&middot;&nbsp;
-    <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener">Sign Up For The Event</a>
+    <a href="#reserve">Reserve Your Spot</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation" target="_blank" rel="noopener">Partner Event Page ↗</a>
   </div>
   <div class="footer-copy">&copy; 2026 This Is Long Island Media &middot; All rights reserved.</div>
 </footer>
+
+<script>
+  // ============================================================
+  // RESERVE FORM HANDLER
+  // ------------------------------------------------------------
+  // Swap YOUR_WEBHOOK_URL with your GHL / Zapier / Make / Mailchimp
+  // / QuickBooks endpoint. The form will POST JSON, then show
+  // the success state.
+  // ============================================================
+  var RESERVE_WEBHOOK = 'YOUR_WEBHOOK_URL';
+
+  function handleReserveSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var btn = form.querySelector('.form-cta');
+    var success = document.getElementById('formSuccess');
+
+    // Collect data
+    var formData = new FormData(form);
+    var payload = {};
+    formData.forEach(function(value, key) { payload[key] = value; });
+    payload.source = 'thisislongisland.com';
+    payload.event = 'Athletes Make The Best Workforce Studio';
+    payload.submitted_at = new Date().toISOString();
+
+    btn.disabled = true;
+    var originalText = btn.innerHTML;
+    btn.innerHTML = 'Submitting...';
+    btn.style.animation = 'none';
+
+    var done = function() {
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    // Attempt webhook post; succeed visually either way so user
+    // is never stuck on a network error. Hook this up to a real
+    // endpoint before going live.
+    if (RESERVE_WEBHOOK && RESERVE_WEBHOOK !== 'YOUR_WEBHOOK_URL') {
+      fetch(RESERVE_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(done).catch(done);
+    } else {
+      // No webhook yet — log to console for testing
+      console.log('Reserve form submission (no webhook configured yet):', payload);
+      setTimeout(done, 600);
+    }
+  }
+</script>
 
 </body>
 </html>
