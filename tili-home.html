@@ -479,27 +479,30 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
-    gap: 16px;
-    max-width: 920px;
+    gap: 18px;
+    max-width: 940px;
     margin: 0 auto;
   }
   .what-card {
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 32px 30px;
+    padding: 40px 36px;
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     line-height: 1.75;
-    color: #c0c0c0;
+    color: #c8c8c8;
     transition: all 0.25s;
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 260px;
+    min-height: 240px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
   .what-card:hover {
     border-color: rgba(27,176,206,0.4);
@@ -514,21 +517,23 @@
     transform-origin: center;
   }
   .what-card:hover::before { transform: scaleX(1); }
+  .what-card .beat {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    color: var(--teal);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    display: block;
+  }
+  .what-card p {
+    margin: 0;
+    max-width: 100%;
+  }
   .what-card strong { color: #fff; font-weight: 700; }
   .what-card .em-underline {
-    background: linear-gradient(180deg, transparent 60%, rgba(27,176,206,0.35) 60%);
-    padding: 0 2px;
-  }
-  .what-card.loud {
-    background: linear-gradient(135deg, rgba(27,176,206,0.12) 0%, rgba(27,176,206,0.04) 100%);
-    border-color: rgba(27,176,206,0.3);
-  }
-  .what-card.loud p {
-    font-family: 'Raleway', sans-serif;
-    font-style: italic;
-    font-weight: 800;
-    font-size: clamp(18px, 2.4vw, 22px);
-    line-height: 1.3;
+    background: linear-gradient(180deg, transparent 62%, rgba(27,176,206,0.4) 62%);
+    padding: 0 3px;
     color: #fff;
   }
 
@@ -1035,24 +1040,28 @@
     <div class="eyebrow"><span class="line"></span><span>About The Pilot</span><span class="line"></span></div>
     <h2 class="section-h">Built For The <span class="teal">Athletes</span><br>Long Island Already Produces.</h2>
     <p class="section-sub">
-      A first-of-its-kind launch from Athletes Make The Best™, Long Island Media, and The SPIN Foundation. Here is what that means in plain English.
+      A first-of-its-kind launch from Athletes Make The Best™, Long Island Media, and The SPIN Foundation. Four beats. Plain English. No spin.
     </p>
 
     <div class="what-grid">
       <div class="what-card">
-        Long Island produces some of the best young athletes in the country. <strong>They train all year. They post highlights. They graduate.</strong> And then most disappear into careers that have nothing to do with the discipline that made them.
-      </div>
-
-      <div class="what-card loud">
-        <p>The Workforce Studio turns Long Island student-athletes into <span class="em-underline">paid content creators</span> for the brands that want to reach them.</p>
-      </div>
-
-      <div class="what-card loud">
-        <p>Athletes get paid. Brands get content. Schools get a pipeline. <span class="em-underline">Long Island wins.</span></p>
+        <span class="beat">01 / The Problem</span>
+        <p>Long Island produces some of the best young athletes in the country. They train. They compete. They graduate. Then most disappear into careers far from <span class="em-underline">the discipline that built them</span>.</p>
       </div>
 
       <div class="what-card">
-        When a brand books the studio, the team behind Long Island Media (same crew behind work for <strong>Chase, Forbes, and DreamSeat</strong>) runs a full broadcast-grade shoot day with hand-picked student-athletes on camera.
+        <span class="beat">02 / The Solution</span>
+        <p>The Workforce Studio turns Long Island student-athletes into <span class="em-underline">paid content creators</span>, brand ambassadors, and on-camera operators for the businesses and schools that want to reach them.</p>
+      </div>
+
+      <div class="what-card">
+        <span class="beat">03 / The Studio</span>
+        <p>Every studio day is run by Long Island Media, the same broadcast crew behind work for <span class="em-underline">Chase, Forbes, and DreamSeat</span>. Real equipment. Real direction. Real athletes.</p>
+      </div>
+
+      <div class="what-card">
+        <span class="beat">04 / The Outcome</span>
+        <p>Athletes get paid. Brands get content that converts. Schools get a workforce pipeline. Long Island companies reach the audience next door. <span class="em-underline">The whole island wins</span>.</p>
       </div>
     </div>
   </div>
