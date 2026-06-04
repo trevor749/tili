@@ -1273,11 +1273,19 @@
   // ============================================================
   // RESERVE FORM HANDLER
   // ------------------------------------------------------------
-  // Swap YOUR_WEBHOOK_URL with your GHL / Zapier / Make / Mailchimp
-  // / QuickBooks endpoint. The form will POST JSON, then show
-  // the success state.
+  // Submissions email directly to trevor@thisislongisland.com via
+  // Formsubmit.co (free, no account, no monthly cost).
+  //
+  // FIRST USE: After the first form submission, Formsubmit sends
+  // an activation email to trevor@thisislongisland.com. Click the
+  // link in that email ONCE to activate. All subsequent submissions
+  // flow straight to the inbox.
+  //
+  // (Optional upgrade) Replace the email in the URL with the hashed
+  // endpoint from your Formsubmit account to hide the email address
+  // from the page source.
   // ============================================================
-  var RESERVE_WEBHOOK = 'YOUR_WEBHOOK_URL';
+  var RESERVE_ENDPOINT = 'https://formsubmit.co/ajax/trevor@thisislongisland.com';
 
   function handleReserveSubmit(e) {
     e.preventDefault();
@@ -1289,12 +1297,17 @@
     var formData = new FormData(form);
     var payload = {};
     formData.forEach(function(value, key) { payload[key] = value; });
+
+    // Build a friendly subject line for the inbox
+    var orgPart = payload.organization ? ' - ' + payload.organization : '';
+    payload._subject = 'New Studio Reservation: ' + (payload.first_name || '') + ' ' + (payload.last_name || '') + orgPart;
+    payload._template = 'table';
+    payload._captcha = 'false';
     payload.source = 'thisislongisland.com';
     payload.event = 'Athletes Make The Best Workforce Studio';
     payload.submitted_at = new Date().toISOString();
 
     btn.disabled = true;
-    var originalText = btn.innerHTML;
     btn.innerHTML = 'Submitting...';
     btn.style.animation = 'none';
 
@@ -1304,21 +1317,16 @@
       success.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
-    // Attempt webhook post; succeed visually either way so user
-    // is never stuck on a network error. Hook this up to a real
-    // endpoint before going live.
-    if (RESERVE_WEBHOOK && RESERVE_WEBHOOK !== 'YOUR_WEBHOOK_URL') {
-      fetch(RESERVE_WEBHOOK, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(done).catch(done);
-    } else {
-      // No webhook yet — log to console for testing
-      console.log('Reserve form submission (no webhook configured yet):', payload);
-      setTimeout(done, 600);
-    }
+    fetch(RESERVE_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    }).then(function(r) { return r.json().catch(function() { return null; }); })
+      .then(done)
+      .catch(done);
   }
 </script>
 

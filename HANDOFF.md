@@ -34,38 +34,46 @@ The CSS uses variables (`--teal`, `--gold`, etc.). Convert sections one-by-one �
 
 ---
 
-## Three things to wire up before going live
+## Form submissions — already wired
 
-### 1. The Reservation Form → QuickBooks
-Inside `tili-home.html`, search for this line near the bottom:
-```js
-var RESERVE_WEBHOOK = 'YOUR_WEBHOOK_URL';
-```
+Both forms send submissions **directly to `trevor@thisislongisland.com`** via [Formsubmit.co](https://formsubmit.co). Free, no account required, no monthly cost.
 
-**Cheapest path (recommended):** Connect this to a free Zapier Catch Hook that creates a QuickBooks invoice automatically.
+**ONE-TIME ACTIVATION REQUIRED (do this first):**
 
-1. Zapier → Create Zap → Trigger = **Webhooks → Catch Hook** → copy the hook URL
-2. Paste that URL in place of `YOUR_WEBHOOK_URL`
-3. Zapier action = **QuickBooks Online → Create Invoice** for $2,960 + NY tax
-4. Turn Zap on
+1. Submit one test entry on `tili-home.html` (the reservation form) — fill out the form with real values and hit Reserve My Spot
+2. Submit one test entry on `updates.html` (the email signup)
+3. Check `trevor@thisislongisland.com` for an activation email from Formsubmit. **Click the activation link.**
+4. From that point forward, every form submission emails straight to the inbox with full details. No further setup needed.
 
-Free tier on Zapier handles 100 submissions per month.
+**Email subjects:**
+- Reservation form → `New Studio Reservation: [name] - [organization]`
+- Updates signup → `New Updates Subscriber: [email]`
 
-**Alternative (cheapest with zero middleware):** Skip the form for instant payment. Replace the gold "Reserve My Spot" CTA with a direct link to a QuickBooks Payment Link:
-- In QuickBooks Online → Sales → Payment Links → create one for $2,960 + tax
-- Change the form CTA's `href` to that QB payment URL
+Both emails arrive formatted as a clean table with every field captured.
 
-### 2. The Updates Page Email Capture
-Inside `updates.html`, search for:
-```js
-var UPDATES_WEBHOOK = 'YOUR_WEBHOOK_URL';
-```
+**Optional upgrade for production:** Once activated, log into Formsubmit and grab the hashed endpoint URL (looks like `https://formsubmit.co/abc123XYZ`). Replace `https://formsubmit.co/ajax/trevor@thisislongisland.com` in both files with the hashed URL — that hides the email address from public page source.
 
-Cheapest options:
-- **Formspree free tier** — 50 submissions/month, no credit card needed. Sign up → create form → paste the form endpoint URL.
-- **Zapier free tier** — same hook pattern as above; second Zap, action = "add subscriber to Mailchimp" or "send email to me."
+Search for `RESERVE_ENDPOINT` in `tili-home.html` and `UPDATES_ENDPOINT` in `updates.html` to find the swap points.
 
-### 3. Partner Event URL
+---
+
+## Connecting QuickBooks for payment (the deposit)
+
+The reservation form captures the lead and emails it to you. To collect the **$2,960 deposit** itself, the cheapest path is one of:
+
+**Option A — QuickBooks Payment Link** ($0 monthly, only card fees)
+1. QuickBooks Online → Sales → Payment Links → create one for $2,960 + NY tax
+2. Edit `tili-home.html` and search for `class="form-cta"` on the gold Reserve button
+3. Either change the button to an `<a>` linking to the QB payment URL (instant pay), OR keep the form for lead capture and email a follow-up with that QB link manually
+
+**Option B — Zapier + QuickBooks Invoice** ($0 monthly under 100 subs/month)
+1. Zapier → Create Zap → Trigger = **Email by Zapier** → connect to trevor@thisislongisland.com → filter by "New Studio Reservation"
+2. Zapier action = **QuickBooks Online → Create Invoice** for $2,960 + tax, send to the email in the reservation
+3. Turn Zap on. Invoices auto-generate when reservations come in.
+
+---
+
+## Partner Event URL
 Both files reference this partner page in 2–3 spots:
 ```
 https://sportspowerinfrastructure.com/events/athletes-make-the-best-tm-launches-pilot-student-athlete-workforce-studio-with-long-island-media-and-the-spin-foundation

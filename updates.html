@@ -510,18 +510,14 @@
   // ============================================================
   // EMAIL SIGNUP HANDLER
   // ------------------------------------------------------------
-  // Swap UPDATES_WEBHOOK with your email service endpoint:
-  //   Mailchimp embedded form action URL
-  //   ConvertKit form action URL
-  //   Formspree endpoint (https://formspree.io/f/YOUR_ID)
-  //   Zapier Catch Hook URL
-  //   GHL form/contact webhook
+  // Submissions email directly to trevor@thisislongisland.com via
+  // Formsubmit.co (free, no account, no monthly cost).
   //
-  // CHEAPEST PATH:
-  //   Formspree free tier (50 submissions/month) — no credit card needed
-  //   Or Zapier free tier (100 tasks/month)
+  // FIRST USE: Formsubmit sends an activation email on the very
+  // first submission. Click the link in that email ONCE to activate.
+  // After that, every signup flows straight to the inbox.
   // ============================================================
-  var UPDATES_WEBHOOK = 'YOUR_WEBHOOK_URL';
+  var UPDATES_ENDPOINT = 'https://formsubmit.co/ajax/trevor@thisislongisland.com';
 
   function handleUpdatesSubmit(e) {
     e.preventDefault();
@@ -530,6 +526,9 @@
     var success = document.getElementById('updatesSuccess');
     var payload = {
       email: form.email.value,
+      _subject: 'New Updates Subscriber: ' + form.email.value,
+      _template: 'table',
+      _captcha: 'false',
       source: 'thisislongisland.com/updates',
       submitted_at: new Date().toISOString()
     };
@@ -543,17 +542,16 @@
       success.classList.add('show');
     };
 
-    if (UPDATES_WEBHOOK && UPDATES_WEBHOOK !== 'YOUR_WEBHOOK_URL') {
-      fetch(UPDATES_WEBHOOK, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(done).catch(done);
-    } else {
-      console.log('Updates signup (no webhook configured):', payload);
-      setTimeout(done, 600);
-    }
+    fetch(UPDATES_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    }).then(function(r) { return r.json().catch(function() { return null; }); })
+      .then(done)
+      .catch(done);
   }
 </script>
 
