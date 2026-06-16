@@ -264,15 +264,45 @@
     line-height: 1.4;
   }
 
+  /* ========== HERO PROOF STRIP (under VSL) ========== */
+  .hero-proof {
+    text-align: center;
+    margin: 6px auto 4px;
+    padding: 12px 0 6px;
+  }
+  .hero-proof-stars {
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+  .hero-proof-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #aaa;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .hero-proof-text strong { color: #fff; }
+  .hero-proof-brands {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12.5px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+  }
+  .hero-proof-brands .dot { color: #444; margin: 0 6px; }
+
   /* ========== PRIMARY CTA ========== */
   .cta-block {
     text-align: center;
-    padding: 6px 16px 26px;
+    padding: 10px 16px 28px;
     background: #000;
   }
   .cta-main {
     display: block;
-    max-width: 560px;
+    max-width: 600px;
     margin: 0 auto 8px;
     padding: 22px 24px;
     background: var(--teal);
@@ -287,16 +317,88 @@
     cursor: pointer;
     animation: pulse-glow 3s ease-in-out infinite;
     transition: background 0.2s, transform 0.1s;
+    line-height: 1.25;
   }
   .cta-main:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .cta-main-big { padding: 24px 28px; font-size: 18px; }
+  .cta-main-sub {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: rgba(0,0,0,0.7);
+    text-transform: uppercase;
+  }
   .cta-sub {
     font-size: 12px;
     color: #888;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     font-weight: 700;
+    margin-top: 14px;
   }
   .cta-sub .gold { color: var(--gold); }
+
+  /* ========== HOW IT WORKS (under CTA) ========== */
+  .how-it-works {
+    max-width: 620px;
+    margin: 16px auto 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+  .how-step {
+    flex: 1;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    min-width: 0;
+  }
+  .how-step .how-num {
+    width: 22px; height: 22px;
+    background: var(--teal);
+    color: #000;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .how-step .how-text {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #aaa;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+  }
+  .how-step .how-text strong {
+    color: #fff;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .how-arrow {
+    color: var(--teal);
+    font-size: 14px;
+    font-weight: 900;
+    align-self: center;
+    flex-shrink: 0;
+    padding: 0 2px;
+  }
 
   /* ========== COUNTDOWN ========== */
   .countdown-wrap {
@@ -1355,6 +1457,11 @@
     .stack-item { flex-wrap: wrap; }
     .stack-item .val { margin-left: 42px; margin-top: 4px; }
     .total-stack .price, .recap-final .today-price { font-size: 48px; }
+    .how-it-works { flex-wrap: wrap; flex-direction: column; gap: 6px; }
+    .how-step { flex-direction: row; gap: 10px; padding: 10px 14px; text-align: left; }
+    .how-step .how-text { font-size: 12px; }
+    .how-step .how-text strong { font-size: 11px; }
+    .how-arrow { transform: rotate(90deg); padding: 2px 0; }
   }
 </style>
 </head>
@@ -1380,29 +1487,32 @@
   </div>
 </div>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO ============
+     Structure (Hormozi/Brunson):
+     1. STOP — promise the outcome
+     2. CLARIFY — explain the promise in plain English
+     3. PROOF — VSL + brand logos right under
+     4. CTA — what they get + how they get it
+============================================= -->
 <div class="hero-block">
   <div class="brand-line"><span class="red">Attention:</span> All <span class="teal">Long Island</span> Trades &amp; Home Service Owners</div>
 
-  <div class="live-badge">
-    <span class="rd"></span>
-    $6,500 &middot; One Day &middot; Phone Ringing Guaranteed
-  </div>
-
+  <!-- 1. STOP — clear outcome promise -->
   <h1 class="hero-headline">
-    HVAC. Plumbers. Roofers. GCs. Electricians.<br>
-    <span class="em">You Are Getting Robbed.</span>
+    How To Get Your Phone Ringing With <span class="em">New Trades Jobs In 12 Days</span> &mdash; Without Hiring An Agency, Signing A Retainer, Or Editing A Frame.
   </h1>
 
+  <!-- 2. CLARIFY — restate the promise in plain English -->
   <p class="hero-sub">
-    Not by criminals. <strong>By invisibility.</strong> Right now a homeowner in your service area needs exactly what you do, and they are not calling their neighbor. They are on their phone, scrolling, picking the company that looks most credible on their screen in the next 30 seconds. <strong>If that's not you, that job is gone forever. And you will never know it happened.</strong>
+    In <strong>one day</strong>, our broadcast crew shoots <strong>3 direct-response ads + 48 videos + 12 weeks of content</strong> for your Long Island HVAC, plumbing, roofing, electrical, or GC business. We launch it. We post it. We track it. You go back to running jobs. <strong>If your phone isn't ringing in 60 days, we come back and reshoot the whole thing &mdash; free.</strong>
   </p>
 
-  <p class="authority-line">In One Day. We Fix That.</p>
+  <p class="authority-line">One Day. Phone Ringing. Guaranteed.</p>
 
+  <!-- 3. PROOF — VSL + brand logos directly support the promise -->
   <div class="watch-badge">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-    Watch This First &middot; 2 Minutes
+    Watch This 2 Min Breakdown First
   </div>
 
   <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
@@ -1411,16 +1521,39 @@
       <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
     </div>
   </div>
+
+  <!-- Proof strip directly under the VSL -->
+  <div class="hero-proof">
+    <div class="hero-proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="hero-proof-text">Trusted Production For <strong>50+ Long Island Businesses</strong></div>
+    <div class="hero-proof-brands">CHASE <span class="dot">◆</span> FORBES <span class="dot">◆</span> DREAMSEAT <span class="dot">◆</span> FUELED BY CULTURE</div>
+  </div>
 </div>
 
-<!-- ============ PRIMARY CTA + HAND ARROW ============ -->
+<!-- ============ PRIMARY CTA + HOW IT WORKS ============
+     4. CTA — WHAT they get + HOW the process works
+================================================= -->
 <div class="cta-block">
   <div class="hand-arrow">▼</div>
-  <p class="scribble">Click below &mdash; shoot slots filling now</p>
-  <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
-    YES! Book My Shoot Day Now &rarr;
+  <p class="scribble">Limited shoot slots this month &mdash; once they're filled, they're gone</p>
+
+  <button class="cta-main cta-main-big" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    YES! Book My One-Day Shoot &rarr;<br>
+    <span class="cta-main-sub">Get 3 Ads + 48 Videos + Phone Ringing In 12 Days</span>
   </button>
-  <div class="cta-sub"><span class="gold">$6,500 ALL-IN</span> &middot; 50% to book &middot; No retainer ever</div>
+
+  <!-- How it works — show the path so they know exactly what happens after they click -->
+  <div class="how-it-works">
+    <div class="how-step"><span class="how-num">1</span><span class="how-text"><strong>Submit form</strong> (60 sec)</span></div>
+    <div class="how-arrow">→</div>
+    <div class="how-step"><span class="how-num">2</span><span class="how-text"><strong>We confirm fit</strong> + lock your goal in writing (24 hrs)</span></div>
+    <div class="how-arrow">→</div>
+    <div class="how-step"><span class="how-num">3</span><span class="how-text"><strong>$3,250 deposit</strong> via QuickBooks</span></div>
+    <div class="how-arrow">→</div>
+    <div class="how-step"><span class="how-num">4</span><span class="how-text"><strong>Shoot day booked</strong> + content live in 12 days</span></div>
+  </div>
+
+  <div class="cta-sub"><span class="gold">$6,500 ALL-IN</span> &middot; 50% to book &middot; 50% on delivery &middot; No retainer ever</div>
 </div>
 
 <!-- ============ COUNTDOWN ============ -->
