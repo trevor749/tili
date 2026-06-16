@@ -168,23 +168,16 @@
   }
   .hero-headline .teal { color: var(--teal); }
   .hero-headline .em {
-    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 4s linear infinite;
-    padding: 0 0.05em;
+    color: var(--teal);
   }
   .hero-subhead {
     font-family: 'Raleway', sans-serif;
     font-size: clamp(17px, 3.2vw, 22px);
     font-weight: 800;
-    line-height: 1.35;
+    line-height: 1.4;
     color: #e5e5e5;
     max-width: 620px;
     margin: 14px auto 0;
-    letter-spacing: -0.005em;
   }
   .hero-subhead strong { color: var(--teal); font-weight: 900; }
 
@@ -197,36 +190,21 @@
   }
   .hero-sub strong { color: #fff; font-weight: 700; }
 
-  .authority-line {
+  .straight-line {
     font-family: 'Raleway', sans-serif;
-    font-size: clamp(20px, 4.5vw, 32px);
+    font-size: clamp(18px, 4vw, 26px);
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #000;
-    background: var(--teal);
-    display: inline-block;
-    padding: 10px 28px;
-    margin-top: 24px;
-    transform: rotate(-1.5deg);
-    box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15);
+    color: #fff;
+    margin-top: 22px;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
   }
   .watch-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(27,176,206,0.08);
-    border: 1.5px solid rgba(27,176,206,0.25);
-    border-radius: 50px;
-    padding: 10px 24px;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 22px 0 18px;
+    color: #888;
+    margin: 20px 0 14px;
   }
-  .watch-badge svg { flex-shrink: 0; color: var(--teal); }
 
   /* ========== VSL ========== */
   .vsl-wrap {
@@ -270,27 +248,15 @@
   .play-btn:hover { transform: translate(-50%,-50%) scale(1.08); }
   .play-btn svg { width: 30px; height: 30px; fill: #000; margin-left: 3px; }
 
-  /* ========== HAND ARROW (Hormozi touch) ========== */
-  .hand-arrow {
-    display: block;
+  /* Plain text note (replaces fancy hand arrow + scribble) */
+  .straight-note {
     text-align: center;
-    color: var(--gold);
-    font-size: 28px;
-    font-weight: 900;
-    margin: 6px 0;
-    animation: wiggle 1.5s ease-in-out infinite;
-    line-height: 1;
-  }
-  .scribble {
-    text-align: center;
-    color: var(--gold);
-    font-style: italic;
-    font-weight: 800;
+    color: #888;
     font-size: 14px;
-    letter-spacing: 0.02em;
+    font-weight: 700;
     max-width: 480px;
-    margin: 4px auto 14px;
-    line-height: 1.4;
+    margin: 0 auto 14px;
+    line-height: 1.5;
   }
 
   /* ========== HERO PROOF STRIP (under VSL) — DreamSeat only ========== */
@@ -521,7 +487,7 @@
     text-align: center;
     margin-bottom: 22px;
   }
-  .agit-label::before, .agit-label::after { content: '// '; }
+  .agit-label::before, .agit-label::after { content: ''; }
   .agit-card {
     background: #0c0c0c;
     border: 1px solid #1a1a1a;
@@ -638,7 +604,7 @@
     text-align: center;
     margin-bottom: 8px;
   }
-  .stack-eyebrow::before, .stack-eyebrow::after { content: '// '; }
+  .stack-eyebrow::before, .stack-eyebrow::after { content: ''; }
   .stack-h {
     font-family: 'Raleway', sans-serif;
     font-size: clamp(22px, 5vw, 34px);
@@ -781,12 +747,7 @@
     font-weight: 900;
     line-height: 1;
     margin-top: 6px;
-    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
+    color: var(--teal);
   }
   .total-stack .price .dollar { font-size: 0.55em; vertical-align: top; }
   .total-stack .price-sub {
@@ -1512,12 +1473,7 @@
     font-weight: 900;
     line-height: 1;
     margin-bottom: 18px;
-    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
+    color: var(--teal);
   }
   .recap-final .today-price .dollar { font-size: 0.55em; vertical-align: top; }
 
@@ -1709,20 +1665,19 @@
   </h1>
 
   <p class="hero-subhead">
-    Not by criminals. <strong>By invisibility.</strong> 10&ndash;30 inbound calls in 60 days &mdash; or we reshoot the whole thing free.
+    Not by criminals. <strong>By invisibility.</strong> We fix that in one day. <strong>Or we come back and reshoot the whole thing free.</strong>
   </p>
 
-  <!-- 2. CLARIFY — specifics -->
+  <!-- 2. CLARIFY — plain trades language -->
   <p class="hero-sub">
-    <strong>8-hour shoot.</strong> 3 ads + 48 videos + 12 weeks of scheduled content. We launch on <strong>Meta + Google</strong>. Post 4x/week to <strong>Facebook + Instagram</strong>. Track every lead via <strong>pixel + UTM</strong>. <strong>You show up for one day. We handle everything else.</strong>
+    We show up to your shop with a full crew. <strong>8 hours.</strong> We shoot everything you need to make your phone ring. 3 ads. 48 videos. We launch them. We post them 4 times a week for 12 weeks. <strong>You show up for one day and go back to running your business.</strong>
   </p>
 
-  <p class="authority-line">8 Hours. 60-Day Guarantee. Zero Retainer.</p>
+  <div class="straight-line">8 Hours. 60-Day Guarantee. No Retainer.</div>
 
-  <!-- 3. PROOF — VSL + brand logos directly support the promise -->
+  <!-- 3. PROOF — VSL -->
   <div class="watch-badge">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-    Watch This 2 Min Breakdown First
+    Watch this. 2 minutes.
   </div>
 
   <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
@@ -1744,12 +1699,11 @@
      4. CTA — WHAT they get + HOW the process works
 ================================================= -->
 <div class="cta-block">
-  <div class="hand-arrow">▼</div>
-  <p class="scribble">5 spots at $6,500 &mdash; then the price moves to $9,500</p>
+  <p class="straight-note">5 spots at $6,500. Then it goes up to $9,500.</p>
 
   <button class="cta-main cta-main-big" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
-    YES! Lock My Founding 5 Spot &rarr;<br>
-    <span class="cta-main-sub">3 Ads + 48 Videos Live In 12 Business Days &middot; 10&ndash;30 Leads In 60</span>
+    Book My Shoot Day &rarr;<br>
+    <span class="cta-main-sub">3 Ads + 48 Videos Live In 12 Business Days</span>
   </button>
 
   <!-- How it works — show the path so they know exactly what happens after they click -->
@@ -1784,120 +1738,110 @@
 <!-- ============ AGITATION CARDS ============ -->
 <div class="agit-section">
   <div class="page-wrap">
-    <div class="agit-label">Here's What's Really Happening</div>
+    <div class="agit-label">Here's What's Actually Happening</div>
 
     <div class="agit-card">
-      <span class="x">✗</span><strong>9pm.</strong> Homeowner's AC just quit. Roof leaking. Drain backed up. They're on their phone, scrolling, picking the most credible company in <strong>30 seconds</strong>. <span class="em-underline">That job is gone forever. You'll never know it happened.</span>
+      <span class="x">✗</span><strong>9pm.</strong> Homeowner's AC just quit. Roof leaking. Drain backed up. They're not calling their neighbor. They're on their phone. They're scrolling. They're picking the company that looks most credible in <strong>30 seconds</strong>.
     </div>
 
     <div class="agit-card loud">
-      <span class="x">✗</span>They pick the company whose face they've already seen. <span class="em-underline">Not the best. The most visible.</span> Right now, probably not you.
+      <span class="x">✗</span>If that's not you, <strong>that job is gone. Forever.</strong> And you will never know it happened.
     </div>
 
     <div class="agit-card">
-      <span class="x">✗</span>At least one HVAC, one roofer, one plumber in your zip code has been running ads for <strong>90 days straight</strong>. Not because they're better. They got on camera before anyone needed them. <strong>Now the homeowner already knows who to call.</strong>
+      <span class="x">✗</span>At least one HVAC, one roofer, one plumber in your zip code has been on camera for <strong>90 days straight</strong>. Not because they're better than you. They just showed up first. <strong>Now the homeowner already knows who to call.</strong>
     </div>
 
     <div class="agit-card loud">
-      We close the gap. <strong>8 hours shooting. 12 days editing.</strong> <span class="em-underline">10&ndash;30 leads in your CRM in 60 days &mdash; or we reshoot. Zero cost.</span>
+      We fix that. <strong>In one day.</strong> Or we come back and reshoot the whole thing. Free.
     </div>
   </div>
 </div>
 
 <!-- ============ MID CTA ============ -->
 <div class="mid-cta">
-  <div class="hand-arrow">▼</div>
   <button class="mid-cta-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
-    Show Me The Line-By-Line Breakdown &rarr;
+    Show Me What I Get &rarr;
   </button>
-  <div class="mid-cta-sub"><span class="gold">$6,500 ALL-IN</span> &middot; Live in 12 business days &middot; Leads in 60</div>
+  <div class="mid-cta-sub"><span class="gold">$6,500.</span> One day. Phone ringing.</div>
 </div>
 
 <!-- ============ WHAT YOU GET (VALUE STACK) ============ -->
 <div class="stack-section">
-  <div class="stack-eyebrow">What You Get Today</div>
-  <h2 class="stack-h">Here's Exactly What You Get<br>For <span class="teal">$6,500.</span></h2>
+  <div class="stack-eyebrow">What You Get</div>
+  <h2 class="stack-h">Here's What You Get For <span class="teal">$6,500.</span></h2>
 
   <div class="stack-list">
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>5-Person Crew At Your Business</h4>
-        <p>Director, camera, lighting, sound, on-set direction. Broadcast gear. <strong>We bring everything. You show up.</strong></p>
+        <h4>Full Crew At Your Shop</h4>
+        <p>We bring everything. Director, cameras, lights, sound. <strong>You just show up.</strong></p>
       </div>
-      <span class="val">$4,000 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>3 Direct-Response Ads</h4>
-        <p>Not awareness. <strong>Three ads built for one job: inbound leads.</strong></p>
+        <h4>3 Ads That Get The Phone Ringing</h4>
+        <p>Not for clicks. Not for views. <strong>Built for one job: real leads.</strong></p>
       </div>
-      <span class="val">$2,500 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>48 Videos &middot; 4x/Week &middot; 12 Weeks</h4>
-        <p>In front of homeowners <strong>4x a week for 12 weeks straight.</strong></p>
+        <h4>48 Videos. 4 Per Week. 12 Weeks Straight.</h4>
+        <p>You stay in front of homeowners <strong>every single week.</strong></p>
       </div>
-      <span class="val">$3,500 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>We Edit. We Post. We Schedule.</h4>
-        <p>Cut, color, sound, captions, posting. <strong>You touch nothing.</strong></p>
+        <h4>We Edit. We Post. We Handle It.</h4>
+        <p>You don't touch any of it. <strong>You go back to running jobs.</strong></p>
       </div>
-      <span class="val">$1,500 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>Google Business Profile Optimized</h4>
+        <h4>Google Profile Fully Set Up</h4>
         <p>Homeowner Googles your trade at 9pm? <strong>You come up.</strong></p>
       </div>
-      <span class="val">$500 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
         <h4>Live In 12 Business Days</h4>
-        <p>Shoot day to live ads in <strong>12 business days. Not weeks.</strong></p>
+        <p>From shoot day to running ads. <strong>Not weeks. Not someday.</strong></p>
       </div>
-      <span class="val">$500 VALUE</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>You Own Every Frame</h4>
-        <p>Every clip. Every ad. <strong>Yours forever. No usage windows. No fees.</strong></p>
+        <h4>You Own Every Frame. Forever.</h4>
+        <p>Every clip. Every ad. <strong>Yours. No fine print.</strong></p>
       </div>
-      <span class="val priceless">PRICELESS</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>No Retainer. No Contract.</h4>
-        <p>Run it yourself or keep us. <strong>Your call.</strong></p>
+        <h4>No Retainer. No Long-Term Contract.</h4>
+        <p>Run it yourself after. Or keep us. <strong>Your call.</strong></p>
       </div>
-      <span class="val priceless">PRICELESS</span>
     </div>
 
     <div class="stack-item">
       <span class="ck">✓</span>
       <div class="body">
-        <h4>6-Month Comeback Option</h4>
-        <p>Six months later, want another round? <strong>Same deal.</strong></p>
+        <h4>We Come Back At 6 Months</h4>
+        <p>Phone's still ringing? Want another round? <strong>Same deal.</strong></p>
       </div>
-      <span class="val">$1,000 VALUE</span>
     </div>
   </div>
 
@@ -1922,15 +1866,15 @@
 <!-- ============ BONUS CALLOUT ============ -->
 <div class="bonus-section">
   <div class="bonus-box">
-    <div class="bonus-stamp">★ Free Bonus With Every Shoot ★</div>
-    <h3 class="bonus-h">A 30-Minute <span class="gold">Authority Interview</span></h3>
+    <div class="bonus-stamp">Thrown In Free With Your First Shoot</div>
+    <h3 class="bonus-h">A <span class="gold">30-Minute Interview</span> About You</h3>
     <p>
-      <strong>30 minutes on camera.</strong> You talking about who you are, what you do, how you protect homeowners, why you're different.
+      We sit you down on camera for 30 minutes. <strong>You talk. Who you are. What you do. How you protect homeowners. Why you're different.</strong>
     </p>
     <p>
-      We cut clips. Post to YouTube. Run as ads. Put it on your website. <strong>Costs thousands standalone. Free here.</strong> Makes everything else convert.
+      We cut it into clips. Post to YouTube. Run pieces as ads. Put it on your website. <strong>A video like this would cost thousands by itself.</strong> We include it free because it makes everything else work better.
     </p>
-    <div class="bonus-value"><span class="strike">$3,500 Value</span> Yours Free Today</div>
+    <div class="bonus-value">Yours Free</div>
   </div>
 </div>
 
@@ -1944,25 +1888,25 @@
     </div>
   </div>
 
-  <h2>10&ndash;30 Leads In 60 Days. <span class="teal">Or We Reshoot Free.</span></h2>
+  <h2>Hit Your Number In 60 Days. <span class="teal">Or We Reshoot Free.</span></h2>
   <p>
-    Before we shoot, we write <strong>one number into the contract</strong>. Inbound calls. Form submissions. Booked installs. Most trades hit <strong>10&ndash;30 qualified leads per month</strong> by day 60.
+    Before we shoot a single frame, we agree on <strong>one number</strong>. Phone calls. Form submissions. Jobs booked. Whatever moves your business.
   </p>
   <p>
-    Miss the number? <strong>We come back. Reshoot the 3 ads + 48 videos. Relaunch. Zero charge.</strong> No fine print. No "service credit" loophole.
+    If you don't hit it in 60 days, <strong>we come back once and shoot all new content. No charge.</strong> No fine print. No loopholes.
   </p>
 
   <div class="guarantee-terms">
-    <div class="lbl">// Two Conditions //</div>
-    <div class="t"><span class="n">1</span><span>Ads run at <strong>$30&ndash;$50/day</strong>. Tracking active.</span></div>
-    <div class="t"><span class="n">2</span><span>Team responds to leads <strong>within 24 hours.</strong></span></div>
+    <div class="lbl">Two Things We Need From You</div>
+    <div class="t"><span class="n">1</span><span>Ads run at <strong>$30&ndash;$50/day</strong>. (You pay Meta direct. We never touch your budget.)</span></div>
+    <div class="t"><span class="n">2</span><span>When a lead comes in, your team calls back <strong>within 24 hours.</strong></span></div>
   </div>
 </div>
 
 <!-- ============ REQUIREMENTS ============ -->
 <div class="requirements-section">
   <div class="stack-eyebrow">What We Need From You</div>
-  <h2 class="stack-h">Only Two Things. <span class="teal">That's It.</span></h2>
+  <h2 class="stack-h">Two Things. <span class="teal">That's It.</span></h2>
 
   <div class="req-grid">
     <div class="req-card">
@@ -1984,10 +1928,10 @@
     <div class="founder-card">
       <div class="founder-avatar">[ Trevor Photo ]</div>
       <div class="founder-body">
-        <div class="founder-eyebrow">// Who You're Working With //</div>
+        <div class="founder-eyebrow">Who You're Working With</div>
         <h3>Hey, I'm Trevor.</h3>
-        <p>I built This Is Long Island Marketing because I watched too many great trades businesses on Long Island get out-marketed by companies that aren't half as good. I've produced creative for <strong>DreamSeat</strong> and worked on national brand campaigns &mdash; and I'm bringing that production system home.</p>
-        <p><strong>Straight talk:</strong> Long Island trades is a new vertical for us. That's why the first 5 spots are $6,500 instead of $9,500. You're not just hiring an agency &mdash; you're going on the record as one of our 5 founding case studies. We document your numbers. You get founding pricing forever.</p>
+        <p>I built this because I'm tired of watching good Long Island trades businesses get out-marketed by guys with worse work and louder videos. I've shot for <strong>DreamSeat</strong> and big national brands. I'm bringing that work home to my island.</p>
+        <p><strong>Straight talk:</strong> trades is new for me. That's why the first 5 spots are $6,500 instead of $9,500. You go on the record. We document your numbers. <strong>You get founding pricing locked in for life.</strong></p>
       </div>
     </div>
   </div>
@@ -1995,7 +1939,7 @@
 
 <!-- ============ DREAMSEAT TESTIMONIAL + CASE STUDIES IN PROGRESS ============ -->
 <div class="testimonials">
-  <h2>Production Credibility. <span class="teal">Trades Case Studies Coming.</span></h2>
+  <h2>What People Say <span class="teal">About Our Work</span></h2>
 
   <div class="ts-single">
     <div class="ts-card">
@@ -2005,7 +1949,7 @@
     </div>
 
     <div class="cs-progress">
-      <div class="cs-progress-lbl">// Trades Case Studies In Progress //</div>
+      <div class="cs-progress-lbl">Trades Case Studies In Progress</div>
       <p>The Founding 5 cohort <strong>is the case study</strong>. We document every shoot, every ad, every lead, every booked job &mdash; on camera, on record, with permission. <strong>If we hit your number, we ask to publish. If we don't, we come back and reshoot free.</strong></p>
     </div>
   </div>
@@ -2015,7 +1959,7 @@
 <div class="not-for-section">
   <div class="page-wrap">
     <div class="not-for-card">
-      <div class="not-for-label">// Skip This Page If //</div>
+      <div class="not-for-label">This Isn't For You If</div>
       <ul class="not-for-list">
         <li><span class="x">✗</span>You won't commit <strong>$30&ndash;$50/day</strong> to Meta ad spend</li>
         <li><span class="x">✗</span>Your team takes <strong>more than 24 hours</strong> to call back leads</li>
@@ -2056,11 +2000,10 @@
 
 <!-- ============ MID CTA 2 ============ -->
 <div class="mid-cta">
-  <div class="hand-arrow">▼</div>
   <button class="mid-cta-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
-    Book My 8-Hour Shoot Day &rarr;
+    Book My Shoot Day &rarr;
   </button>
-  <div class="mid-cta-sub"><span class="gold">$6,500</span> &middot; $3,250 to book &middot; 10&ndash;30 leads in 60 days, guaranteed</div>
+  <div class="mid-cta-sub"><span class="gold">$6,500.</span> $3,250 to book. Phone ringing guaranteed.</div>
 </div>
 
 <!-- ============ FORM ============ -->
@@ -2069,9 +2012,9 @@
     <span class="rd"></span>
     <span>The Founding 5 &middot; <strong>5 Spots At $6,500</strong></span>
   </div>
-  <h2>YES, Lock My <span class="teal">Founding 5 Spot.</span></h2>
+  <h2>Book My <span class="teal">Shoot Day.</span></h2>
   <div class="form-sub">
-    Reviewed in 24 hours. We confirm fit, lock the goal in writing, then send the $3,250 deposit via QuickBooks. <strong>Once slot 5 is gone, the price moves to $9,500.</strong>
+    Reviewed in 24 hours. We confirm fit, agree on the number, then send the $3,250 deposit. <strong>Once 5 spots are gone, the price goes to $9,500.</strong>
   </div>
 
   <div class="form-card">
@@ -2140,7 +2083,7 @@
         <textarea name="goal" placeholder="The number that would make this worth it for your business" rows="3"></textarea>
       </div>
 
-      <button type="submit" class="form-cta">YES! Book My Shoot Day &rarr;</button>
+      <button type="submit" class="form-cta">Book My Shoot Day &rarr;</button>
       <div class="form-urg"><span class="rd"></span> Limited shoot slots filling fast</div>
     </form>
     <div class="form-disc">
@@ -2159,7 +2102,7 @@
 <!-- ============ FINAL RECAP (Hormozi-style restate-everything) ============ -->
 <div class="recap-section">
   <div class="wide-wrap">
-    <h2 class="recap-h">Everything You Get <span class="teal">In The Founding 5:</span></h2>
+    <h2 class="recap-h">Everything You Get For <span class="teal">$6,500:</span></h2>
 
     <ul class="recap-list">
       <li><span class="ck">✓</span><span><strong>8-Hour Production Day</strong> at your business</span></li>
@@ -2179,9 +2122,8 @@
       <div class="today-lbl">Founding 5 Price</div>
       <div class="today-price"><span class="dollar">$</span>6,500</div>
 
-      <div class="hand-arrow">▼</div>
-      <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
-        YES! Lock My Founding 5 Spot &rarr;
+          <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+        Book My Shoot Day &rarr;
       </button>
       <div class="cta-sub"><span class="gold">50% DOWN &middot; 50% ON DELIVERY &middot; NO RETAINER EVER</span></div>
     </div>
@@ -2191,10 +2133,10 @@
 <!-- ============ P.S. ============ -->
 <div class="ps-section">
   <div class="ps-card">
-    <span class="ps-label">P.S. &mdash; The Math</span>
-    Book <span class="hi">one HVAC replacement, one roof, one panel upgrade, or one major remodel</span> out of 48 videos and 3 ads &mdash; and this investment is paid for. <strong>Twice.</strong> You still own every frame.
+    <span class="ps-label">P.S.</span>
+    One install. One roof. One system replacement. One serious job &mdash; pays for this whole investment. <strong>Twice.</strong> And you still own every frame.
     <br><br>
-    The companies dominating Facebook + Google in your zip code didn't get there by accident. <strong>They booked the shoot. They got on camera. They showed up where homeowners look at 9pm.</strong> Wait on referrals while they take the next ten jobs &mdash; or book the shoot.
+    The trades businesses winning on Facebook + Google in your zip code didn't get there by accident. <strong>They booked the shoot. They got on camera. They showed up where homeowners are looking at 9pm.</strong> Keep waiting on referrals while they take the next ten jobs &mdash; or book the shoot.
   </div>
 </div>
 
