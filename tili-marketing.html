@@ -4,698 +4,977 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>$6,500. One Day. Your Phone Is Ringing. Guaranteed. — This Is Long Island Marketing</title>
-<meta name="description" content="One-day production for Long Island HVAC, plumbing, roofing, electrical, GC. 3 ads + 48 videos + 12 weeks of content. Phone ringing in 60 days or we come back free.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="description" content="A one-day production for Long Island HVAC, plumbing, roofing, electrical, GC. 3 ads + 48 videos + 12 weeks of content. Phone ringing in 60 days or we come back free.">
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #ffffff;
-    color: #000;
-    line-height: 1.6;
+    font-family: 'Cabin', arial, sans-serif;
+    background: #000;
+    color: #e5e5e5;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    font-size: 17px;
   }
   img { max-width: 100%; display: block; }
-  a { color: inherit; }
+  a { color: inherit; text-decoration: none; }
 
   :root {
-    --black: #000000;
-    --ink: #111111;
-    --yellow: #ffeb3b;
-    --yellow-bright: #ffd600;
-    --red: #d32f2f;
-    --red-bright: #f44336;
-    --green: #2e7d32;
-    --green-bright: #43a047;
-    --grey-50: #fafafa;
-    --grey-100: #f5f5f5;
-    --grey-200: #eeeeee;
-    --grey-300: #e0e0e0;
-    --grey-500: #9e9e9e;
-    --grey-700: #424242;
     --teal: #1bb0ce;
+    --teal-bright: #22e8ff;
+    --teal-dark: #158a9e;
+    --teal-border: #2f93b0;
+    --gold: #f5b731;
+    --gold-bright: #ffd45c;
+    --red: #e74c3c;
+    --green: #2ecc71;
   }
 
-  @keyframes pulse-shadow {
-    0%, 100% { box-shadow: 0 4px 0 #b8a500, 0 0 0 0 rgba(255,235,59,0); }
-    50% { box-shadow: 0 4px 0 #b8a500, 0 0 0 16px rgba(255,235,59,0); }
+  /* ========== ANIMATIONS ========== */
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(27,176,206,0.3); }
+    50% { box-shadow: 0 0 40px rgba(27,176,206,0.55), 0 0 80px rgba(27,176,206,0.18); }
+  }
+  @keyframes pulse-glow-gold {
+    0%, 100% { box-shadow: 0 0 20px rgba(245,183,49,0.3); }
+    50% { box-shadow: 0 0 40px rgba(245,183,49,0.6), 0 0 80px rgba(245,183,49,0.2); }
   }
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.85); }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
   @keyframes scroll-left {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+  @keyframes slot-pulse {
+    0%, 100% { background: rgba(231,76,60,0.1); }
+    50% { background: rgba(231,76,60,0.2); }
+  }
   @keyframes wiggle {
-    0%, 100% { transform: rotate(-2deg); }
-    50% { transform: rotate(2deg); }
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
   }
 
-  /* ============ TOP ATTENTION BAR ============ */
-  .attention-bar {
-    background: #000;
-    color: #fff;
-    padding: 12px 16px;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    font-weight: 700;
-  }
-  .attention-track {
-    display: inline-block;
-    animation: scroll-left 28s linear infinite;
-    white-space: nowrap;
-  }
-  .attention-track span {
-    display: inline-block;
-    padding: 0 28px;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #fff;
-  }
-  .attention-track span.y {
-    background: var(--yellow);
+  /* ========== WRAPPER ========== */
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+  .wide-wrap { max-width: 820px; margin: 0 auto; padding: 0 16px; }
+
+  /* ========== TOP SCROLLING BANNER ========== */
+  .top-banner {
+    background: var(--teal);
     color: #000;
-    padding: 2px 10px;
-    font-weight: 900;
-    margin: 0 4px;
-  }
-  .attention-track .star { color: var(--yellow); padding: 0 6px; }
-
-  /* ============ WRAPPER ============ */
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 18px;
-  }
-  .wrap-wide { max-width: 820px; margin: 0 auto; padding: 0 18px; }
-
-  /* ============ HERO ============ */
-  .hero {
-    padding: 40px 0 30px;
-    text-align: center;
-    background: #fff;
-  }
-  .attn-headline {
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 8px;
-  }
-  .attn-headline .red { color: var(--red); }
-  .for-line {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 6px 14px;
-    font-size: 13px;
+    padding: 11px 0;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
   }
-  .for-line .y { color: var(--yellow); }
+  .top-banner-track {
+    display: inline-block;
+    animation: scroll-left 26s linear infinite;
+    white-space: nowrap;
+  }
+  .top-banner-track span { display: inline-block; padding: 0 36px; }
+  .top-banner-track .star { color: #000; opacity: 0.4; padding: 0 4px; }
 
-  h1.hero-h {
-    font-size: clamp(30px, 5.5vw, 48px);
+  /* ========== SPOTS TICKER ========== */
+  .spots-ticker {
+    background: #0c0c0c;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 10px 16px;
+    text-align: center;
+  }
+  .spots-ticker-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .spots-ticker .dot {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  .spots-ticker .num { color: var(--teal); font-weight: 900; }
+
+  /* ========== HERO ========== */
+  .hero-block {
+    background: linear-gradient(180deg, rgba(27,176,206,0.1) 0%, #000 70%);
+    text-align: center;
+    padding: 32px 16px 0;
+  }
+  .brand-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(15px, 3.2vw, 21px);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 14px;
+    text-shadow: 0 0 20px rgba(27,176,206,0.3);
+  }
+  .brand-line .red { color: var(--red); }
+  .brand-line .teal { color: var(--teal); }
+
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(231,76,60,0.1);
+    border: 1.5px solid rgba(231,76,60,0.4);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 22px;
+    animation: slot-pulse 2s ease-in-out infinite;
+  }
+  .live-badge .rd {
+    width: 8px; height: 8px; background: var(--red);
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+
+  .hero-headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(28px, 7vw, 50px);
     font-weight: 900;
     line-height: 1.12;
-    color: #000;
-    letter-spacing: -0.025em;
-    max-width: 760px;
-    margin: 0 auto 16px;
+    color: #fff;
+    letter-spacing: -0.02em;
+    max-width: 720px;
+    margin: 0 auto 14px;
   }
-  h1.hero-h .hi { background: var(--yellow); padding: 0 6px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-  h1.hero-h .strike { color: #888; text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 4px; margin-right: 0.05em; }
-  h1.hero-h .underline { border-bottom: 4px solid var(--red); padding-bottom: 2px; }
+  .hero-headline .teal { color: var(--teal); }
+  .hero-headline .em {
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+    padding: 0 0.05em;
+  }
 
   .hero-sub {
-    font-size: 18px;
-    color: var(--ink);
-    max-width: 640px;
-    margin: 0 auto 22px;
-    line-height: 1.55;
-    font-weight: 500;
+    font-size: clamp(15px, 2.4vw, 18px);
+    color: #c0c0c0;
+    max-width: 580px;
+    margin: 18px auto 0;
+    line-height: 1.65;
   }
-  .hero-sub strong { font-weight: 800; }
+  .hero-sub strong { color: #fff; font-weight: 700; }
 
-  /* ============ VSL ============ */
+  .authority-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 4.5vw, 32px);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000;
+    background: var(--teal);
+    display: inline-block;
+    padding: 10px 28px;
+    margin-top: 24px;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 0 30px rgba(27,176,206,0.4), 0 0 60px rgba(27,176,206,0.15);
+  }
+  .watch-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(27,176,206,0.08);
+    border: 1.5px solid rgba(27,176,206,0.25);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 22px 0 18px;
+  }
+  .watch-badge svg { flex-shrink: 0; color: var(--teal); }
+
+  /* ========== VSL ========== */
   .vsl-wrap {
     position: relative;
-    max-width: 660px;
-    margin: 26px auto 22px;
-    background: #000;
-    border-radius: 8px;
+    max-width: 580px;
+    margin: 0 auto 16px;
+    background: #050505;
+    border-radius: 12px;
     overflow: hidden;
     aspect-ratio: 16/9;
     cursor: pointer;
-    border: 4px solid #000;
-    box-shadow: 0 6px 0 var(--yellow);
+    border: 2px solid rgba(27,176,206,0.4);
+    box-shadow: 0 12px 60px rgba(0,0,0,0.6);
   }
-  .vsl-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .vsl-wrap:hover { border-color: var(--teal); }
+  .vsl-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
   .play-btn {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%,-50%);
-    width: 80px; height: 80px;
-    background: var(--red);
+    width: 76px; height: 76px;
+    background: var(--teal);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     z-index: 2;
-    border: 4px solid #fff;
-    box-shadow: 0 0 0 4px var(--red);
+    animation: pulse-glow 3s ease-in-out infinite;
   }
-  .play-btn:hover { transform: translate(-50%,-50%) scale(1.05); }
-  .play-btn svg { width: 32px; height: 32px; fill: #fff; margin-left: 4px; }
+  .play-btn:hover { transform: translate(-50%,-50%) scale(1.08); }
+  .play-btn svg { width: 30px; height: 30px; fill: #000; margin-left: 3px; }
 
-  .vsl-watch {
-    text-align: center;
-    font-weight: 800;
-    font-size: 14px;
-    color: var(--ink);
-    margin-top: 12px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .vsl-watch .arrow { color: var(--red); margin: 0 8px; }
-
-  /* ============ CTA BUTTON ============ */
-  .cta-btn {
-    display: inline-block;
-    width: 100%;
-    max-width: 540px;
-    margin: 16px auto 8px;
-    padding: 22px 24px;
-    background: var(--yellow);
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 3px solid #000;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 4px 0 #b8a500;
-    transition: transform 0.1s, box-shadow 0.1s;
-    animation: pulse-shadow 2s ease-in-out infinite;
-  }
-  .cta-btn:hover { transform: translateY(2px); box-shadow: 0 2px 0 #b8a500; }
-  .cta-btn:active { transform: translateY(4px); box-shadow: 0 0 0 #b8a500; }
-  .cta-btn .arrow { display: inline-block; margin-left: 6px; }
-
-  .cta-sub {
-    text-align: center;
-    font-size: 13px;
-    color: var(--grey-700);
-    font-weight: 600;
-    margin-top: 6px;
-  }
-  .cta-sub .green { color: var(--green); font-weight: 800; }
-
-  /* ============ HAND ARROW (Hormozi signature) ============ */
+  /* ========== HAND ARROW (Hormozi touch) ========== */
   .hand-arrow {
     display: block;
     text-align: center;
-    color: var(--red);
+    color: var(--gold);
     font-size: 28px;
     font-weight: 900;
-    margin: 4px 0;
-    transform: rotate(-5deg);
+    margin: 6px 0;
     animation: wiggle 1.5s ease-in-out infinite;
     line-height: 1;
   }
-  .hand-arrow.left { transform: rotate(15deg); }
-
-  .red-handwritten {
-    font-family: 'Inter', sans-serif;
-    color: var(--red);
+  .scribble {
+    text-align: center;
+    color: var(--gold);
     font-style: italic;
     font-weight: 800;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px auto 8px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
     max-width: 480px;
+    margin: 4px auto 14px;
     line-height: 1.4;
   }
 
-  /* ============ SECTION DIVIDERS ============ */
-  section { padding: 40px 18px; }
-  .section-wrap { max-width: 720px; margin: 0 auto; }
-  .section-wide { max-width: 820px; margin: 0 auto; }
-
-  /* ============ HEADLINE STYLES ============ */
-  .eyebrow {
-    display: inline-block;
+  /* ========== PRIMARY CTA ========== */
+  .cta-block {
+    text-align: center;
+    padding: 6px 16px 26px;
     background: #000;
-    color: var(--yellow);
-    padding: 4px 14px;
-    font-size: 11px;
+  }
+  .cta-main {
+    display: block;
+    max-width: 560px;
+    margin: 0 auto 8px;
+    padding: 22px 24px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
     font-weight: 900;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s, transform 0.1s;
   }
-  .section-h {
-    font-size: clamp(26px, 4.5vw, 38px);
-    font-weight: 900;
-    line-height: 1.15;
-    color: #000;
-    text-align: center;
-    margin-bottom: 18px;
-    letter-spacing: -0.02em;
+  .cta-main:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .cta-sub {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 700;
   }
-  .section-h .hi { background: var(--yellow); padding: 0 6px; }
-  .section-h .red { color: var(--red); }
-  .section-h .green { color: var(--green); }
-  .section-sub {
-    text-align: center;
-    color: var(--grey-700);
-    font-size: 16px;
-    max-width: 620px;
-    margin: 0 auto 26px;
-    line-height: 1.6;
-  }
+  .cta-sub .gold { color: var(--gold); }
 
-  /* ============ PROBLEM / AGITATION ============ */
-  .problem-section { background: #fafafa; border-top: 4px solid #000; border-bottom: 4px solid #000; }
-  .problem-section .section-h { text-align: center; }
-  .problem-list {
-    max-width: 660px;
-    margin: 0 auto;
-    list-style: none;
+  /* ========== COUNTDOWN ========== */
+  .countdown-wrap {
+    text-align: center;
+    padding: 14px 16px;
+    background: #000;
   }
-  .problem-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    background: #fff;
-    border: 2px solid #000;
-    padding: 18px 20px;
-    margin-bottom: 12px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #000;
-    box-shadow: 4px 4px 0 #000;
-  }
-  .problem-item .x {
+  .countdown-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     color: var(--red);
+    margin-bottom: 8px;
+  }
+  .countdown { display: inline-flex; gap: 6px; align-items: center; }
+  .cd-num {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 8px 12px;
+    min-width: 50px;
+    text-align: center;
+  }
+  .cd-num .n {
+    font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 900;
-    flex-shrink: 0;
+    color: #fff;
+    display: block;
     line-height: 1;
-    margin-top: 2px;
   }
-  .problem-item strong { font-weight: 800; }
-  .problem-item .hi { background: var(--yellow); padding: 0 4px; font-weight: 700; }
+  .cd-num .l {
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .cd-sep { font-size: 20px; font-weight: 700; color: #333; }
 
-  /* ============ WHAT YOU GET (VALUE STACK) ============ */
-  .stack-section { background: #fff; }
-  .stack-list { max-width: 660px; margin: 0 auto; }
-  .stack-item {
-    display: grid;
-    grid-template-columns: 38px 1fr;
-    gap: 14px;
-    padding: 18px 16px;
-    border-bottom: 1px dashed var(--grey-300);
+  /* ========== SOCIAL PROOF ========== */
+  .proof-strip {
+    text-align: center;
+    padding: 22px 16px;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+    background: #060606;
   }
-  .stack-item .check {
+  .proof-stars {
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .proof-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .proof-text strong { color: #fff; }
+  .proof-brands {
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    color: var(--teal);
+  }
+  .proof-brands .dot { color: #444; margin: 0 8px; }
+
+  /* ========== BIG CLAIM ========== */
+  .big-claim {
+    text-align: center;
+    padding: 36px 16px 30px;
+    background: #000;
+  }
+  .big-claim h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5.5vw, 36px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.12;
+    margin-bottom: 12px;
+  }
+  .big-claim h2 .teal { color: var(--teal); }
+  .big-claim h2 .gold { color: var(--gold); }
+  .big-claim p {
+    font-size: 14px;
+    color: #888;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ========== AGITATION CARDS ========== */
+  .agit-section {
+    padding: 32px 16px 32px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
+  .agit-section .page-wrap { max-width: 640px; }
+  .agit-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .agit-label::before, .agit-label::after { content: '// '; }
+  .agit-card {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #b8b8b8;
+    position: relative;
+  }
+  .agit-card .x {
+    color: var(--red);
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  .agit-card strong { color: #fff; font-weight: 700; }
+  .agit-card .em-underline {
+    text-decoration: underline;
+    text-decoration-color: var(--teal);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    color: #fff;
+  }
+  .agit-card.loud {
+    background: rgba(27,176,206,0.06);
+    border-left-color: var(--teal);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  /* ========== MID CTA ========== */
+  .mid-cta {
+    text-align: center;
+    padding: 24px 16px;
+    background: #000;
+  }
+  .mid-cta-btn {
+    display: inline-block;
+    padding: 18px 36px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .mid-cta-btn:hover { background: var(--teal-bright); transform: translateY(-2px); }
+  .mid-cta-sub {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .mid-cta-sub .gold { color: var(--gold); }
+
+  /* ========== STAT ROW ========== */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 22px 16px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .stat-box {
+    text-align: center;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 18px 8px;
+  }
+  .stat-num {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 900;
+    color: var(--teal);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  /* ========== STACK ========== */
+  .stack-section {
+    padding: 36px 16px 30px;
+    background: #000;
+    border-top: 1px solid #151515;
+  }
+  .stack-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .stack-eyebrow::before, .stack-eyebrow::after { content: '// '; }
+  .stack-h {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .stack-h .teal { color: var(--teal); }
+  .stack-list { max-width: 620px; margin: 0 auto; }
+  .stack-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .stack-item:hover { border-color: rgba(27,176,206,0.4); transform: translateX(4px); }
+  .stack-item .ck {
     width: 28px; height: 28px;
     background: var(--green);
     color: #fff;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
     font-weight: 900;
+    font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     margin-top: 2px;
   }
+  .stack-item .body { flex: 1; min-width: 0; }
   .stack-item h4 {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 800;
-    color: #000;
+    color: #fff;
     margin-bottom: 4px;
     line-height: 1.3;
   }
-  .stack-item h4 .val {
-    display: inline-block;
-    background: var(--green);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 0.06em;
-    padding: 2px 8px;
-    margin-left: 6px;
-    border-radius: 3px;
-    vertical-align: middle;
-  }
   .stack-item p {
-    font-size: 15px;
-    color: var(--grey-700);
+    font-size: 13px;
+    color: #888;
     line-height: 1.55;
   }
-  .stack-item p strong { color: #000; font-weight: 700; }
+  .stack-item .val {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    color: #000;
+    background: var(--gold);
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-left: 8px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+  .stack-item .val.priceless { background: var(--teal); color: #000; }
 
-  /* ============ TOTAL VALUE BOX ============ */
+  /* ========== TOTAL VALUE BOX ========== */
   .total-box {
-    max-width: 540px;
+    max-width: 520px;
     margin: 32px auto 0;
-    background: #fff;
-    border: 4px solid #000;
+    background: linear-gradient(180deg, rgba(27,176,206,0.1) 0%, #0a0a0a 100%);
+    border: 2px solid rgba(27,176,206,0.45);
+    border-radius: 14px;
     padding: 26px 24px;
     text-align: center;
-    box-shadow: 6px 6px 0 var(--yellow);
   }
   .total-box .title {
-    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
     font-weight: 900;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #000;
-    margin-bottom: 14px;
-  }
-  .total-rows {
-    border-top: 2px dashed var(--grey-300);
-    padding-top: 12px;
+    color: #fff;
     margin-bottom: 14px;
   }
   .total-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px 0;
-    font-size: 14px;
-  }
-  .total-row span:first-child { color: var(--grey-700); text-align: left; }
-  .total-row span:last-child { color: #000; font-weight: 800; }
-  .real-value {
-    margin-top: 18px;
-    padding-top: 16px;
-    border-top: 3px solid #000;
-  }
-  .real-value-label {
+    padding: 7px 0;
+    border-bottom: 1px dashed #222;
     font-size: 13px;
-    font-weight: 800;
-    color: var(--grey-700);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
   }
-  .real-value-amount {
-    font-size: 42px;
+  .total-row:last-of-type { border-bottom: 0; }
+  .total-row span:first-child { color: #888; letter-spacing: 0.03em; text-align: left; }
+  .total-row span:last-child { color: #fff; font-weight: 800; font-family: 'Raleway', sans-serif; }
+
+  .total-stack { margin-top: 18px; padding-top: 18px; border-top: 2px solid #222; text-align: center; }
+  .total-stack .label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 6px;
+    font-weight: 800;
+  }
+  .total-stack .value {
+    font-family: 'Raleway', sans-serif;
+    font-size: 38px;
     font-weight: 900;
-    color: var(--grey-500);
+    color: #666;
+    line-height: 1;
     text-decoration: line-through;
     text-decoration-color: var(--red);
     text-decoration-thickness: 4px;
-    line-height: 1;
-    margin-bottom: 14px;
   }
-  .today-label {
-    font-size: 14px;
-    font-weight: 900;
-    color: #000;
-    letter-spacing: 0.06em;
+  .total-stack .today {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 22px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    font-weight: 900;
   }
-  .today-amount {
+  .total-stack .price {
+    font-family: 'Raleway', sans-serif;
     font-size: 64px;
     font-weight: 900;
-    color: var(--green);
     line-height: 1;
-    letter-spacing: -0.02em;
+    margin-top: 6px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
   }
-  .today-amount .dollar { font-size: 0.6em; vertical-align: top; line-height: 1; }
-  .today-sub {
+  .total-stack .price .dollar { font-size: 0.55em; vertical-align: top; }
+  .total-stack .price-sub {
     font-size: 12px;
-    color: var(--grey-700);
-    margin-top: 8px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    color: #888;
+    margin-top: 10px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    font-weight: 700;
   }
 
-  /* ============ BONUS BOX ============ */
-  .bonus-section { background: var(--yellow); border-top: 4px solid #000; border-bottom: 4px solid #000; }
+  /* ========== BONUS CALLOUT ========== */
+  .bonus-section {
+    padding: 36px 16px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
   .bonus-box {
-    max-width: 660px;
+    max-width: 620px;
     margin: 0 auto;
+    background: linear-gradient(135deg, rgba(245,183,49,0.1) 0%, #0c0c0c 70%);
+    border: 1.5px dashed rgba(245,183,49,0.5);
+    border-radius: 12px;
+    padding: 28px 24px;
     text-align: center;
+    position: relative;
   }
   .bonus-stamp {
     display: inline-block;
-    background: var(--red);
-    color: #fff;
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    transform: rotate(-2deg);
-    border: 2px solid #000;
-  }
-  .bonus-box h3 {
-    font-size: clamp(24px, 4vw, 34px);
-    font-weight: 900;
+    background: var(--gold);
     color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    transform: rotate(-2deg);
+  }
+  .bonus-h {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 4.5vw, 30px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
     line-height: 1.15;
     margin-bottom: 14px;
-    letter-spacing: -0.02em;
   }
+  .bonus-h .gold { color: var(--gold); }
   .bonus-box p {
-    font-size: 16px;
-    color: #000;
-    line-height: 1.6;
-    max-width: 580px;
-    margin: 0 auto 14px;
-    font-weight: 500;
+    font-size: 14.5px;
+    color: #bbb;
+    line-height: 1.65;
+    margin-bottom: 12px;
   }
-  .bonus-box p strong { font-weight: 800; }
-  .bonus-pill {
+  .bonus-box p strong { color: #fff; font-weight: 700; }
+  .bonus-value {
     display: inline-block;
-    background: #000;
-    color: var(--yellow);
-    padding: 8px 18px;
+    margin-top: 8px;
+    font-family: 'Raleway', sans-serif;
     font-size: 13px;
     font-weight: 900;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-top: 8px;
+    color: #000;
+    padding: 8px 18px;
+    background: var(--gold);
+    border-radius: 50px;
   }
-  .bonus-pill .red { color: var(--red-bright); }
+  .bonus-value .strike {
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+    opacity: 0.7;
+    margin-right: 8px;
+  }
 
-  /* ============ GUARANTEE ============ */
-  .guarantee-section { background: #fff; }
-  .guarantee-box {
-    max-width: 720px;
-    margin: 0 auto;
-    background: #fff;
-    border: 4px solid #000;
-    padding: 36px 28px;
+  /* ========== GUARANTEE ========== */
+  .guarantee {
+    padding: 42px 16px;
+    background: linear-gradient(180deg, #000 0%, rgba(27,176,206,0.08) 100%);
+    border-top: 1px solid #151515;
     text-align: center;
-    box-shadow: 8px 8px 0 var(--yellow);
-    position: relative;
   }
-  .seal {
-    width: 150px; height: 150px;
-    margin: 0 auto 18px;
-    background: var(--yellow);
-    border-radius: 50%;
-    border: 4px solid #000;
+  .guarantee-seal {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    box-shadow: 4px 4px 0 #000;
+    width: 140px; height: 140px;
+    background: #0a0a0a;
+    border: 3px solid var(--teal);
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    box-shadow: 0 0 50px rgba(27,176,206,0.35);
     transform: rotate(-3deg);
   }
-  .seal .big {
-    font-size: 44px;
-    font-weight: 900;
-    color: #000;
+  .guarantee-seal-inner {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .guarantee-seal-inner .big {
+    display: block;
+    font-size: 48px;
+    color: #fff;
     line-height: 1;
     font-style: italic;
   }
-  .seal .day {
-    font-size: 14px;
-    font-weight: 900;
-    color: #000;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    margin-top: 2px;
-  }
-  .seal .promise {
-    font-size: 10px;
-    font-weight: 900;
-    color: var(--red);
+  .guarantee-seal-inner .day {
+    display: block;
+    font-size: 13px;
+    color: #fff;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-weight: 900;
+    margin-top: 4px;
+  }
+  .guarantee-seal-inner .promise {
+    display: block;
+    font-size: 9px;
+    color: var(--teal);
+    letter-spacing: 0.22em;
+    font-weight: 900;
     margin-top: 6px;
   }
-
-  .guarantee-h {
-    font-size: clamp(22px, 4vw, 32px);
+  .guarantee h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 34px);
     font-weight: 900;
-    color: #000;
-    line-height: 1.15;
-    margin-bottom: 14px;
-    letter-spacing: -0.02em;
-  }
-  .guarantee-h .red { color: var(--red); }
-  .guarantee-h .hi { background: var(--yellow); padding: 0 6px; }
-  .guarantee-box p {
-    font-size: 16px;
-    color: #000;
-    line-height: 1.65;
-    max-width: 580px;
-    margin: 0 auto 12px;
-    font-weight: 500;
-  }
-  .guarantee-box p strong { font-weight: 800; }
-  .conditions {
-    background: var(--grey-100);
-    border-left: 4px solid var(--red);
-    padding: 14px 16px;
-    text-align: left;
-    max-width: 560px;
-    margin: 18px auto 0;
-  }
-  .conditions .lbl {
-    font-size: 12px;
-    font-weight: 900;
-    color: var(--red);
-    letter-spacing: 0.12em;
+    color: #fff;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    line-height: 1.15;
+    max-width: 640px;
+    margin: 0 auto 16px;
   }
-  .conditions div.c {
+  .guarantee h2 .teal { color: var(--teal); }
+  .guarantee p {
+    font-size: 15px;
+    color: #bbb;
+    max-width: 560px;
+    margin: 0 auto 14px;
+    line-height: 1.7;
+  }
+  .guarantee p strong { color: #fff; font-weight: 700; }
+  .guarantee-terms {
+    max-width: 560px;
+    margin: 22px auto 0;
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 3px solid var(--red);
+    border-radius: 4px;
+    padding: 18px 20px;
+    text-align: left;
+  }
+  .guarantee-terms .lbl {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .guarantee-terms div.t {
     display: flex;
     gap: 10px;
-    padding: 5px 0;
-    font-size: 14px;
-    color: #000;
-    line-height: 1.55;
+    padding: 7px 0;
+    font-size: 13px;
+    color: #bbb;
+    line-height: 1.6;
   }
-  .conditions .n {
-    background: #000;
-    color: var(--yellow);
+  .guarantee-terms .n {
+    background: var(--teal);
+    color: #000;
     width: 22px; height: 22px;
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-size: 11px;
     font-weight: 900;
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 1px;
   }
-  .conditions strong { font-weight: 800; }
+  .guarantee-terms strong { color: #fff; }
 
-  /* ============ REQUIREMENTS ============ */
-  .req-section { background: var(--grey-100); border-top: 4px solid #000; }
+  /* ========== REQUIREMENTS ========== */
+  .requirements-section {
+    padding: 36px 16px 30px;
+    background: #000;
+    border-top: 1px solid #151515;
+  }
   .req-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    max-width: 660px;
+    gap: 12px;
+    max-width: 620px;
     margin: 0 auto;
   }
   .req-card {
-    background: #fff;
-    border: 3px solid #000;
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
     padding: 22px 18px;
     text-align: center;
-    box-shadow: 4px 4px 0 var(--yellow);
   }
   .req-card .num {
-    display: inline-block;
-    background: #000;
-    color: var(--yellow);
+    background: var(--teal);
+    color: #000;
     width: 36px; height: 36px;
     border-radius: 50%;
-    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
     font-weight: 900;
-    line-height: 36px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .req-card h4 {
-    font-size: 17px;
-    font-weight: 900;
-    color: #000;
-    margin-bottom: 8px;
-    line-height: 1.25;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.2;
   }
-  .req-card p {
-    font-size: 14px;
-    color: var(--grey-700);
-    line-height: 1.55;
-  }
+  .req-card p { font-size: 12.5px; color: #888; line-height: 1.55; }
 
-  /* ============ TESTIMONIALS ============ */
-  .testimonials { background: #fff; }
-  .t-grid {
+  /* ========== TESTIMONIALS ========== */
+  .testimonials {
+    padding: 32px 16px 30px;
+    background: #060606;
+    border-top: 1px solid #151515;
+  }
+  .testimonials h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(20px, 4.5vw, 28px);
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .testimonials h2 .teal { color: var(--teal); }
+  .testimonial-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    max-width: 720px;
+    gap: 12px;
+    max-width: 660px;
     margin: 0 auto;
   }
-  .t-card {
-    background: #fff;
-    border: 3px solid #000;
-    padding: 20px 22px;
-    box-shadow: 4px 4px 0 var(--yellow);
+  .testimonial-card {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 3px solid var(--teal);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
   }
-  .t-card .stars {
-    color: var(--yellow-bright);
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  .t-card p {
-    font-size: 15px;
+  .testimonial-card .stars { color: var(--gold); font-size: 14px; letter-spacing: 1px; margin-bottom: 6px; }
+  .testimonial-card p {
+    font-size: 13.5px;
     line-height: 1.6;
-    color: #000;
-    margin-bottom: 12px;
-    font-weight: 500;
+    color: #ccc;
+    font-style: italic;
+    margin-bottom: 10px;
   }
-  .t-card .author {
-    font-size: 14px;
+  .testimonial-author {
+    font-size: 10px;
     font-weight: 900;
-    color: #000;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal);
   }
-  .t-card .author small {
-    display: block;
-    font-size: 12px;
-    color: var(--grey-700);
-    font-weight: 600;
-    margin-top: 2px;
+  .testimonial-author span {
+    color: #555;
+    font-weight: 500;
+    margin-left: 4px;
   }
 
-  /* ============ FAQ ============ */
-  .faq-section { background: var(--grey-100); border-top: 4px solid #000; }
-  .faq-wrap { max-width: 720px; margin: 0 auto; }
-  .faq details {
-    background: #fff;
-    border: 2px solid #000;
-    margin-bottom: 10px;
-    box-shadow: 3px 3px 0 #000;
+  /* ========== FAQ ========== */
+  .faq-section {
+    padding: 34px 16px 30px;
+    background: #000;
+    border-top: 1px solid #151515;
   }
+  .faq-section h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .faq-section h2 .teal { color: var(--teal); }
+  .faq { max-width: 660px; margin: 0 auto; }
+  .faq details {
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: border-color 0.2s;
+  }
+  .faq details:hover { border-color: rgba(27,176,206,0.3); }
+  .faq details[open] { border-color: var(--teal); }
   .faq summary {
-    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14.5px;
     font-weight: 800;
-    color: #000;
-    padding: 16px 18px;
+    color: #fff;
+    padding: 16px 20px;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -705,774 +984,909 @@
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after {
     content: '+';
-    color: var(--red);
-    font-size: 24px;
+    color: var(--teal);
+    font-size: 22px;
     font-weight: 900;
     margin-left: 10px;
-    line-height: 1;
   }
   .faq details[open] summary::after { content: '−'; }
   .faq .a {
-    padding: 0 18px 16px;
-    font-size: 15px;
-    color: var(--grey-700);
-    line-height: 1.7;
+    padding: 0 20px 16px;
+    font-size: 13.5px;
+    color: #aaa;
+    line-height: 1.75;
   }
-  .faq .a strong { color: #000; font-weight: 700; }
+  .faq .a strong { color: #fff; font-weight: 700; }
 
-  /* ============ FORM ============ */
-  .form-section { background: var(--yellow); border-top: 4px solid #000; }
-  .form-block { max-width: 580px; margin: 0 auto; text-align: center; }
-  .form-eyebrow {
-    display: inline-block;
-    background: #000;
-    color: var(--yellow);
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 18px;
+  /* ========== FORM ========== */
+  .form-block {
+    padding: 36px 16px 32px;
+    background: linear-gradient(180deg, #080808 0%, #000 100%);
+    border-top: 3px solid var(--teal);
+    text-align: center;
   }
   .form-block h2 {
-    font-size: clamp(28px, 5vw, 40px);
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(26px, 5.5vw, 38px);
     font-weight: 900;
-    color: #000;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.05;
   }
-  .form-block h2 .red { color: var(--red); }
-  .form-block h2 .underline { border-bottom: 4px solid #000; }
-  .form-block .sub {
-    font-size: 15px;
-    color: #000;
-    margin-bottom: 24px;
-    line-height: 1.6;
-    font-weight: 500;
-    max-width: 500px;
+  .form-block h2 .teal { color: var(--teal); }
+  .form-sub {
+    font-size: 14.5px;
+    color: #aaa;
+    margin-bottom: 16px;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
+  }
+  .form-spots {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(231,76,60,0.08);
+    border: 1px solid rgba(231,76,60,0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .form-spots .rd {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
   }
   .form-card {
-    background: #fff;
-    border: 4px solid #000;
-    padding: 28px 24px;
-    box-shadow: 6px 6px 0 #000;
-    text-align: left;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #0e0e0e;
+    border: 1px solid #1a1a1a;
+    border-radius: 14px;
+    padding: 26px 22px;
   }
-  .fg { margin-bottom: 12px; }
+  .fg { margin-bottom: 10px; text-align: left; }
   .fg label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 900;
-    color: #000;
-    margin-bottom: 6px;
-    letter-spacing: 0.04em;
+    color: var(--teal);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    margin-bottom: 6px;
   }
   .fg input, .fg select, .fg textarea {
     width: 100%;
     padding: 14px 16px;
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 4px;
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
     outline: none;
-    transition: background 0.15s;
+    transition: border-color 0.2s;
   }
-  .fg input::placeholder, .fg textarea::placeholder { color: var(--grey-500); font-weight: 400; }
-  .fg input:focus, .fg select:focus, .fg textarea:focus { background: #fff8c4; }
+  .fg input::placeholder, .fg textarea::placeholder { color: #444; }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--teal); }
   .fg select {
     appearance: none;
-    cursor: pointer;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23000' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    color: #ccc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231bb0ce' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
+    cursor: pointer;
   }
+  .fg select option { background: #111; color: #fff; }
   .fg textarea { min-height: 80px; resize: vertical; }
 
   .form-cta {
     display: block;
     width: 100%;
-    margin-top: 16px;
-    padding: 22px 24px;
-    background: var(--red);
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    padding: 20px 24px;
+    background: var(--teal);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
     font-weight: 900;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    border: 3px solid #000;
-    border-radius: 6px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 0 #8a0c0c;
-    transition: transform 0.1s, box-shadow 0.1s;
-  }
-  .form-cta:hover { transform: translateY(2px); box-shadow: 0 2px 0 #8a0c0c; background: var(--red-bright); }
-  .form-cta:active { transform: translateY(4px); box-shadow: 0 0 0 #8a0c0c; }
-  .form-cta:disabled { opacity: 0.7; cursor: wait; }
-  .form-cta .arrow { display: inline-block; margin-left: 6px; }
-
-  .form-disc {
-    font-size: 13px;
-    color: var(--grey-700);
     margin-top: 14px;
-    line-height: 1.5;
-    text-align: center;
-    font-weight: 500;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transition: background 0.2s;
   }
-  .form-disc strong { color: #000; font-weight: 800; }
-
-  /* Success */
-  .form-success { display: none; text-align: center; }
-  .form-success.show { display: block; }
-  .form-success .check-big {
-    width: 80px; height: 80px;
-    background: var(--green);
-    color: #fff;
+  .form-cta:hover { background: var(--teal-bright); }
+  .form-cta:disabled { opacity: 0.7; cursor: wait; }
+  .form-urg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .form-urg .rd {
+    width: 6px; height: 6px;
+    background: var(--red);
     border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  .form-disc {
+    font-size: 11px;
+    color: #555;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  .form-disc strong { color: #aaa; }
+
+  /* Form success */
+  .form-success { display: none; text-align: center; padding: 24px 16px; }
+  .form-success.show { display: block; }
+  .form-success .check {
+    width: 64px; height: 64px;
+    background: rgba(46,204,113,0.1);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    margin: 0 auto 16px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 38px;
+    color: var(--green);
+    font-size: 32px;
     font-weight: 900;
-    margin: 0 auto 18px;
   }
   .form-success h4 {
-    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
     font-weight: 900;
-    color: #000;
-    margin-bottom: 10px;
-    line-height: 1.15;
-  }
-  .form-success p {
-    font-size: 16px;
-    color: var(--grey-700);
-    line-height: 1.7;
-    max-width: 440px;
-    margin: 0 auto;
-  }
-
-  /* ============ P.S. ============ */
-  .ps-section { background: #fff; }
-  .ps-card {
-    max-width: 660px;
-    margin: 0 auto;
-    background: var(--yellow);
-    border: 4px solid #000;
-    padding: 24px 26px;
-    box-shadow: 6px 6px 0 #000;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #000;
-    font-weight: 500;
-  }
-  .ps-card strong { font-weight: 800; }
-  .ps-label {
-    display: inline-block;
-    background: #000;
-    color: var(--yellow);
-    padding: 4px 12px;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 0.12em;
+    color: #fff;
     text-transform: uppercase;
     margin-bottom: 10px;
   }
-  .ps-card .hi { background: #fff; padding: 0 4px; font-weight: 700; }
-
-  /* ============ FINAL RECAP (full stack repeat) ============ */
-  .recap-section { background: #fafafa; border-top: 4px solid #000; border-bottom: 4px solid #000; }
-  .recap-h {
-    font-size: clamp(24px, 4.5vw, 36px);
-    font-weight: 900;
-    color: #000;
-    text-align: center;
-    margin-bottom: 22px;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-  .recap-h .hi { background: var(--yellow); padding: 0 6px; }
-  .recap-list {
-    max-width: 540px;
+  .form-success p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 400px;
     margin: 0 auto;
+  }
+
+  /* ========== FINAL RECAP ========== */
+  .recap-section {
+    padding: 40px 16px 36px;
+    background: #060606;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+  }
+  .recap-h {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .recap-h .teal { color: var(--teal); }
+  .recap-h .gold { color: var(--gold); }
+  .recap-list {
+    max-width: 520px;
+    margin: 0 auto 26px;
     list-style: none;
   }
   .recap-list li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+    gap: 12px;
     padding: 8px 0;
-    font-size: 16px;
-    color: #000;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 14.5px;
+    color: #ccc;
+    line-height: 1.55;
   }
-  .recap-list .check {
+  .recap-list .ck {
     color: var(--green);
     font-weight: 900;
-    font-size: 18px;
+    font-size: 16px;
     flex-shrink: 0;
     margin-top: 2px;
   }
-  .recap-list strong { font-weight: 800; }
+  .recap-list strong { color: #fff; font-weight: 700; }
   .recap-list small {
-    background: var(--green);
-    color: #fff;
-    font-size: 11px;
+    display: inline-block;
+    background: rgba(245,183,49,0.12);
+    border: 1px solid rgba(245,183,49,0.35);
+    color: var(--gold);
+    font-size: 10px;
     font-weight: 900;
-    letter-spacing: 0.04em;
-    padding: 1px 6px;
-    margin-left: 6px;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
     border-radius: 3px;
-    vertical-align: middle;
+    margin-left: 6px;
+    white-space: nowrap;
+  }
+  .recap-final {
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 22px;
+    border-top: 1px dashed #2a2a2a;
+  }
+  .recap-final .val-lbl {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 4px;
+  }
+  .recap-final .val-strike {
+    font-family: 'Raleway', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #666;
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 3px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .recap-final .today-lbl {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .recap-final .today-price {
+    font-family: 'Raleway', sans-serif;
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-bright) 50%, var(--teal) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  .recap-final .today-price .dollar { font-size: 0.55em; vertical-align: top; }
+
+  /* ========== P.S. ========== */
+  .ps-section {
+    padding: 32px 16px;
+    background: #000;
+    border-top: 1px solid #151515;
+  }
+  .ps-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #0c0c0c;
+    border: 1px solid #1a1a1a;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 24px;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #bbb;
+  }
+  .ps-card strong { color: #fff; font-weight: 700; }
+  .ps-card .hi { background: rgba(245,183,49,0.18); padding: 0 4px; color: #fff; }
+  .ps-card .ps-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
   }
 
-  /* ============ FOOTER ============ */
+  /* ========== FOOTER ========== */
   .footer {
     text-align: center;
-    padding: 30px 18px 90px;
-    font-size: 12px;
-    color: var(--grey-700);
-    background: #fff;
-    border-top: 2px solid #000;
+    padding: 30px 16px 84px;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 0.04em;
+    background: #000;
+    border-top: 1px solid #151515;
   }
   .footer .tag {
-    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
     font-weight: 900;
-    color: #000;
-    letter-spacing: 0.06em;
+    color: var(--teal);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
   }
-  .footer .tag .teal { color: var(--teal); }
-  .footer a { color: var(--red); font-weight: 700; }
+  .footer a { color: #777; }
 
-  /* ============ STICKY BAR ============ */
+  /* ========== STICKY BAR ========== */
   .sticky-bar {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: #000;
-    padding: 10px 14px;
-    display: flex; justify-content: center; align-items: center; gap: 12px;
+    background: rgba(0,0,0,0.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid #1a1a1a;
+    padding: 10px 16px;
+    display: flex; justify-content: center; align-items: center; gap: 14px;
     transform: translateY(100%);
     transition: transform 0.4s ease;
-    border-top: 3px solid var(--yellow);
   }
   .sticky-bar.visible { transform: translateY(0); }
   .sticky-text { font-size: 13px; font-weight: 700; color: #fff; display: none; }
-  .sticky-text .y { color: var(--yellow); font-weight: 900; }
+  .sticky-text .gold { color: var(--gold); font-family: 'Raleway', sans-serif; font-weight: 900; }
   .sticky-btn {
     padding: 12px 28px;
-    background: var(--yellow);
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 900;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 2px solid #000;
-    border-radius: 4px;
-    cursor: pointer;
+    background: var(--teal); color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px; font-weight: 900;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    border: none; border-radius: 8px; cursor: pointer;
     white-space: nowrap;
   }
-  .sticky-btn:hover { background: var(--yellow-bright); }
+  .sticky-btn:hover { background: var(--teal-bright); }
   .sticky-x {
     position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; color: #999; font-size: 22px; cursor: pointer;
-    line-height: 1;
+    background: none; border: none; color: #444; font-size: 18px; cursor: pointer;
   }
 
-  @media (min-width: 640px) { .sticky-text { display: block; } }
+  @media (min-width: 641px) { .sticky-text { display: block; } }
   @media (max-width: 640px) {
-    .req-grid, .t-grid { grid-template-columns: 1fr; }
-    .seal { width: 130px; height: 130px; }
-    .seal .big { font-size: 36px; }
-    .real-value-amount { font-size: 32px; }
-    .today-amount { font-size: 48px; }
-    body { font-size: 16px; }
+    .stat-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .req-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .stack-item { flex-wrap: wrap; }
+    .stack-item .val { margin-left: 42px; margin-top: 4px; }
+    .total-stack .price, .recap-final .today-price { font-size: 48px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ============ TOP ATTENTION BAR ============ -->
-<div class="attention-bar">
-  <div class="attention-track">
-    <span class="y">ATTENTION</span><span>LONG ISLAND HVAC, PLUMBING, ROOFING, ELECTRICAL & GC</span><span class="star">★</span>
-    <span class="y">READ THIS</span><span>YOUR PHONE RINGING IN 12 DAYS &middot; GUARANTEED IN 60</span><span class="star">★</span>
-    <span class="y">$6,500</span><span>ONE DAY &middot; YOU OWN IT ALL &middot; NO RETAINER</span><span class="star">★</span>
-    <span class="y">ATTENTION</span><span>LONG ISLAND HVAC, PLUMBING, ROOFING, ELECTRICAL & GC</span><span class="star">★</span>
-    <span class="y">READ THIS</span><span>YOUR PHONE RINGING IN 12 DAYS &middot; GUARANTEED IN 60</span><span class="star">★</span>
-    <span class="y">$6,500</span><span>ONE DAY &middot; YOU OWN IT ALL &middot; NO RETAINER</span><span class="star">★</span>
+<!-- ============ SCROLLING TOP BANNER ============ -->
+<div class="top-banner">
+  <div class="top-banner-track">
+    <span>&#9888; LONG ISLAND HVAC, PLUMBING, ROOFING, ELECTRICAL, GC &mdash; READ THIS</span><span class="star">★</span>
+    <span>&#9888; YOUR PHONE RINGING IN 12 DAYS &middot; GUARANTEED IN 60</span><span class="star">★</span>
+    <span>&#9888; ONE DAY SHOOT &middot; 12 WEEKS OF CONTENT &middot; YOU OWN IT ALL</span><span class="star">★</span>
+    <span>&#9888; LONG ISLAND HVAC, PLUMBING, ROOFING, ELECTRICAL, GC &mdash; READ THIS</span><span class="star">★</span>
+    <span>&#9888; YOUR PHONE RINGING IN 12 DAYS &middot; GUARANTEED IN 60</span><span class="star">★</span>
+    <span>&#9888; ONE DAY SHOOT &middot; 12 WEEKS OF CONTENT &middot; YOU OWN IT ALL</span><span class="star">★</span>
+  </div>
+</div>
+
+<!-- ============ SPOTS TICKER ============ -->
+<div class="spots-ticker">
+  <div class="spots-ticker-inner">
+    <span class="dot"></span>
+    <span>This Month: <span class="num">Limited Shoot Slots Available</span></span>
   </div>
 </div>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="wrap">
-    <div class="attn-headline"><span class="red">ATTENTION:</span> Long Island Trades & Home Service Owners</div>
-    <div class="for-line">For <span class="y">HVAC</span> · Plumbing · Roofing · Electrical · GC · Landscaping</div>
+<div class="hero-block">
+  <div class="brand-line"><span class="red">Attention:</span> All <span class="teal">Long Island</span> Trades &amp; Home Service Owners</div>
 
-    <h1 class="hero-h">
-      How To Get Your Phone Ringing With <span class="hi">New Jobs In 12 Days</span> &mdash; Without Paying A Penny In Retainer Fees Or Signing A Single Contract.
-    </h1>
-
-    <p class="hero-sub">
-      In one day we shoot <strong>3 ads + 48 videos + 12 weeks of content</strong>. We launch it, post it, optimize it. You go back to running your business. <strong>If your phone isn't ringing in 60 days, we come back and shoot the whole thing again. Free.</strong>
-    </p>
-
-    <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
-    <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
-      <div class="play-btn" id="playBtn">
-        <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
-      </div>
-    </div>
-    <div class="vsl-watch">
-      <span class="arrow">▶</span> Watch this 2-minute breakdown first <span class="arrow">◀</span>
-    </div>
-
-    <a href="#apply" class="cta-btn">YES! Book My Shoot Day Now <span class="arrow">→</span></a>
-    <div class="cta-sub"><span class="green">$6,500 ALL-IN</span> · 50% to book · 50% on delivery · No retainer ever</div>
-    <div class="hand-arrow">▼</div>
-    <p class="red-handwritten">⚠ Limited shoot slots this month &mdash; once they're filled they're gone</p>
+  <div class="live-badge">
+    <span class="rd"></span>
+    $6,500 &middot; One Day &middot; Phone Ringing Guaranteed
   </div>
-</section>
 
-<!-- ============ PROBLEM ============ -->
-<section class="problem-section">
-  <div class="wrap">
-    <div style="text-align:center;">
-      <span class="eyebrow">Here's What's Really Happening</span>
-    </div>
-    <h2 class="section-h">If You Run A Trades Business On Long Island,<br><span class="red">You Are Getting ROBBED.</span></h2>
-    <p class="section-sub">Not by criminals. By <strong>invisibility</strong>. Here's the truth most agencies don't want you to hear:</p>
+  <h1 class="hero-headline">
+    HVAC. Plumbers. Roofers. GCs. Electricians.<br>
+    <span class="em">You Are Getting Robbed.</span>
+  </h1>
 
-    <ul class="problem-list">
-      <li class="problem-item">
-        <span class="x">✗</span>
-        <span>It's 9pm. A homeowner in your service area just realized their AC quit. Their roof is leaking. <strong>They are NOT calling their neighbor.</strong> They're on their phone, scrolling, and they're picking the company that looks <span class="hi">most credible on their screen</span> in the next 30 seconds.</span>
-      </li>
-      <li class="problem-item">
-        <span class="x">✗</span>
-        <span>They pick the company whose face they have <strong>already seen before</strong>. Not the best company. The most visible one. And right now that's probably <span class="hi">not you</span>.</span>
-      </li>
-      <li class="problem-item">
-        <span class="x">✗</span>
-        <span>That job is gone. The next one too. And the one after that. <strong>You will never know it happened.</strong> Your competitor's phone just rang. Yours did not.</span>
-      </li>
-      <li class="problem-item">
-        <span class="x">✗</span>
-        <span>Word of mouth built your business. But word of mouth only travels to people who already know your name. <span class="hi">Everyone else on Long Island is handing deposits to your competitor right now.</span></span>
-      </li>
-      <li class="problem-item">
-        <span class="x">✗</span>
-        <span>Every week you stay invisible on Facebook, Instagram, and Google is a week your competitor gets <strong>further ahead and harder to catch</strong>. Peak season is 90 days. The companies fully booked by July were on camera in March.</span>
-      </li>
-    </ul>
+  <p class="hero-sub">
+    Not by criminals. <strong>By invisibility.</strong> Right now a homeowner in your service area needs exactly what you do, and they are not calling their neighbor. They are on their phone, scrolling, picking the company that looks most credible on their screen in the next 30 seconds. <strong>If that's not you, that job is gone forever. And you will never know it happened.</strong>
+  </p>
+
+  <p class="authority-line">In One Day. We Fix That.</p>
+
+  <div class="watch-badge">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    Watch This First &middot; 2 Minutes
   </div>
-</section>
+
+  <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
+  <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
+    <div class="play-btn" id="playBtn">
+      <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRIMARY CTA + HAND ARROW ============ -->
+<div class="cta-block">
+  <div class="hand-arrow">▼</div>
+  <p class="scribble">Click below &mdash; shoot slots filling now</p>
+  <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    YES! Book My Shoot Day Now &rarr;
+  </button>
+  <div class="cta-sub"><span class="gold">$6,500 ALL-IN</span> &middot; 50% to book &middot; No retainer ever</div>
+</div>
+
+<!-- ============ COUNTDOWN ============ -->
+<div class="countdown-wrap">
+  <div class="countdown-label">&#9888; Shoot Slots Filling This Week:</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-num"><span class="n" id="cd-d">07</span><span class="l">Days</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-h">00</span><span class="l">Hours</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-m">00</span><span class="l">Min</span></div>
+    <span class="cd-sep">:</span>
+    <div class="cd-num"><span class="n" id="cd-s">00</span><span class="l">Sec</span></div>
+  </div>
+</div>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<div class="proof-strip">
+  <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  <div class="proof-text">Trusted Production For <strong>50+ Long Island Businesses</strong></div>
+  <div class="proof-brands">CHASE <span class="dot">◆</span> FORBES <span class="dot">◆</span> DREAMSEAT <span class="dot">◆</span> FUELED BY CULTURE</div>
+</div>
+
+<!-- ============ BIG CLAIM ============ -->
+<div class="big-claim">
+  <h2>One Day. <span class="teal">12 Weeks Of Content.</span><br>Phone Ringing. <span class="gold">Guaranteed.</span></h2>
+  <p>This is everything you need to take back the homeowners your competitors are silently winning every night while you wait on referrals.</p>
+</div>
+
+<!-- ============ AGITATION CARDS ============ -->
+<div class="agit-section">
+  <div class="page-wrap">
+    <div class="agit-label">Here's What's Really Happening</div>
+
+    <div class="agit-card">
+      <span class="x">✗</span>It is 9pm. A homeowner in your service area just realized their AC quit. Their roof is leaking. Their drain is backed up. <strong>They are not calling their neighbor.</strong> They are not waiting until morning. They are on their phone right now, scrolling Facebook and opening Google, looking for the company that looks the most credible on their screen in the next 30 seconds.
+    </div>
+
+    <div class="agit-card loud">
+      <span class="x">✗</span>They pick the company whose face they have already seen before. <span class="em-underline">Not the best company. The most visible one.</span> And right now that is probably not you.
+    </div>
+
+    <div class="agit-card">
+      <span class="x">✗</span>There is at least one HVAC company, one roofer, one plumber, one electrician in your service area whose ads have been showing up on Facebook and Google for the last 90 days. <strong>Not because they are better than you.</strong> Because they made one decision to show up on camera before anyone needed them. Now when the emergency hits at 9pm, the homeowner does not search at all. They already know who to call.
+    </div>
+
+    <div class="agit-card loud">
+      <span class="x">✗</span>Word of mouth built your business. But word of mouth only travels as far as the people who already know your name. The homeowner on the other side of your service area has never heard of you. And right now <span class="em-underline">they are handing a deposit to your competitor.</span>
+    </div>
+
+    <div class="agit-card">
+      <span class="x">✗</span>Every week you stay invisible on Facebook, Instagram, and Google is a week your competitor gets further ahead and harder to catch. Peak season is only 90 days. The companies fully booked by July did not get lucky. <strong>They were on camera in March.</strong>
+    </div>
+
+    <div class="agit-card loud">
+      We fix all of it. <span class="em-underline">In one day. Guaranteed in 60.</span> Below is exactly what you get.
+    </div>
+  </div>
+</div>
+
+<!-- ============ MID CTA ============ -->
+<div class="mid-cta">
+  <div class="hand-arrow">▼</div>
+  <button class="mid-cta-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    Show Me What I Get &rarr;
+  </button>
+  <div class="mid-cta-sub"><span class="gold">$6,500 ALL-IN</span> &middot; Phone ringing in 12 days</div>
+</div>
+
+<!-- ============ STAT ROW ============ -->
+<div class="stat-row">
+  <div class="stat-box">
+    <div class="stat-num">1 Day</div>
+    <div class="stat-label">Shoot</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num">3 Ads</div>
+    <div class="stat-label">Direct Response</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num">48</div>
+    <div class="stat-label">Videos</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num">12 Days</div>
+    <div class="stat-label">To Live</div>
+  </div>
+</div>
 
 <!-- ============ WHAT YOU GET (VALUE STACK) ============ -->
-<section class="stack-section">
-  <div class="wrap-wide">
-    <div style="text-align:center;">
-      <span class="eyebrow">What You Get Today</span>
-    </div>
-    <h2 class="section-h">Here's <span class="hi">Exactly What You Get</span> When You Book Your Shoot Day:</h2>
+<div class="stack-section">
+  <div class="stack-eyebrow">What You Get Today</div>
+  <h2 class="stack-h">Here's Exactly What You Get<br>For <span class="teal">$6,500.</span></h2>
 
-    <div class="stack-list">
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>Full Production Crew At Your Business <span class="val">$4,000 VALUE</span></h4>
-          <p>Director, camera ops, lighting, sound, on-set creative direction. Broadcast-grade gear. <strong>We bring it all. You show up.</strong></p>
-        </div>
+  <div class="stack-list">
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>Full Production Crew At Your Business</h4>
+        <p>Director, camera ops, lighting, sound, on-set creative direction. Broadcast-grade gear. <strong>We bring it all. You show up.</strong></p>
       </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>3 Direct-Response Ads Built To Make Your Phone Ring <span class="val">$2,500 VALUE</span></h4>
-          <p>Not awareness pieces. Not vibes. <strong>Three ads engineered for one job: bring you real leads.</strong></p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>48 Videos. 4 Per Week. 12 Weeks Straight. <span class="val">$3,500 VALUE</span></h4>
-          <p>You stay in front of homeowners <strong>4 times a week for the full 12-week peak window</strong>. Never go dark.</p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>We Edit. We Post. We Handle Everything. <span class="val">$1,500 VALUE</span></h4>
-          <p>Cut, color, sound, captions, scheduling, posting. <strong>You don't touch a single piece of the workflow.</strong></p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>Google Business Profile Fully Optimized <span class="val">$500 VALUE</span></h4>
-          <p>So when a homeowner Googles your trade at 9pm in your service area, <strong>you come up</strong>. End-to-end setup.</p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>Live In 12 Business Days <span class="val">$500 VALUE</span></h4>
-          <p>From shoot day to live ads + posting feed in 12 business days. <strong>Not weeks. Not someday.</strong></p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>You Own Every Frame. Permanently. <span class="val">PRICELESS</span></h4>
-          <p>Every clip, every cut, every ad. <strong>Yours forever. No usage windows. No licensing fees.</strong></p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>No Retainer. No Long-Term Contract. <span class="val">PRICELESS</span></h4>
-          <p>Run it yourself going forward, or we stay involved. <strong>Your call. Not ours.</strong></p>
-        </div>
-      </div>
-
-      <div class="stack-item">
-        <div class="check">✓</div>
-        <div>
-          <h4>6-Month Comeback Option <span class="val">$1,000 VALUE</span></h4>
-          <p>Six months in, if your phone has been ringing and you want another round? <strong>We come back. Same deal.</strong></p>
-        </div>
-      </div>
-
+      <span class="val">$4,000 VALUE</span>
     </div>
 
-    <!-- TOTAL VALUE BOX -->
-    <div class="total-box">
-      <div class="title">Add It All Up...</div>
-      <div class="total-rows">
-        <div class="total-row"><span>Production Day</span><span>$4,000</span></div>
-        <div class="total-row"><span>3 Direct Response Ads</span><span>$2,500</span></div>
-        <div class="total-row"><span>48 Videos · 12 Weeks</span><span>$3,500</span></div>
-        <div class="total-row"><span>Edit + Post + Workflow</span><span>$1,500</span></div>
-        <div class="total-row"><span>Google Business Profile</span><span>$500</span></div>
-        <div class="total-row"><span>12-Day Delivery</span><span>$500</span></div>
-        <div class="total-row"><span>6-Month Comeback Option</span><span>$1,000</span></div>
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>3 Ads Built To Bring In Real Jobs</h4>
+        <p>Not awareness pieces. <strong>Three direct-response ads engineered for one job: bring you leads.</strong></p>
       </div>
-      <div class="real-value">
-        <div class="real-value-label">Real Combined Value</div>
-        <div class="real-value-amount">$13,500</div>
-        <div class="today-label">Your Investment Today</div>
-        <div class="today-amount"><span class="dollar">$</span>6,500</div>
-        <div class="today-sub">All-In · 50% To Book · 50% On Delivery</div>
-      </div>
+      <span class="val">$2,500 VALUE</span>
     </div>
 
-    <div style="text-align:center; margin-top: 28px;">
-      <div class="hand-arrow left">▶</div>
-      <a href="#apply" class="cta-btn">YES! Book My Shoot Day Now <span class="arrow">→</span></a>
-      <div class="cta-sub"><span class="green">$6,500 ALL-IN</span> · No retainer · Phone ringing guaranteed</div>
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>48 Videos &middot; 4x/Week &middot; 12 Weeks</h4>
+        <p>You stay in front of homeowners <strong>4 times a week for the full 12-week peak window.</strong></p>
+      </div>
+      <span class="val">$3,500 VALUE</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>We Edit. We Post. We Handle Everything.</h4>
+        <p>Cut, color, sound, captions, scheduling, posting. <strong>You don't touch the workflow.</strong></p>
+      </div>
+      <span class="val">$1,500 VALUE</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>Google Business Profile Fully Optimized</h4>
+        <p>Homeowner Googles your trade at 9pm in your service area? <strong>You come up.</strong> Optimized end-to-end.</p>
+      </div>
+      <span class="val">$500 VALUE</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>Live In 12 Business Days</h4>
+        <p>From shoot day to live ads + posting feed in 12 business days. <strong>Not weeks. Not someday.</strong></p>
+      </div>
+      <span class="val">$500 VALUE</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>You Own Every Frame. Permanently.</h4>
+        <p>Every clip, every cut, every ad. <strong>Yours forever. No usage windows. No licensing fees.</strong></p>
+      </div>
+      <span class="val priceless">PRICELESS</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>No Retainer. No Long-Term Contract.</h4>
+        <p>Run it yourself going forward, or we stay involved. <strong>Your call. Not ours.</strong></p>
+      </div>
+      <span class="val priceless">PRICELESS</span>
+    </div>
+
+    <div class="stack-item">
+      <span class="ck">✓</span>
+      <div class="body">
+        <h4>6-Month Comeback Option</h4>
+        <p>Six months in, want another round? <strong>We come back. Same deal.</strong></p>
+      </div>
+      <span class="val">$1,000 VALUE</span>
     </div>
   </div>
-</section>
 
-<!-- ============ BONUS ============ -->
-<section class="bonus-section">
-  <div class="wrap">
-    <div class="bonus-box">
-      <div class="bonus-stamp">★ FREE BONUS ★</div>
-      <h3>BONUS #1 — A 30-Minute Authority Interview <span style="color:var(--red);">($3,500 VALUE)</span></h3>
-      <p>
-        We sit you down on camera for 30 minutes and let you talk. <strong>Who you are. What you do. How you protect homeowners. Why you're different.</strong>
-      </p>
-      <p>
-        We turn that into clips, post it to YouTube, run pieces of it as ads, and put it on your website. <strong>A video like this could easily cost thousands on its own.</strong> We include it free because it makes everything else convert better.
-      </p>
-      <div class="bonus-pill">Standalone Value: <span class="red">$3,500</span> · Yours FREE Today</div>
+  <!-- TOTAL VALUE BOX -->
+  <div class="total-box">
+    <div class="title">When You Add It All Up...</div>
+    <div class="total-row"><span>Full Production Day</span><span>$4,000</span></div>
+    <div class="total-row"><span>3 Direct Response Ads</span><span>$2,500</span></div>
+    <div class="total-row"><span>48 Videos &middot; 12 Weeks</span><span>$3,500</span></div>
+    <div class="total-row"><span>Edit + Post + Workflow</span><span>$1,500</span></div>
+    <div class="total-row"><span>Google Business Profile</span><span>$500</span></div>
+    <div class="total-row"><span>12-Day Delivery</span><span>$500</span></div>
+    <div class="total-row"><span>6-Month Comeback Option</span><span>$1,000</span></div>
+
+    <div class="total-stack">
+      <div class="label">Real Combined Value</div>
+      <div class="value">$13,500</div>
+      <div class="today">Your Investment Today</div>
+      <div class="price"><span class="dollar">$</span>6,500</div>
+      <div class="price-sub">All-In &middot; 50% To Book &middot; 50% On Delivery</div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- ============ BONUS CALLOUT ============ -->
+<div class="bonus-section">
+  <div class="bonus-box">
+    <div class="bonus-stamp">★ Free Bonus With Every Shoot ★</div>
+    <h3 class="bonus-h">A 30-Minute <span class="gold">Authority Interview</span></h3>
+    <p>
+      We sit you down on camera for 30 minutes and let you talk. <strong>Who you are. What you do. How you protect homeowners. Why you're different.</strong>
+    </p>
+    <p>
+      We turn that into clips, post it to YouTube, run pieces of it as ads, and put it on your website. <strong>A video like this could easily cost thousands on its own.</strong> We include it free because it makes everything else convert better.
+    </p>
+    <div class="bonus-value"><span class="strike">$3,500 Value</span> Yours Free Today</div>
+  </div>
+</div>
 
 <!-- ============ GUARANTEE ============ -->
-<section class="guarantee-section">
-  <div class="wrap">
-    <div class="guarantee-box">
-      <div class="seal">
-        <div class="big">60</div>
-        <div class="day">Day</div>
-        <div class="promise">Iron-Clad Promise</div>
-      </div>
-
-      <h2 class="guarantee-h">Your Phone Ringing In <span class="hi">60 Days</span>.<br>Or We <span class="red">Come Back And Reshoot Free</span>.</h2>
-
-      <p>
-        Before we shoot a single frame, we agree on <strong>one specific goal in writing</strong>. A real number. Phone calls. Form submissions. Jobs booked. Whatever moves your business.
-      </p>
-      <p>
-        If we don't hit that number in 60 days, <strong>we come back and shoot all new content at no charge.</strong> No drama. No excuses. No fine print.
-      </p>
-
-      <div class="conditions">
-        <div class="lbl">Two Conditions Apply</div>
-        <div class="c">
-          <span class="n">1</span>
-          <span>Your ads run at the recommended budget for your trade (<strong>$30–$50/day</strong>) and tracking is active.</span>
-        </div>
-        <div class="c">
-          <span class="n">2</span>
-          <span>Your team responds to inbound leads <strong>within 24 hours</strong>. (This one matters most.)</span>
-        </div>
-      </div>
+<div class="guarantee">
+  <div class="guarantee-seal">
+    <div class="guarantee-seal-inner">
+      <span class="big">60</span>
+      <span class="day">Day</span>
+      <span class="promise">Iron-Clad Promise</span>
     </div>
   </div>
-</section>
+
+  <h2>Your Phone Ringing In 60 Days. <span class="teal">Or We Reshoot The Whole Thing Free.</span></h2>
+  <p>
+    Before we shoot a single frame, we agree on <strong>one specific goal in writing</strong>. A real number. Phone calls. Form submissions. Jobs booked. Whatever moves your business.
+  </p>
+  <p>
+    If we don't hit that number in 60 days, <strong>we come back and shoot all new content at no charge.</strong> No drama. No excuses. No fine print.
+  </p>
+
+  <div class="guarantee-terms">
+    <div class="lbl">// Two Simple Conditions //</div>
+    <div class="t"><span class="n">1</span><span>Your ads run at the recommended budget for your trade (<strong>$30 to $50 per day</strong>) and tracking is active.</span></div>
+    <div class="t"><span class="n">2</span><span>Your team responds to inbound leads <strong>within 24 hours</strong>. (This one matters most.)</span></div>
+  </div>
+</div>
 
 <!-- ============ REQUIREMENTS ============ -->
-<section class="req-section">
-  <div class="wrap">
-    <div style="text-align:center;">
-      <span class="eyebrow">What We Need From You</span>
-    </div>
-    <h2 class="section-h">Only <span class="hi">Two Things</span>. That's It.</h2>
-    <p class="section-sub">Everything else is on us. These two are non-negotiable because without them the guarantee can't hold.</p>
+<div class="requirements-section">
+  <div class="stack-eyebrow">What We Need From You</div>
+  <h2 class="stack-h">Only Two Things. <span class="teal">That's It.</span></h2>
 
-    <div class="req-grid">
-      <div class="req-card">
-        <div class="num">1</div>
-        <h4>$30–$50/day Ad Spend</h4>
-        <p>You pay Meta directly. <strong>We never touch your ad budget.</strong> Amount depends on your trade and service area.</p>
-      </div>
-      <div class="req-card">
-        <div class="num">2</div>
-        <h4>24-Hour Lead Response</h4>
-        <p>When a lead comes in, your team calls back <strong>within 24 hours</strong>. Faster is better. This is the most important rule.</p>
-      </div>
+  <div class="req-grid">
+    <div class="req-card">
+      <div class="num">1</div>
+      <h4>$30 to $50/Day Ad Spend</h4>
+      <p>You pay Meta directly. <strong>We never touch your ad budget.</strong> Amount depends on your trade + service area.</p>
+    </div>
+    <div class="req-card">
+      <div class="num">2</div>
+      <h4>24-Hour Lead Response</h4>
+      <p>When a lead comes in, your team calls back <strong>within 24 hours.</strong> Faster is better.</p>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ============ TESTIMONIALS ============ -->
-<section class="testimonials">
-  <div class="wrap-wide">
-    <div style="text-align:center;">
-      <span class="eyebrow">What People Say About Our Work</span>
+<div class="testimonials">
+  <h2>What People Say <span class="teal">About Our Work</span></h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Their creative team built campaigns that actually move product, not just rack up views. They get brand, culture, and ROI all at once."</p>
+      <div class="testimonial-author">Chandler Suprina <span>&middot; Owner, DreamSeat</span></div>
     </div>
-    <h2 class="section-h">Real Brands. <span class="hi">Real Results.</span></h2>
-
-    <div class="t-grid">
-      <div class="t-card">
-        <div class="stars">★★★★★</div>
-        <p>"Their creative team built campaigns that actually move product, not just rack up views. They get brand, culture, and ROI all at once."</p>
-        <div class="author">Chandler Suprina<small>Owner, DreamSeat</small></div>
-      </div>
-      <div class="t-card">
-        <div class="stars">★★★★★</div>
-        <p>"Not your typical agency. Culture-driven, fast-moving, focused on impact. The storytelling, the offer structure, the execution. All elite."</p>
-        <div class="author">Marcus Damas<small>Founder, Fueled By Culture</small></div>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 26px; padding-top: 20px; border-top: 2px dashed var(--grey-300);">
-      <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-700); margin-bottom: 8px;">As Seen Producing Work For:</div>
-      <div style="font-size: 16px; font-weight: 900; color: #000; letter-spacing: 0.04em;">
-        CHASE &nbsp;·&nbsp; FORBES &nbsp;·&nbsp; DREAMSEAT &nbsp;·&nbsp; FUELED BY CULTURE
-      </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p>"Not your typical agency. Culture-driven, fast-moving, focused on impact. The storytelling, the offer structure, the execution. All elite."</p>
+      <div class="testimonial-author">Marcus Damas <span>&middot; Founder, Fueled By Culture</span></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ============ FAQ ============ -->
-<section class="faq-section">
-  <div class="wrap">
-    <div style="text-align:center;">
-      <span class="eyebrow">Questions People Ask</span>
-    </div>
-    <h2 class="section-h">Frequently Asked <span class="hi">Questions</span></h2>
-
-    <div class="faq-wrap faq">
-      <details>
-        <summary>What's the total cost? Anything else after?</summary>
-        <div class="a"><strong>$6,500 all-in.</strong> Split 50/50 — half upfront to book, half on delivery. Nothing else after that. The only additional spend is the $30–$50/day Meta ad budget you pay directly. We never touch it.</div>
-      </details>
-      <details>
-        <summary>Do I really own everything?</summary>
-        <div class="a"><strong>Yes.</strong> Every raw clip, every edit, every ad. Yours forever. No usage windows. No licensing fees. No "use it for 12 months then pay again." That's not how we operate.</div>
-      </details>
-      <details>
-        <summary>What does the guarantee actually cover?</summary>
-        <div class="a">Before we shoot, we agree in writing on one specific number — phone calls, form submissions, or jobs booked. <strong>If we don't hit that number in 60 days, we come back and shoot all new content at no charge.</strong> Two conditions: ads run at recommended budget + team responds to leads within 24 hours.</div>
-      </details>
-      <details>
-        <summary>I've never run ads before. Am I a fit?</summary>
-        <div class="a"><strong>Perfect.</strong> You're exactly who this is built for. We set up everything — pixel, tracking, audience, campaigns. You just need to commit to $30–$50/day on Meta and call your leads back. That's it.</div>
-      </details>
-      <details>
-        <summary>How fast can we actually shoot?</summary>
-        <div class="a">Once your deposit is in, we typically schedule the shoot within 2–3 weeks. <strong>Live ads + posting feed in 12 business days from the shoot.</strong> Roughly 4–5 weeks from "yes" to "phone ringing."</div>
-      </details>
-      <details>
-        <summary>My phone is already ringing. Do I need this?</summary>
-        <div class="a">If you're at full capacity and happy, no. If you want to fill gap weeks, raise prices because demand is too high, or build a brand that doesn't depend on word-of-mouth alone — <strong>yes.</strong></div>
-      </details>
-      <details>
-        <summary>Do you only work with HVAC companies?</summary>
-        <div class="a">No. <strong>HVAC, plumbing, roofing, electrical, landscaping, pool, GCs, remodelers, painters, pavers</strong> — any Long Island trades or home service business with real margin per job.</div>
-      </details>
-    </div>
+<div class="faq-section">
+  <h2>Questions <span class="teal">People Ask</span></h2>
+  <div class="faq">
+    <details>
+      <summary>What's the total cost? Anything else after?</summary>
+      <div class="a"><strong>$6,500 all-in.</strong> Split 50/50 — half up front to book the shoot, half on delivery. Nothing else after. The only additional spend is the $30–$50/day Meta ad budget which you pay Meta directly. We never touch it.</div>
+    </details>
+    <details>
+      <summary>Do I really own everything?</summary>
+      <div class="a"><strong>Yes. Every frame.</strong> Raw clips, edits, ads. Yours forever. No usage windows. No licensing fees. No "you can use it for 12 months and then you pay again." That's not how we operate.</div>
+    </details>
+    <details>
+      <summary>What does the guarantee actually cover?</summary>
+      <div class="a">Before we shoot, we agree in writing on one specific number — phone calls, form submissions, or jobs booked. <strong>If we don't hit that number in 60 days, we come back and shoot all new content at no extra charge.</strong> Two conditions: ads run at recommended budget + team responds to leads within 24 hours.</div>
+    </details>
+    <details>
+      <summary>I've never run ads before. Am I a fit?</summary>
+      <div class="a"><strong>Perfect.</strong> You're exactly who this is for. We set up everything — pixel, tracking, audience, campaigns. You just need to commit to $30–$50/day on Meta and call your leads back. That's it.</div>
+    </details>
+    <details>
+      <summary>How fast can we actually shoot?</summary>
+      <div class="a">Once your deposit is in, we typically schedule the shoot within 2–3 weeks. <strong>Live ads + posting feed within 12 business days of the shoot.</strong> Roughly 4–5 weeks from "yes" to "phone ringing."</div>
+    </details>
+    <details>
+      <summary>My phone is already ringing. Do I need this?</summary>
+      <div class="a">If you're at full capacity and happy, no. If you want to fill gap weeks, raise prices because demand is too high, or build a brand that doesn't depend on word-of-mouth alone — <strong>yes.</strong></div>
+    </details>
+    <details>
+      <summary>Do you only work with HVAC?</summary>
+      <div class="a">No. <strong>HVAC, plumbing, roofing, electrical, landscaping, pool, GCs, remodelers, painters, pavers</strong> — any Long Island trades or home service business with real margin per job.</div>
+    </details>
   </div>
-</section>
+</div>
+
+<!-- ============ MID CTA 2 ============ -->
+<div class="mid-cta">
+  <div class="hand-arrow">▼</div>
+  <button class="mid-cta-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    Book My Shoot Day Now &rarr;
+  </button>
+  <div class="mid-cta-sub"><span class="gold">$6,500</span> &middot; 50% to book &middot; Guaranteed in 60 days</div>
+</div>
 
 <!-- ============ FORM ============ -->
-<section class="form-section" id="apply">
-  <div class="form-block">
-    <div class="form-eyebrow">★ BOOK MY SHOOT DAY ★</div>
-    <h2>YES, I Want My Phone <span class="underline">Ringing In 12 Days</span>.</h2>
-    <p class="sub">Fill this out and we'll reach back within 24 hours to confirm fit, lock the goal we'll write into the guarantee, and send the $3,250 deposit invoice.</p>
+<div class="form-block" id="apply">
+  <div class="form-spots">
+    <span class="rd"></span>
+    <span>Limited Shoot Slots This Month</span>
+  </div>
+  <h2>YES, Book My <span class="teal">Shoot Day.</span></h2>
+  <div class="form-sub">
+    Reservation request reviewed within 24 hours. We confirm fit, agree on the goal we'll write into the guarantee, then send the $3,250 deposit invoice via QuickBooks.
+  </div>
 
-    <div class="form-card">
-      <form id="reserveForm" onsubmit="handleReserveSubmit(event)">
-        <div class="fg">
-          <label>First Name</label>
-          <input type="text" name="first_name" placeholder="Your first name" required>
-        </div>
-        <div class="fg">
-          <label>Last Name</label>
-          <input type="text" name="last_name" placeholder="Your last name" required>
-        </div>
-        <div class="fg">
-          <label>Business Name</label>
-          <input type="text" name="business_name" placeholder="Your business name" required>
-        </div>
-        <div class="fg">
-          <label>Email</label>
-          <input type="email" name="email" placeholder="you@business.com" required>
-        </div>
-        <div class="fg">
-          <label>Phone</label>
-          <input type="tel" name="phone" placeholder="(631) 555-0123" required>
-        </div>
-        <div class="fg">
-          <label>Trade</label>
-          <select name="trade" required>
-            <option value="" disabled selected>Select your trade</option>
-            <option>HVAC</option>
-            <option>Plumbing</option>
-            <option>Roofing</option>
-            <option>Electrical</option>
-            <option>Landscaping / Hardscape</option>
-            <option>Pool</option>
-            <option>General Contractor / Remodel</option>
-            <option>Painting</option>
-            <option>Other Home Service</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>Service Area (Town or Zip)</label>
-          <input type="text" name="service_area" placeholder="Northport, Commack, etc." required>
-        </div>
-        <div class="fg">
-          <label>Current Ad Spend</label>
-          <select name="ad_spend" required>
-            <option value="" disabled selected>What are you spending now?</option>
-            <option>Nothing on ads</option>
-            <option>Under $30/day</option>
-            <option>$30 to $50/day</option>
-            <option>$50/day or more</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>How Soon?</label>
-          <select name="timeline" required>
-            <option value="" disabled selected>Pick a timeline</option>
-            <option>As soon as possible</option>
-            <option>Within 30 days</option>
-            <option>Within 60 days</option>
-            <option>Exploring options</option>
-          </select>
-        </div>
-        <div class="fg">
-          <label>What's the goal? (calls / form submits / jobs booked)</label>
-          <textarea name="goal" placeholder="The number that would make this worth it for your business" rows="3"></textarea>
-        </div>
-
-        <button type="submit" class="form-cta">BOOK MY SHOOT DAY NOW <span class="arrow">→</span></button>
-        <div class="form-disc"><strong>No payment now.</strong> We confirm fit + lock the goal first. The $3,250 deposit invoice goes out via QuickBooks once we set your shoot date together.</div>
-      </form>
-
-      <div class="form-success" id="formSuccess">
-        <div class="check-big">✓</div>
-        <h4>You're On The Calendar.</h4>
-        <p>We received your reservation. Expect a confirmation email and a call from our team within 24 hours to lock the shoot date and walk through the guarantee.</p>
+  <div class="form-card">
+    <form id="reserveForm" onsubmit="handleReserveSubmit(event)">
+      <div class="fg">
+        <label>First Name</label>
+        <input type="text" name="first_name" placeholder="Your first name" required>
       </div>
+      <div class="fg">
+        <label>Last Name</label>
+        <input type="text" name="last_name" placeholder="Your last name" required>
+      </div>
+      <div class="fg">
+        <label>Business Name</label>
+        <input type="text" name="business_name" placeholder="Your business name" required>
+      </div>
+      <div class="fg">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="you@business.com" required>
+      </div>
+      <div class="fg">
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="(631) 555-0123" required>
+      </div>
+      <div class="fg">
+        <label>Trade</label>
+        <select name="trade" required>
+          <option value="" disabled selected>Select your trade</option>
+          <option>HVAC</option>
+          <option>Plumbing</option>
+          <option>Roofing</option>
+          <option>Electrical</option>
+          <option>Landscaping / Hardscape</option>
+          <option>Pool</option>
+          <option>General Contractor / Remodel</option>
+          <option>Painting</option>
+          <option>Other Home Service</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Service Area (Town or Zip)</label>
+        <input type="text" name="service_area" placeholder="Northport, Commack, etc." required>
+      </div>
+      <div class="fg">
+        <label>Current Ad Spend</label>
+        <select name="ad_spend" required>
+          <option value="" disabled selected>What are you spending now?</option>
+          <option>Nothing on ads</option>
+          <option>Under $30/day</option>
+          <option>$30 to $50/day</option>
+          <option>$50/day or more</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>How Soon?</label>
+        <select name="timeline" required>
+          <option value="" disabled selected>Pick a timeline</option>
+          <option>As soon as possible</option>
+          <option>Within 30 days</option>
+          <option>Within 60 days</option>
+          <option>Exploring options</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>What's the goal? (calls / form submits / jobs booked)</label>
+        <textarea name="goal" placeholder="The number that would make this worth it for your business" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="form-cta">YES! Book My Shoot Day &rarr;</button>
+      <div class="form-urg"><span class="rd"></span> Limited shoot slots filling fast</div>
+    </form>
+    <div class="form-disc">
+      <strong>No payment now.</strong> We confirm fit + lock the goal first. $3,250 (50%) deposit invoice goes out via QuickBooks once we set the shoot date together.
+    </div>
+
+    <!-- Success state -->
+    <div class="form-success" id="formSuccess">
+      <div class="check">✓</div>
+      <h4>You're On The Calendar.</h4>
+      <p>We received your reservation. Expect a confirmation email and a call from our team within 24 hours to lock the shoot date and walk through the guarantee.</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ============ FINAL RECAP ============ -->
-<section class="recap-section">
-  <div class="wrap">
-    <h2 class="recap-h">Here's <span class="hi">EVERYTHING You Get</span> Today For <span style="color: var(--green);">$6,500</span>:</h2>
+<!-- ============ FINAL RECAP (Hormozi-style restate-everything) ============ -->
+<div class="recap-section">
+  <div class="wide-wrap">
+    <h2 class="recap-h">Let Me Recap <span class="teal">Everything You Get</span> Today:</h2>
+
     <ul class="recap-list">
-      <li><span class="check">✓</span><span><strong>Full Production Day</strong> at your business <small>$4,000</small></span></li>
-      <li><span class="check">✓</span><span><strong>3 Direct-Response Ads</strong> built to make your phone ring <small>$2,500</small></span></li>
-      <li><span class="check">✓</span><span><strong>48 Videos</strong> over 12 weeks straight <small>$3,500</small></span></li>
-      <li><span class="check">✓</span><span><strong>Edit + Post + Schedule</strong> — we handle it all <small>$1,500</small></span></li>
-      <li><span class="check">✓</span><span><strong>Google Business Profile</strong> fully optimized <small>$500</small></span></li>
-      <li><span class="check">✓</span><span><strong>12-Business-Day Delivery</strong> from shoot to live <small>$500</small></span></li>
-      <li><span class="check">✓</span><span><strong>Own Every Frame</strong> forever, no usage windows <small>PRICELESS</small></span></li>
-      <li><span class="check">✓</span><span><strong>No Retainer, No Contract</strong> <small>PRICELESS</small></span></li>
-      <li><span class="check">✓</span><span><strong>6-Month Comeback Option</strong> <small>$1,000</small></span></li>
-      <li><span class="check">✓</span><span><strong>BONUS: 30-Min Authority Interview</strong> <small>$3,500 FREE</small></span></li>
-      <li><span class="check">✓</span><span><strong>60-Day Phone Ringing Guarantee</strong> <small>PRICELESS</small></span></li>
+      <li><span class="ck">✓</span><span><strong>Full Production Day</strong> at your business <small>$4,000</small></span></li>
+      <li><span class="ck">✓</span><span><strong>3 Direct-Response Ads</strong> built to make your phone ring <small>$2,500</small></span></li>
+      <li><span class="ck">✓</span><span><strong>48 Videos</strong> posted 4x/week for 12 weeks <small>$3,500</small></span></li>
+      <li><span class="ck">✓</span><span><strong>Edit + Post + Schedule</strong> &mdash; we handle it all <small>$1,500</small></span></li>
+      <li><span class="ck">✓</span><span><strong>Google Business Profile</strong> fully optimized <small>$500</small></span></li>
+      <li><span class="ck">✓</span><span><strong>12-Business-Day Delivery</strong> from shoot to live <small>$500</small></span></li>
+      <li><span class="ck">✓</span><span><strong>Own Every Frame</strong> forever, no usage windows <small>PRICELESS</small></span></li>
+      <li><span class="ck">✓</span><span><strong>No Retainer, No Contract</strong> <small>PRICELESS</small></span></li>
+      <li><span class="ck">✓</span><span><strong>6-Month Comeback Option</strong> <small>$1,000</small></span></li>
+      <li><span class="ck">✓</span><span><strong>BONUS: 30-Min Authority Interview</strong> <small>$3,500 FREE</small></span></li>
+      <li><span class="ck">✓</span><span><strong>60-Day Phone Ringing Guarantee</strong> <small>PRICELESS</small></span></li>
     </ul>
 
-    <div style="text-align:center; margin-top: 30px;">
-      <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-700); margin-bottom: 4px;">Real Combined Value:</div>
-      <div style="font-size: 36px; font-weight: 900; color: var(--grey-500); text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 4px; line-height: 1; margin-bottom: 14px;">$13,500</div>
-      <div style="font-size: 14px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; color: #000; margin-bottom: 4px;">Today Only:</div>
-      <div style="font-size: 56px; font-weight: 900; color: var(--green); line-height: 1; letter-spacing: -0.02em; margin-bottom: 22px;"><span style="font-size: 0.6em; vertical-align: top;">$</span>6,500</div>
+    <div class="recap-final">
+      <div class="val-lbl">Real Combined Value</div>
+      <div class="val-strike">$13,500</div>
+      <div class="today-lbl">Today Only</div>
+      <div class="today-price"><span class="dollar">$</span>6,500</div>
 
       <div class="hand-arrow">▼</div>
-      <a href="#apply" class="cta-btn">YES! Book My Shoot Day Now <span class="arrow">→</span></a>
-      <div class="cta-sub"><span class="green">50% Down · 50% On Delivery · No Retainer Ever</span></div>
+      <button class="cta-main" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+        YES! Book My Shoot Day Now &rarr;
+      </button>
+      <div class="cta-sub"><span class="gold">50% DOWN &middot; 50% ON DELIVERY &middot; NO RETAINER EVER</span></div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- ============ P.S. ============ -->
-<section class="ps-section">
-  <div class="wrap">
-    <div class="ps-card">
-      <span class="ps-label">P.S. — Read This Part</span>
-      <p style="margin-bottom: 14px;">Here's the math. If you book <span class="hi">one HVAC system replacement, one new roof, one panel upgrade, one major remodel</span> out of the 48 videos and 3 ads we run over 12 weeks, you've already paid for this entire investment. <strong>Twice.</strong> And you still own every frame forever.</p>
-      <p>The companies dominating Long Island on Facebook and Google right now didn't get there by accident. <strong>They booked the shoot day. They got on camera. They showed up where the homeowner is looking at 9pm.</strong> You can keep waiting on referrals while they take the next ten jobs in your zip code, or you can book the shoot.</p>
-    </div>
+<div class="ps-section">
+  <div class="ps-card">
+    <span class="ps-label">P.S. &mdash; Read This Part</span>
+    Here's the math. If you book <span class="hi">one HVAC system replacement, one new roof, one panel upgrade, or one major remodel</span> out of the 48 videos and 3 ads we run for you over 12 weeks, you've already paid for this entire investment. <strong>Twice.</strong> And you still own every frame forever.
+    <br><br>
+    The companies dominating Long Island on Facebook and Google right now did not get there by accident. <strong>They booked the shoot day. They got on camera. They showed up where the homeowner is looking at 9pm.</strong> You can keep waiting on referrals while they take the next ten jobs in your zip code — or you can book the shoot.
   </div>
-</section>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="tag">This Is <span class="teal">Long Island</span> Marketing</div>
-  <div>Northport, Long Island · <a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
-  <div style="margin-top: 10px;">&copy; 2026 · All rights reserved.</div>
+  <div class="tag">This Is Long Island Marketing</div>
+  <div>Northport, Long Island &middot; <a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
+  <div style="margin-top: 10px;">&copy; 2026 &middot; All rights reserved.</div>
 </footer>
 
 <!-- ============ STICKY BAR ============ -->
 <div class="sticky-bar" id="stickyBar">
-  <span class="sticky-text"><span class="y">$6,500</span> · Phone ringing in 60 days · GUARANTEED</span>
-  <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Book My Shoot →</button>
+  <span class="sticky-text"><span class="gold">$6,500</span> &middot; Phone ringing in 60 days &middot; <strong>GUARANTEED</strong></span>
+  <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Book My Shoot &rarr;</button>
   <button class="sticky-x" onclick="closeStickyBar()" aria-label="Close">&times;</button>
 </div>
 
@@ -1490,7 +1904,7 @@
   // ------------------------------------------------------------
   // GHL: Replace RESERVE_ENDPOINT with your GoHighLevel Webhook URL
   // (Settings → API → Webhooks → Add Webhook). Or keep the
-  // Formsubmit URL — emails go to trevor@thisislongisland.com.
+  // Formsubmit URL below — emails go to trevor@thisislongisland.com.
   // ============================================================
   var RESERVE_ENDPOINT = 'https://formsubmit.co/ajax/trevor@thisislongisland.com';
 
@@ -1514,6 +1928,7 @@
 
     btn.disabled = true;
     btn.textContent = 'Submitting...';
+    btn.style.animation = 'none';
 
     var done = function() {
       form.style.display = 'none';
@@ -1528,6 +1943,27 @@
     }).then(function(r) { return r.json().catch(function() { return null; }); })
       .then(done).catch(done);
   }
+
+  // ============================================================
+  // COUNTDOWN TIMER — 7 days from page load
+  // ============================================================
+  var end = new Date();
+  end.setDate(end.getDate() + 7);
+  end.setHours(23, 59, 59, 0);
+  function tick() {
+    var now = new Date();
+    var diff = Math.max(0, end - now);
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  tick();
+  setInterval(tick, 1000);
 
   // ============================================================
   // STICKY BAR
