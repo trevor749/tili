@@ -7,105 +7,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #050505;
-    color: #fff;
-    padding: 60px 24px 80px;
-    min-height: 100vh;
-    line-height: 1.6;
-  }
+  body { font-family: 'Inter', sans-serif; background: #050505; color: #fff; padding: 60px 24px 80px; min-height: 100vh; line-height: 1.6; }
   .wrap { max-width: 640px; margin: 0 auto; }
-  h1 {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(36px, 6vw, 56px);
-    color: #1bb0ce;
-    letter-spacing: 0.01em;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-  .sub {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 36px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-  }
+  h1 { font-family: 'Anton', sans-serif; font-size: clamp(36px, 6vw, 56px); color: #1bb0ce; letter-spacing: 0.01em; margin-bottom: 6px; text-transform: uppercase; line-height: 1; }
+  .sub { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: #888; margin-bottom: 36px; letter-spacing: 0.22em; text-transform: uppercase; }
   .group { margin-bottom: 36px; }
-  .group h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: #f5b731;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #1a1a1a;
-  }
-  a.card {
-    display: block;
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    border-left: 3px solid #1bb0ce;
-    border-radius: 0 6px 6px 0;
-    padding: 18px 22px;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: all 0.15s;
-    font-family: 'Anton', sans-serif;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.01em;
-  }
-  a.card:hover {
-    border-left-color: #22e8ff;
-    background: #0d0d0d;
-    transform: translateX(4px);
-  }
-  a.card small {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    color: #888;
-    font-weight: 500;
-    margin-top: 4px;
-    text-transform: none;
-    letter-spacing: 0;
-  }
+  .group h2 { font-family: 'Bebas Neue', sans-serif; font-size: 12px; font-weight: 400; color: #f5b731; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #1a1a1a; }
+  a.card { display: block; background: #0a0a0a; border: 1px solid #1a1a1a; border-left: 3px solid #1bb0ce; border-radius: 0 6px 6px 0; padding: 18px 22px; color: #fff; text-decoration: none; margin-bottom: 10px; transition: all 0.15s; font-family: 'Anton', sans-serif; font-size: 18px; text-transform: uppercase; letter-spacing: 0.01em; }
+  a.card:hover { border-left-color: #22e8ff; background: #0d0d0d; transform: translateX(4px); }
+  a.card small { display: block; font-family: 'Inter', sans-serif; font-size: 12px; color: #888; font-weight: 500; margin-top: 4px; text-transform: none; letter-spacing: 0; }
   a.card.gold { border-left-color: #f5b731; }
   a.card.gold:hover { border-left-color: #ffd45c; }
-  .footer {
-    margin-top: 50px;
-    padding-top: 22px;
-    border-top: 1px solid #1a1a1a;
-    font-size: 12px;
-    color: #555;
-    text-align: center;
-  }
+  .footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid #1a1a1a; font-size: 12px; color: #555; text-align: center; }
   .footer a { color: #1bb0ce; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>This Is Long Island</h1>
-  <div class="sub">AMTB Workforce Studio &mdash; Preview Hub</div>
-
+  <div class="sub">Preview Hub</div>
   <div class="group">
-    <h2>Live Pages</h2>
-    <a class="card gold" href="tili-home.html">Home<small>thisislongisland.com main landing &mdash; AMTB Workforce Studio</small></a>
+    <h2>Athletes Make The Best&trade; — Workforce Studio</h2>
+    <a class="card gold" href="tili-home.html">Workforce Studio Home<small>Main landing &mdash; AMTB Workforce Studio</small></a>
     <a class="card" href="updates.html">Updates<small>Email capture &mdash; "More coming soon"</small></a>
-    <a class="card" href="amtb-studio.html">AMTB Studio Detail<small>Long-form studio booking page (alternative deep-link)</small></a>
+    <a class="card" href="amtb-studio.html">AMTB Studio Detail<small>Long-form studio booking page</small></a>
   </div>
-
+  <div class="group">
+    <h2>This Is Long Island Marketing &mdash; Trades Offer</h2>
+    <a class="card gold" href="tili-marketing.html">$6,500 Shoot Day Offer<small>HVAC, plumbing, roofing, electrical, GC. One day shoot + 12 weeks content + 60-day guarantee.</small></a>
+  </div>
   <div class="group">
     <h2>For The Web Developer</h2>
     <a class="card" href="HANDOFF.md">HANDOFF.md<small>Plug &amp; play WordPress install guide</small></a>
   </div>
-
   <div class="footer">
     Athletes Make The Best&trade; &middot; Long Island Media &middot; The SPIN Foundation<br>
     <a href="https://thisislongisland.com">thisislongisland.com</a>
