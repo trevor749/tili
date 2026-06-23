@@ -7,14 +7,14 @@
 <meta name="description" content="For Long Island HVAC, plumbing, roofing, electrical & GCs. One-day shoot. 3 ads + 48 videos + 12 weeks posted. More calls in 60 days or we shoot again free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0a0a0a;
-    color: #f4f1ea;
+    background: #011E3D;
+    color: #F7ECDB;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -22,304 +22,359 @@
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-  ::selection { background: #1bb0ce; color: #0a0a0a; }
+  ::selection { background: #E67E22; color: #011E3D; }
 
   :root {
-    --bg: #0a0a0a;
-    --bg-alt: #111111;
-    --cream: #f4f1ea;
-    --cream-dim: #c8c5be;
-    --teal: #1bb0ce;
-    --teal-bright: #22c4e5;
-    --line: #1f1f1f;
-    --grey: #888;
-    --grey-dark: #555;
+    /* Brand palette — from style guide */
+    --navy-deep: #011E3D;
+    --navy-midnight: #030025;
+    --navy-soft: #0a2a4d;
+    --cream: #F7ECDB;
+    --cream-dim: #c8bea7;
+    --cream-low: #8a8276;
+    --teal: #377B7D;
+    --teal-bright: #4A9598;
+    --teal-deep: #2a6164;
+    --orange: #E67E22;
+    --orange-bright: #f0902e;
+    --fog: #C9C7C4;
+    --steel: #696B73;
+    --line: #143352;
+    --line-strong: #1f4570;
   }
 
+  /* Display fonts — bold, condensed, athletic per brand guide */
+  .display { font-family: 'Bebas Neue', 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.005em; }
+  .condensed { font-family: 'Anton', sans-serif; font-weight: 400; }
   .italic { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600; color: var(--teal); }
 
   /* ===== NAV ===== */
   .nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(10,10,10,0.88);
+    background: rgba(1,30,61,0.92);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--line);
-    padding: 16px 28px;
+    padding: 14px 28px;
     display: flex; justify-content: space-between; align-items: center;
   }
   .nav-brand {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
     color: var(--cream);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
+  .nav-brand .dot { color: var(--orange); margin: 0 6px; }
   .nav-cta {
     display: inline-block;
     padding: 11px 22px;
-    background: var(--teal);
-    color: #0a0a0a;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    background: var(--orange);
+    color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
+    border: 2px solid var(--orange);
   }
-  .nav-cta:hover { background: var(--teal-bright); }
+  .nav-cta:hover { background: var(--orange-bright); border-color: var(--orange-bright); transform: translateY(-1px); }
 
   /* ===== WRAPPERS ===== */
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
   .wrap-narrow { max-width: 620px; margin: 0 auto; padding: 0 24px; }
-  .wrap-wide { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  .wrap-wide { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
   /* ===== SECTIONS ===== */
   section { padding: 80px 0; position: relative; }
 
-  /* ===== HERO ===== */
-  .hero {
-    padding: 80px 0 60px;
-    text-align: center;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-  }
-  .eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
+  /* Section eyebrow with athletic feel */
+  .section-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 36px;
+    color: var(--orange);
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--teal);
+    vertical-align: middle;
+    margin: 0 16px;
   }
 
-  .hero-stack {
-    margin-bottom: 36px;
-  }
-  .hero-stack-line {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(36px, 6vw, 64px);
-    font-weight: 800;
-    line-height: 1.05;
+  .section-h {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 64px);
+    font-weight: 400;
     color: var(--cream);
-    letter-spacing: -0.025em;
-    margin: 4px 0;
+    text-align: center;
+    line-height: 1.02;
+    margin-bottom: 36px;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
   }
-  .hero-stack-line .italic {
-    font-size: 1.15em;
-    color: var(--teal);
-    letter-spacing: -0.01em;
+  .section-h .italic { font-size: 0.95em; color: var(--orange); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 76px 0 60px;
+    text-align: center;
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--teal);
+  }
+  .hero-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 32px;
+    display: inline-block;
+    padding: 8px 18px;
+    border: 2px solid var(--orange);
+  }
+
+  .hero-stack { margin-bottom: 32px; }
+  .hero-stack-line {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 9vw, 96px);
+    line-height: 0.95;
+    color: var(--cream);
+    letter-spacing: 0.005em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .hero-stack-line .num {
+    color: var(--orange);
+    font-family: 'Anton', sans-serif;
+    font-size: 1.05em;
+  }
+  .hero-stack-line .ital {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 0.9em;
   }
 
   .hero-subline {
-    max-width: 600px;
-    margin: 32px auto 40px;
+    max-width: 620px;
+    margin: 36px auto 36px;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(17px, 2.2vw, 19px);
+    font-size: clamp(18px, 2.2vw, 21px);
     font-weight: 500;
-    line-height: 1.55;
-    color: var(--cream-dim);
+    line-height: 1.5;
+    color: var(--cream);
   }
-  .hero-subline strong { color: var(--cream); font-weight: 600; }
+  .hero-subline strong { color: var(--cream); font-weight: 700; }
+  .hero-subline .accent { color: var(--orange); font-weight: 600; }
 
   /* Hero price + offer block */
   .hero-offer {
     display: inline-block;
-    padding: 28px 38px;
-    border: 1px solid var(--teal);
-    background: rgba(27,176,206,0.04);
-    margin-bottom: 32px;
+    padding: 24px 40px 28px;
+    border: 3px solid var(--cream);
+    background: var(--navy-midnight);
+    margin-bottom: 28px;
+    position: relative;
   }
+  .hero-offer::before,
+  .hero-offer::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+  }
+  .hero-offer::before { top: -3px; left: -3px; }
+  .hero-offer::after { bottom: -3px; right: -3px; }
   .hero-offer .price {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(40px, 5vw, 54px);
-    font-weight: 800;
-    color: var(--teal);
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(52px, 7vw, 76px);
+    color: var(--orange);
     line-height: 1;
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
+    letter-spacing: 0;
+    margin-bottom: 10px;
   }
   .hero-offer .terms {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
     color: var(--cream);
-    font-weight: 500;
     line-height: 1.6;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .hero-offer .terms .key { color: var(--teal); font-weight: 700; }
-  .hero-offer .terms .italic-line { display: block; margin-top: 6px; font-size: 15px; }
+  .hero-offer .terms .key { color: var(--teal-bright); }
+  .hero-offer .terms .italic-line { display: block; margin-top: 6px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; letter-spacing: 0; text-transform: none; color: var(--orange); font-weight: 600; }
 
-  /* CTA */
+  /* CTA — orange punch */
   .btn-primary {
     display: inline-block;
-    padding: 18px 38px;
-    background: var(--teal);
-    color: #0a0a0a;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    padding: 20px 44px;
+    background: var(--orange);
+    color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    border: none;
+    border: 3px solid var(--orange);
     cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    box-shadow: 4px 4px 0 var(--navy-midnight);
   }
-  .btn-primary:hover { background: var(--teal-bright); transform: translateY(-1px); }
-  .btn-primary .arrow { display: inline-block; margin-left: 8px; transition: transform 0.2s; }
+  .btn-primary:hover { background: var(--orange-bright); border-color: var(--orange-bright); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--navy-midnight); }
+  .btn-primary .arrow { display: inline-block; margin-left: 10px; transition: transform 0.2s; }
   .btn-primary:hover .arrow { transform: translateX(4px); }
 
   .btn-sub {
-    margin-top: 16px;
+    margin-top: 18px;
     font-family: 'Inter', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--grey);
+    color: var(--cream-dim);
     letter-spacing: 0.02em;
-    max-width: 460px;
+    max-width: 480px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.55;
+    font-style: italic;
   }
 
   /* ===== PROOF BAND ===== */
   .proof-band {
-    background: var(--bg-alt);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 36px 24px;
+    background: var(--navy-midnight);
+    border-top: 3px solid var(--teal);
+    border-bottom: 3px solid var(--teal);
+    padding: 38px 24px;
     text-align: center;
   }
   .proof-stars {
-    color: var(--teal);
-    font-size: 16px;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
+    color: var(--orange);
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 14px;
   }
   .proof-quote {
     font-family: 'Inter', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     font-style: italic;
     color: var(--cream);
-    max-width: 580px;
-    margin: 0 auto 10px;
-    line-height: 1.55;
+    max-width: 600px;
+    margin: 0 auto 12px;
+    line-height: 1.5;
     font-weight: 500;
   }
+  .proof-quote strong { color: var(--orange); font-style: normal; font-weight: 700; }
   .proof-attr {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--teal);
-    letter-spacing: 0.16em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--teal-bright);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
   }
   .proof-credits {
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-strong);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
     color: var(--cream-dim);
   }
-  .proof-credits .lbl { color: var(--grey); margin-right: 8px; font-weight: 500; }
-  .proof-credits .brands { color: var(--cream); font-weight: 700; }
-
-  /* ===== SECTION HEADERS ===== */
-  .section-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--teal);
-    text-align: center;
-    margin-bottom: 18px;
-  }
-  .section-h {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(32px, 4.5vw, 48px);
-    font-weight: 800;
-    color: var(--cream);
-    text-align: center;
-    line-height: 1.1;
-    margin-bottom: 36px;
-    letter-spacing: -0.02em;
-  }
-  .section-h .italic { font-size: 1.05em; }
+  .proof-credits .lbl { color: var(--cream-low); margin-right: 8px; }
+  .proof-credits .brands { color: var(--cream); }
 
   /* ===== THE PROBLEM ===== */
   .problem-section {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--teal);
   }
   .problem-body {
-    max-width: 620px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .problem-body p {
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--cream);
-    margin-bottom: 16px;
-  }
-  .problem-body p.dim { color: var(--cream-dim); }
-  .problem-body p.punch {
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--cream);
-  }
-  .problem-body p.close {
-    margin-top: 22px;
-    font-weight: 700;
-    font-size: 19px;
-    color: var(--teal);
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-  }
-
-  /* ===== WHAT HAPPENS ===== */
-  .happens-section {
-    background: var(--bg-alt);
-    border-bottom: 1px solid var(--line);
-  }
-  .happens-body {
     max-width: 640px;
     margin: 0 auto;
     text-align: center;
   }
-  .happens-body p {
-    font-size: 17px;
+  .problem-body p {
+    font-size: 19px;
     line-height: 1.65;
     color: var(--cream);
-    margin-bottom: 10px;
-  }
-  .happens-body p.lead {
-    font-size: 20px;
-    font-weight: 600;
     margin-bottom: 18px;
   }
+  .problem-body p.dim { color: var(--cream-dim); }
+  .problem-body p.punch {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+  }
+  .problem-body p.punch strong { color: var(--orange); }
+  .problem-body p.close {
+    margin-top: 28px;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--orange);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* ===== WHAT HAPPENS ===== */
+  .happens-section {
+    background: var(--navy-midnight);
+    border-bottom: 3px solid var(--teal);
+  }
+  .happens-body {
+    max-width: 660px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .happens-body p {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+  .happens-body p.lead {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 22px;
+  }
   .happens-body p.dim { color: var(--cream-dim); }
-  .happens-body p .key { color: var(--teal); font-weight: 700; }
-  .happens-body p strong { color: var(--cream); font-weight: 600; }
+  .happens-body p .key {
+    color: var(--orange);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15em;
+    letter-spacing: 0.04em;
+    margin-right: 4px;
+  }
+  .happens-body p strong { color: var(--cream); font-weight: 700; }
   .happens-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--teal);
-    margin: 22px auto;
-    opacity: 0.6;
+    width: 50px;
+    height: 3px;
+    background: var(--orange);
+    margin: 28px auto;
   }
   .happens-list-3 {
     max-width: 560px;
-    margin: 14px auto;
+    margin: 16px auto;
     text-align: left;
   }
   .happens-list-3 li {
     list-style: none;
-    padding: 8px 0 8px 28px;
+    padding: 10px 0 10px 32px;
     position: relative;
     color: var(--cream);
     font-size: 17px;
@@ -329,40 +384,56 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--teal);
+    color: var(--orange);
     font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    top: 6px;
+  }
+  .happens-finisher {
+    margin-top: 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--orange);
   }
 
   /* ===== WHAT YOU GET ===== */
   .stack-section {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--teal);
   }
   .stack-list {
-    max-width: 720px;
+    max-width: 740px;
     margin: 0 auto;
   }
   .stack-item {
     display: grid;
-    grid-template-columns: 28px 1fr;
-    gap: 18px;
-    padding: 22px 0;
-    border-bottom: 1px solid var(--line);
+    grid-template-columns: 36px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line-strong);
+    transition: padding-left 0.2s;
   }
   .stack-item:last-child { border-bottom: 0; }
+  .stack-item:hover { padding-left: 8px; }
   .stack-item .ck {
-    color: var(--teal);
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.4;
+    width: 30px; height: 30px;
+    background: var(--orange);
+    color: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 3px;
   }
   .stack-item h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 19px;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
     color: var(--cream);
     margin-bottom: 6px;
-    letter-spacing: -0.005em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   .stack-item p {
     font-family: 'Inter', sans-serif;
@@ -374,137 +445,139 @@
 
   /* ===== BONUS ===== */
   .bonus-section {
-    background: var(--bg-alt);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-midnight);
+    border-bottom: 3px solid var(--teal);
     text-align: center;
   }
   .bonus-tag {
     display: inline-block;
-    padding: 8px 18px;
-    border: 1px solid var(--teal);
-    background: rgba(27,176,206,0.06);
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
+    padding: 10px 22px;
+    background: var(--orange);
+    color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    border: 2px solid var(--orange);
   }
   .bonus-section h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 800;
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5.5vw, 56px);
     color: var(--cream);
-    line-height: 1.1;
-    margin-bottom: 28px;
-    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 30px;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
   }
-  .bonus-section h2 .italic { font-size: 1.05em; }
+  .bonus-section h2 .italic { font-size: 0.95em; color: var(--orange); }
   .bonus-section h2 .tm {
-    font-size: 0.4em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.3em;
     vertical-align: super;
-    color: var(--teal);
-    margin-left: -0.05em;
-    font-weight: 600;
+    color: var(--orange);
+    margin-left: 4px;
+    font-weight: 700;
+    font-style: normal;
   }
   .bonus-body {
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
   }
   .bonus-body p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--cream);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
   .bonus-body p.dim { color: var(--cream-dim); }
-  .bonus-body p strong { color: var(--cream); font-weight: 600; }
+  .bonus-body p strong { color: var(--cream); font-weight: 700; }
   .bonus-callout {
-    margin-top: 26px;
-    padding: 16px 24px;
-    background: rgba(27,176,206,0.06);
-    border: 1px solid var(--teal);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--teal);
-    letter-spacing: 0.02em;
-    line-height: 1.5;
+    margin-top: 28px;
+    padding: 20px 28px;
+    background: var(--navy-deep);
+    border: 2px solid var(--orange);
+    font-size: 15px;
+    color: var(--cream);
+    line-height: 1.6;
     display: inline-block;
+    text-align: left;
   }
-  .bonus-callout strong { color: var(--cream); font-weight: 700; }
+  .bonus-callout strong { color: var(--orange); font-weight: 700; }
 
   /* ===== GUARANTEE ===== */
   .guarantee-section {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--teal);
     text-align: center;
   }
   .guarantee-seal {
     display: inline-block;
-    padding: 14px 28px;
-    border: 1px solid var(--teal);
+    padding: 18px 36px;
+    background: var(--orange);
+    color: var(--navy-deep);
     margin: 0 auto 32px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.24em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--teal);
+    border: 3px solid var(--cream);
+    box-shadow: 4px 4px 0 var(--navy-midnight);
   }
   .guarantee-seal .big {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--cream);
-    letter-spacing: -0.01em;
-    margin-right: 10px;
+    font-family: 'Anton', sans-serif;
+    font-size: 36px;
+    color: var(--navy-deep);
+    letter-spacing: 0;
+    margin-right: 14px;
     vertical-align: middle;
+    line-height: 1;
   }
   .guarantee-body {
-    max-width: 600px;
+    max-width: 620px;
     margin: 0 auto;
   }
   .guarantee-body p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.65;
     color: var(--cream);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
   .guarantee-body p.bold {
-    font-weight: 600;
-    font-size: 19px;
+    font-weight: 700;
+    font-size: 20px;
     color: var(--cream);
   }
+  .guarantee-body p.bold strong { color: var(--orange); }
   .guarantee-body p.dim { color: var(--cream-dim); }
   .guarantee-rules {
-    max-width: 560px;
-    margin: 26px auto 0;
-    padding: 22px 26px;
-    border: 1px solid var(--line);
+    max-width: 580px;
+    margin: 30px auto 0;
+    padding: 24px 28px;
+    border: 2px solid var(--teal);
     text-align: left;
-    background: rgba(255,255,255,0.02);
+    background: var(--navy-midnight);
   }
   .guarantee-rules .lbl {
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 12px;
+    color: var(--orange);
+    margin-bottom: 14px;
   }
   .guarantee-rules p {
     font-size: 15px;
     color: var(--cream-dim);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 8px;
   }
   .guarantee-rules p strong { color: var(--cream); }
 
   /* ===== MATH ===== */
   .math-section {
-    background: var(--bg-alt);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-midnight);
+    border-bottom: 3px solid var(--teal);
     text-align: center;
   }
   .math-body {
@@ -513,151 +586,177 @@
   }
   .math-body p {
     font-size: 19px;
-    line-height: 1.65;
+    line-height: 1.6;
     color: var(--cream);
-    margin-bottom: 14px;
-    font-weight: 500;
+    margin-bottom: 8px;
   }
-  .math-body p.intro { color: var(--cream-dim); }
+  .math-body p.intro {
+    color: var(--cream-dim);
+    margin-bottom: 22px;
+  }
+  .math-body p.intro strong { color: var(--cream); font-weight: 700; }
   .math-body p.list {
-    font-size: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
     color: var(--cream);
     margin-bottom: 4px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
-  .math-body p.list .key { color: var(--teal); font-weight: 700; }
+  .math-body p.list .key { color: var(--orange); font-size: 1.2em; margin-right: 6px; }
   .math-body p.close {
-    margin-top: 26px;
-    font-size: 21px;
-    font-weight: 700;
+    margin-top: 32px;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(26px, 3.5vw, 34px);
     color: var(--cream);
+    line-height: 1.15;
+    text-transform: uppercase;
   }
-  .math-body p.close .italic { font-size: 1.05em; }
+  .math-body p.close .italic { font-size: 1em; color: var(--orange); }
 
   /* ===== WHO ===== */
   .who-section {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--navy-deep);
+    border-bottom: 3px solid var(--teal);
     text-align: center;
   }
   .who-intro {
-    max-width: 600px;
-    margin: 0 auto 32px;
-    font-size: 18px;
+    max-width: 620px;
+    margin: 0 auto 36px;
+    font-size: 19px;
     color: var(--cream);
     line-height: 1.6;
+    font-weight: 500;
   }
-  .who-intro strong { color: var(--teal); font-weight: 700; }
+  .who-intro strong { color: var(--orange); font-weight: 700; }
   .who-grid {
-    max-width: 540px;
+    max-width: 560px;
     margin: 0 auto 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px 32px;
+    gap: 14px 36px;
   }
   .who-item {
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    font-weight: 500;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
     color: var(--cream);
     text-align: left;
-    padding-left: 28px;
+    padding-left: 32px;
     position: relative;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .who-item::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--teal);
-    font-weight: 700;
+    color: var(--orange);
+    font-weight: 900;
+    font-size: 18px;
   }
   .who-region {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--cream-dim);
-    margin-bottom: 18px;
-  }
-  .who-region strong { color: var(--teal); }
-  .who-sweet {
-    max-width: 540px;
-    margin: 0 auto;
-    padding: 20px 24px;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 16px;
-    color: var(--cream);
-    line-height: 1.6;
-  }
-  .who-sweet strong { color: var(--teal); font-weight: 700; }
-  .who-sweet .italic { font-size: 1em; }
-
-  /* ===== INVESTMENT ===== */
-  .investment-section {
-    background: var(--bg-alt);
-    border-bottom: 1px solid var(--line);
-    text-align: center;
-  }
-  .investment-card {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 40px 36px;
-    border: 1px solid var(--teal);
-    background: rgba(27,176,206,0.03);
-  }
-  .investment-card .total {
-    font-family: 'Inter', sans-serif;
-    font-size: clamp(64px, 8vw, 84px);
-    font-weight: 800;
-    color: var(--teal);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    margin-bottom: 10px;
-  }
-  .investment-card .total-lbl {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--cream-dim);
-    margin-bottom: 28px;
+    margin-bottom: 22px;
+  }
+  .who-region strong { color: var(--orange); }
+  .who-sweet {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 22px 28px;
+    border: 2px solid var(--teal);
+    background: var(--navy-midnight);
+    font-size: 16px;
+    color: var(--cream);
+    line-height: 1.65;
+  }
+  .who-sweet strong { color: var(--orange); font-weight: 700; }
+  .who-sweet .italic { font-size: 1em; color: var(--orange); }
+
+  /* ===== INVESTMENT ===== */
+  .investment-section {
+    background: var(--navy-midnight);
+    border-bottom: 3px solid var(--teal);
+    text-align: center;
+  }
+  .investment-card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 44px 40px;
+    border: 3px solid var(--cream);
+    background: var(--navy-deep);
+    position: relative;
+    box-shadow: 6px 6px 0 var(--navy-midnight);
+  }
+  .investment-card::before,
+  .investment-card::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--orange);
+  }
+  .investment-card::before { top: -3px; left: -3px; }
+  .investment-card::after { bottom: -3px; right: -3px; }
+  .investment-card .total {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(72px, 9vw, 96px);
+    color: var(--orange);
+    line-height: 1;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .investment-card .total-lbl {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-bottom: 30px;
   }
   .investment-card .split {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     padding: 16px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-strong);
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 15px;
     color: var(--cream);
-    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .investment-card .split:last-of-type { border-bottom: 1px solid var(--line); }
-  .investment-card .split .amount { color: var(--teal); font-weight: 700; }
+  .investment-card .split:last-of-type { border-bottom: 1px solid var(--line-strong); }
+  .investment-card .split .amount {
+    color: var(--orange);
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0;
+  }
   .investment-card .after {
-    margin-top: 22px;
+    margin-top: 24px;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    font-weight: 600;
     color: var(--cream-dim);
-    letter-spacing: 0.06em;
-    line-height: 1.6;
+    line-height: 1.7;
   }
-  .investment-card .after strong { color: var(--cream); }
+  .investment-card .after strong { color: var(--orange); font-weight: 700; }
 
   /* ===== FORM ===== */
   .form-section {
-    background: var(--bg);
+    background: var(--navy-deep);
     text-align: center;
     padding: 90px 0;
   }
   .form-block {
-    max-width: 520px;
+    max-width: 540px;
     margin: 0 auto;
   }
   .form-block .lead {
-    max-width: 460px;
+    max-width: 480px;
     margin: 0 auto 36px;
     font-size: 17px;
     color: var(--cream-dim);
@@ -665,27 +764,38 @@
   }
   .form-block .lead strong { color: var(--cream); font-weight: 600; }
   .form-card {
-    background: var(--bg-alt);
-    border: 1px solid var(--line);
-    padding: 36px 32px;
+    background: var(--navy-midnight);
+    border: 3px solid var(--cream);
+    padding: 38px 34px;
     text-align: left;
+    position: relative;
+    box-shadow: 6px 6px 0 var(--navy-midnight);
   }
+  .form-card::before,
+  .form-card::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--orange);
+  }
+  .form-card::before { top: -3px; left: -3px; }
+  .form-card::after { bottom: -3px; right: -3px; }
   .fg { margin-bottom: 16px; }
   .fg label {
     display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--teal);
-    letter-spacing: 0.14em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--orange);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     margin-bottom: 8px;
   }
   .fg input, .fg select, .fg textarea {
     width: 100%;
     padding: 14px 16px;
-    background: var(--bg);
-    border: 1px solid var(--line);
+    background: var(--navy-deep);
+    border: 2px solid var(--line-strong);
     color: var(--cream);
     font-family: 'Inter', sans-serif;
     font-size: 15px;
@@ -693,62 +803,63 @@
     outline: none;
     transition: border-color 0.2s, background 0.2s;
   }
-  .fg input::placeholder, .fg textarea::placeholder { color: var(--grey-dark); }
-  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--teal); background: rgba(27,176,206,0.04); }
+  .fg input::placeholder, .fg textarea::placeholder { color: var(--cream-low); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--orange); }
   .fg select {
     appearance: none;
     cursor: pointer;
     color: var(--cream);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%231bb0ce' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23E67E22' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
   }
-  .fg select option { background: var(--bg); color: var(--cream); }
+  .fg select option { background: var(--navy-deep); color: var(--cream); }
   .fg textarea { min-height: 90px; resize: vertical; }
 
   .form-cta {
     display: block;
     width: 100%;
-    margin-top: 8px;
-    padding: 18px;
-    background: var(--teal);
-    color: #0a0a0a;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
+    margin-top: 10px;
+    padding: 20px;
+    background: var(--orange);
+    color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    border: none;
+    border: 3px solid var(--orange);
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
   }
-  .form-cta:hover { background: var(--teal-bright); }
+  .form-cta:hover { background: var(--orange-bright); border-color: var(--orange-bright); transform: translateY(-1px); }
   .form-cta:disabled { opacity: 0.6; cursor: wait; }
   .form-disc {
     margin-top: 16px;
-    font-size: 12px;
-    color: var(--grey);
+    font-size: 13px;
+    color: var(--cream-low);
     line-height: 1.6;
     text-align: center;
+    font-style: italic;
   }
 
   .form-success { display: none; text-align: center; padding: 18px 0; }
   .form-success.show { display: block; }
   .form-success .check {
-    width: 56px; height: 56px;
+    width: 60px; height: 60px;
     margin: 0 auto 16px;
-    border: 2px solid var(--teal);
-    color: var(--teal);
+    background: var(--orange);
+    color: var(--navy-deep);
     display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-    border-radius: 50%;
+    font-size: 30px;
+    font-weight: 900;
   }
   .form-success h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
+    font-family: 'Anton', sans-serif;
+    font-size: 28px;
     color: var(--cream);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
   .form-success p {
     font-size: 15px;
@@ -760,36 +871,45 @@
 
   /* ===== FOOTER ===== */
   .footer {
-    background: var(--bg);
-    border-top: 1px solid var(--line);
-    padding: 50px 24px 100px;
+    background: var(--navy-midnight);
+    border-top: 3px solid var(--orange);
+    padding: 56px 24px 100px;
     text-align: center;
   }
   .footer .brand {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 14px;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .footer .brand .dot { color: var(--orange); margin: 0 6px; }
+  .footer .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--teal-bright);
+    margin-bottom: 22px;
   }
   .footer .address {
     font-size: 13px;
     color: var(--cream-dim);
-    margin-bottom: 14px;
+    margin-bottom: 8px;
   }
-  .footer .address a { color: var(--cream); }
+  .footer .address a { color: var(--orange); }
   .footer .links {
     font-size: 12px;
-    color: var(--grey);
-    margin-top: 16px;
-    letter-spacing: 0.06em;
+    color: var(--cream-low);
+    margin-top: 18px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
   }
-  .footer .links a { color: var(--cream-dim); margin: 0 6px; }
+  .footer .links a { color: var(--cream-dim); margin: 0 10px; }
   .footer .copy {
     font-size: 11px;
-    color: var(--grey-dark);
+    color: var(--cream-low);
     margin-top: 14px;
     letter-spacing: 0.04em;
   }
@@ -797,9 +917,8 @@
   /* ===== STICKY BAR ===== */
   .sticky-bar {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: rgba(10,10,10,0.97);
-    backdrop-filter: blur(14px);
-    border-top: 1px solid var(--teal);
+    background: var(--navy-midnight);
+    border-top: 3px solid var(--orange);
     padding: 12px 20px;
     display: flex; justify-content: center; align-items: center; gap: 18px;
     transform: translateY(100%);
@@ -807,27 +926,27 @@
   }
   .sticky-bar.visible { transform: translateY(0); }
   .sticky-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
     color: var(--cream);
     display: none;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .sticky-text .teal { color: var(--teal); font-weight: 700; }
+  .sticky-text .orange { color: var(--orange); font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0; vertical-align: middle; }
   .sticky-btn {
-    padding: 12px 26px;
-    background: var(--teal); color: #0a0a0a;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    border: none; cursor: pointer;
+    padding: 14px 28px;
+    background: var(--orange); color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    border: 2px solid var(--orange); cursor: pointer;
     transition: background 0.2s;
   }
-  .sticky-btn:hover { background: var(--teal-bright); }
+  .sticky-btn:hover { background: var(--orange-bright); border-color: var(--orange-bright); }
   .sticky-x {
     position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
-    background: none; border: none; color: var(--grey-dark); font-size: 20px; cursor: pointer;
+    background: none; border: none; color: var(--cream-low); font-size: 20px; cursor: pointer;
     line-height: 1;
   }
 
@@ -837,9 +956,10 @@
     .hero { padding: 60px 0 40px; }
     .who-grid { grid-template-columns: 1fr; gap: 12px; }
     .nav { padding: 12px 18px; }
-    .nav-brand { font-size: 11px; letter-spacing: 0.1em; }
-    .nav-cta { font-size: 11px; padding: 9px 16px; letter-spacing: 0.1em; }
-    .hero-offer { padding: 22px 24px; }
+    .nav-brand { font-size: 15px; letter-spacing: 0.12em; }
+    .nav-cta { font-size: 12px; padding: 9px 16px; letter-spacing: 0.14em; }
+    .hero-offer { padding: 20px 24px 24px; }
+    .investment-card { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -847,29 +967,29 @@
 
 <!-- ============ NAV ============ -->
 <nav class="nav">
-  <div class="nav-brand">This Is Long Island Marketing</div>
+  <div class="nav-brand">This Is Long Island<span class="dot">◆</span>Marketing</div>
   <a href="#apply" class="nav-cta">Book A 15-Min Call</a>
 </nav>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">For Long Island Trades &amp; Home Service Owners</div>
+    <div class="hero-eyebrow">For Long Island Trades &amp; Home Service Owners</div>
 
     <div class="hero-stack">
       <div class="hero-stack-line">One Day At Your Shop.</div>
-      <div class="hero-stack-line"><span class="italic">3</span> Ads.</div>
-      <div class="hero-stack-line"><span class="italic">48</span> Videos.</div>
-      <div class="hero-stack-line"><span class="italic">12</span> Weeks Posted.</div>
+      <div class="hero-stack-line"><span class="num">3</span> Ads.</div>
+      <div class="hero-stack-line"><span class="num">48</span> Videos.</div>
+      <div class="hero-stack-line"><span class="num">12</span> Weeks Posted.</div>
     </div>
 
-    <p class="hero-subline">We shoot it, edit it, post it, and run the ads so <strong>homeowners see you before they call someone else.</strong></p>
+    <p class="hero-subline">We shoot it, edit it, post it, and run the ads so <strong>homeowners see you <span class="accent">before</span> they call someone else.</strong></p>
 
     <div class="hero-offer">
       <div class="price">$6,500</div>
       <div class="terms">
         <span class="key">No forced retainer.</span> You own everything.
-        <span class="italic-line"><span class="italic">More calls</span> &mdash; or we shoot again free.</span>
+        <span class="italic-line">More calls &mdash; or we shoot again free.</span>
       </div>
     </div>
 
@@ -887,7 +1007,7 @@
     <div class="proof-quote">"Built campaigns that <strong>actually move product</strong> &mdash; not just rack up views."</div>
     <div class="proof-attr">Chandler Suprina &middot; Owner, DreamSeat</div>
     <div class="proof-credits">
-      <span class="lbl">Production Credits:</span>
+      <span class="lbl">Production Credits</span>
       <span class="brands">Chase &middot; Forbes &middot; DreamSeat &middot; Fueled By Culture</span>
     </div>
   </div>
@@ -929,17 +1049,17 @@
 
       <div class="happens-divider"></div>
 
-      <p>We shoot <span class="key">3 ads</span> built specifically to make your phone ring on <strong>Facebook, Instagram, and Google</strong>.</p>
-      <p>We shoot <span class="key">48 original short videos</span> &mdash; not random clips &mdash; <strong>filmed on purpose to answer the questions homeowners are already asking</strong> and make your company look like the obvious choice before anyone ever calls.</p>
+      <p>We shoot <span class="key">3 ads</span> built to make your phone ring on <strong>Facebook, Instagram, and Google</strong>.</p>
+      <p>We shoot <span class="key">48 short videos</span> &mdash; not random clips &mdash; <strong>filmed on purpose to answer the questions homeowners are already asking</strong>.</p>
 
       <div class="happens-divider"></div>
 
-      <p class="dim">You do <strong>not</strong> have to film yourself on your own time.</p>
-      <p class="dim">You do <strong>not</strong> have to figure out what to say.</p>
-      <p class="dim">You do <strong>not</strong> have to post anything.</p>
-      <p class="dim">You do <strong>not</strong> have to learn ads, editing, scripts, or content strategy.</p>
+      <p class="dim">You do <strong>not</strong> film yourself on your own time.</p>
+      <p class="dim">You do <strong>not</strong> figure out what to say.</p>
+      <p class="dim">You do <strong>not</strong> post anything.</p>
+      <p class="dim">You do <strong>not</strong> learn ads, editing, scripts, or content strategy.</p>
 
-      <p style="margin-top: 20px; font-size: 20px; font-weight: 700; color: var(--cream);">We handle every part of it.</p>
+      <p class="happens-finisher">We Handle Every Part Of It.</p>
     </div>
   </div>
 </section>
@@ -970,7 +1090,7 @@
       <div class="stack-item">
         <span class="ck">✓</span>
         <div>
-          <h4>12 Weeks of Posting</h4>
+          <h4>12 Weeks Of Posting</h4>
           <p>Fully handled. We schedule and post everything. <strong>Your social media runs without you touching it.</strong></p>
         </div>
       </div>
@@ -978,7 +1098,7 @@
       <div class="stack-item">
         <span class="ck">✓</span>
         <div>
-          <h4>Facebook and Instagram Ads</h4>
+          <h4>Facebook + Instagram Ads</h4>
           <p>Set up, launched, and managed. <strong>You pay Meta directly. No markup. No middleman.</strong></p>
         </div>
       </div>
@@ -1030,7 +1150,7 @@
 <section class="bonus-section">
   <div class="wrap">
     <div class="bonus-tag">The Bonus &middot; Free With Your First Shoot</div>
-    <h2>The Authority <span class="italic">Sit-Down</span><span class="tm">™</span></h2>
+    <h2>The Authority <span class="italic">Sit-Down</span><span class="tm">TM</span></h2>
 
     <div class="bonus-body">
       <p>We sit you down on camera for thirty minutes and capture <strong>who you are, what you do, why you are different, and why homeowners should trust you over every other trades company on Long Island</strong>.</p>
@@ -1057,7 +1177,7 @@
     <div class="guarantee-body">
       <p>Before we shoot a single frame we sit down and agree on <strong>one clear goal in writing</strong>.</p>
       <p class="dim">Calls. Form submissions. Booked jobs. Whatever matters most to your business. We write it down. We both sign off on it.</p>
-      <p class="bold">If we do not hit the agreed goal within 60 days of your ads going live &mdash; we come back one time and shoot brand new content at no charge.</p>
+      <p class="bold">If we do not hit the agreed goal within 60 days of your ads going live &mdash; <strong>we come back one time and shoot brand new content at no charge.</strong></p>
     </div>
 
     <div class="guarantee-rules">
@@ -1078,13 +1198,13 @@
     <div class="math-body">
       <p class="intro">For most trades businesses on Long Island <strong>one serious job covers the entire investment</strong>.</p>
 
-      <p class="list"><span class="key">→</span> One install.</p>
-      <p class="list"><span class="key">→</span> One roof.</p>
-      <p class="list"><span class="key">→</span> One system replacement.</p>
-      <p class="list"><span class="key">→</span> One serious project.</p>
-      <p class="list"><span class="key">→</span> One high-value customer.</p>
+      <p class="list"><span class="key">→</span> One Install.</p>
+      <p class="list"><span class="key">→</span> One Roof.</p>
+      <p class="list"><span class="key">→</span> One System Replacement.</p>
+      <p class="list"><span class="key">→</span> One Serious Project.</p>
+      <p class="list"><span class="key">→</span> One High-Value Customer.</p>
 
-      <p class="close">That is the whole equation. <span class="italic">One job in. Everything else is profit.</span></p>
+      <p class="close">One Job In. <span class="italic">Everything Else Is Profit.</span></p>
     </div>
   </div>
 </section>
@@ -1093,17 +1213,17 @@
 <section class="who-section">
   <div class="wrap">
     <div class="section-eyebrow">Who This Is For</div>
-    <h2 class="section-h">Trades Owners Ready To <span class="italic">Stop Being Invisible.</span></h2>
+    <h2 class="section-h">Ready To <span class="italic">Stop Being Invisible.</span></h2>
 
     <p class="who-intro">This is for trades and home service businesses on Long Island <strong>ready to stop being invisible online</strong>.</p>
 
     <div class="who-grid">
-      <div class="who-item">HVAC Companies</div>
-      <div class="who-item">Plumbing Companies</div>
-      <div class="who-item">Roofing Companies</div>
-      <div class="who-item">Electrical Contractors</div>
-      <div class="who-item">Landscaping Companies</div>
-      <div class="who-item">Pool Companies</div>
+      <div class="who-item">HVAC</div>
+      <div class="who-item">Plumbing</div>
+      <div class="who-item">Roofing</div>
+      <div class="who-item">Electrical</div>
+      <div class="who-item">Landscaping</div>
+      <div class="who-item">Pool</div>
       <div class="who-item">General Contractors</div>
       <div class="who-item">Home Remodelers</div>
     </div>
@@ -1127,11 +1247,11 @@
       <div class="total-lbl">Total. All In.</div>
 
       <div class="split">
-        <span>To book your shoot day</span>
+        <span>To Book Your Shoot Day</span>
         <span class="amount">$3,250</span>
       </div>
       <div class="split">
-        <span>When we deliver your content</span>
+        <span>When We Deliver Your Content</span>
         <span class="amount">$3,250</span>
       </div>
 
@@ -1205,7 +1325,7 @@
 
       <div class="form-success" id="formSuccess">
         <div class="check">✓</div>
-        <h4>Got it. We'll be in touch.</h4>
+        <h4>Got It. We'll Be In Touch.</h4>
         <p>Expect a reply within 24 hours to schedule your 15-minute call.</p>
       </div>
     </div>
@@ -1214,20 +1334,21 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <div class="brand">This Is Long Island Marketing</div>
+  <div class="brand">This Is Long Island<span class="dot">◆</span>Marketing</div>
+  <div class="tagline">Built on Long Island. Built for businesses that need results.</div>
   <div class="address">Northport, Long Island &middot; <a href="https://thisislongisland.com">thisislongisland.com</a></div>
-  <div class="address" style="margin-top: 6px;"><a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
+  <div class="address"><a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
   <div class="links">
     <a href="#terms">Terms</a> &middot;
     <a href="#privacy">Privacy</a> &middot;
     <a href="#guarantee">Guarantee Details</a>
   </div>
-  <div class="copy">&copy; 2026 This Is Long Island Marketing &middot; All rights reserved.</div>
+  <div class="copy">&copy; 2026 This Is Long Island Marketing &middot; Est. 2022 &middot; All rights reserved.</div>
 </footer>
 
 <!-- ============ STICKY BAR ============ -->
 <div class="sticky-bar" id="stickyBar">
-  <span class="sticky-text"><span class="teal">$6,500</span> &middot; One Day &middot; More Calls Or We Shoot Again Free</span>
+  <span class="sticky-text"><span class="orange">$6,500</span> &middot; One Day &middot; More Calls Or We Shoot Again Free</span>
   <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Book A Call →</button>
   <button class="sticky-x" onclick="closeStickyBar()" aria-label="Close">&times;</button>
 </div>
