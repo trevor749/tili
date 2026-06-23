@@ -341,7 +341,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px 22px;
-    margin: 14px auto 6px;
+    margin: 14px auto 14px;
     font-family: 'Oswald', sans-serif;
     font-size: 12px;
     font-weight: 600;
@@ -351,6 +351,54 @@
     max-width: 720px;
   }
   .hero-trust span { white-space: nowrap; }
+
+  /* Social proof — compact above-the-fold trust block */
+  .hero-social {
+    max-width: 620px;
+    margin: 18px auto 4px;
+    padding: 14px 18px 12px;
+    background: #0a0a0a;
+    border: 2px solid #2a2a2a;
+    text-align: center;
+  }
+  .hero-social-stars {
+    color: var(--yellow);
+    font-size: 18px;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+  .hero-social-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #f5f5f5;
+    line-height: 1.5;
+    margin-bottom: 6px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-social-quote strong { color: var(--yellow); font-style: normal; font-weight: 800; }
+  .hero-social-attr {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #aaa;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .hero-social-credits {
+    padding-top: 10px;
+    border-top: 1px dashed #2a2a2a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .hero-social-credits .lbl { color: #888; font-weight: 500; margin-right: 6px; }
+  .hero-social-credits .brands { color: var(--yellow); font-weight: 700; }
 
   /* Tighten the hero CTA */
   .hero-block .cta-main { margin: 8px auto 4px; max-width: 480px; }
@@ -1764,14 +1812,15 @@
 <div class="hero-block">
   <div class="brand-line"><span class="red">Attention:</span> All <span class="teal">Long Island</span> Trades &amp; Home Service Owners</div>
 
-  <!-- 1. STOP — the punch -->
+  <!-- HEADLINE — what we do + how we solve the problem -->
   <h1 class="hero-headline">
-    You Are <span class="em">Getting Robbed.</span>
+    We Get Your Phone Ringing.<br>
+    <span class="em">In One Day. Guaranteed.</span>
   </h1>
 
-  <!-- 2. PROMISE — outcome + guarantee in one line -->
+  <!-- SUBLINE — company name + the specific process that backs it up -->
   <p class="hero-subhead">
-    <strong>10&ndash;30 inbound calls in 60 days.</strong> Or we reshoot the whole thing free.
+    <strong>This Is Long Island Marketing.</strong> One 8-hour shoot at your shop produces 3 ads + 48 videos. We launch them on Facebook + Google and post for 12 weeks. <strong>10&ndash;30 inbound calls in 60 days &mdash; or we come back and reshoot the whole thing free.</strong>
   </p>
 
   <!-- 3. WHAT YOU GET — 4 quick bullets above the fold -->
@@ -1796,11 +1845,22 @@
   <!-- 6. TRUST + GUARANTEE one-liner -->
   <div class="hero-trust">
     <span>&#9733; 60-Day Guarantee</span>
-    <span>&#9733; Phone Ringing Or We Reshoot Free</span>
-    <span>&#9733; DreamSeat-Credited Production</span>
+    <span>&#9733; You Own Every Frame</span>
+    <span>&#9733; No Retainer Ever</span>
   </div>
 
-  <!-- VSL — placed below the CTA (still visible / quick scroll) -->
+  <!-- 7. SOCIAL PROOF — stars, testimonial, production credits -->
+  <div class="hero-social">
+    <div class="hero-social-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+    <div class="hero-social-quote">"Built campaigns that <strong>actually move product</strong> &mdash; not just rack up views."</div>
+    <div class="hero-social-attr">Chandler Suprina &middot; Owner, DreamSeat</div>
+    <div class="hero-social-credits">
+      <span class="lbl">Production Credits:</span>
+      <span class="brands">CHASE &middot; FORBES &middot; DREAMSEAT &middot; FUELED BY CULTURE</span>
+    </div>
+  </div>
+
+  <!-- VSL — placed below the social proof (still visible / quick scroll) -->
   <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
     <div class="vsl-soon">Founder Walkthrough &middot; Live Soon</div>
     <div class="play-btn" id="playBtn">
