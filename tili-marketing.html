@@ -146,9 +146,9 @@
 
   /* ========== HERO ========== */
   .hero-block {
-    background: linear-gradient(180deg, rgba(27,176,206,0.1) 0%, #000 70%);
+    background: linear-gradient(180deg, rgba(255,204,0,0.06) 0%, #000 70%);
     text-align: center;
-    padding: 32px 16px 0;
+    padding: 22px 16px 18px;
   }
   .brand-line {
     font-family: 'Oswald', sans-serif;
@@ -194,14 +194,14 @@
 
   .hero-headline {
     font-family: 'Anton', 'Oswald', sans-serif;
-    font-size: clamp(44px, 10vw, 84px);
+    font-size: clamp(40px, 9vw, 72px);
     font-weight: 400;
     line-height: 1;
     color: #fff;
     letter-spacing: 0;
     text-transform: uppercase;
     max-width: 760px;
-    margin: 0 auto 18px;
+    margin: 8px auto 12px;
   }
   .hero-headline .teal { color: var(--yellow); }
   .hero-headline .em {
@@ -209,14 +209,14 @@
   }
   .hero-subhead {
     font-family: 'Oswald', 'Inter', sans-serif;
-    font-size: clamp(17px, 3.2vw, 22px);
-    font-weight: 800;
-    line-height: 1.4;
+    font-size: clamp(17px, 3vw, 22px);
+    font-weight: 600;
+    line-height: 1.3;
     color: #e5e5e5;
     max-width: 620px;
-    margin: 14px auto 0;
+    margin: 0 auto;
   }
-  .hero-subhead strong { color: var(--teal); font-weight: 900; }
+  .hero-subhead strong { color: var(--yellow); font-weight: 700; }
 
   .hero-sub {
     font-size: clamp(15px, 2.4vw, 18px);
@@ -296,26 +296,71 @@
     line-height: 1.5;
   }
 
-  /* ========== HERO PROOF STRIP (under VSL) — DreamSeat only ========== */
-  .hero-proof {
-    text-align: center;
-    margin: 8px auto 0;
-    padding: 14px 0 4px;
+  /* ========== HERO BULLETS / PRICE / TRUST (above the fold) ========== */
+  .hero-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 22px;
+    margin: 14px auto 18px;
+    max-width: 720px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #f5f5f5;
   }
-  .hero-proof-text {
-    font-size: 10px;
-    font-weight: 800;
-    color: #666;
-    letter-spacing: 0.24em;
+  .hero-bullets span { white-space: nowrap; }
+
+  .hero-price {
+    display: inline-block;
+    background: #000;
+    border: 3px solid var(--yellow);
+    padding: 12px 28px 14px;
+    margin: 0 auto 14px;
+    box-shadow: 5px 5px 0 var(--yellow);
+  }
+  .hero-price .price-amount {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(48px, 9vw, 72px);
+    line-height: 0.9;
+    color: var(--yellow);
+    letter-spacing: -0.02em;
+  }
+  .hero-price .price-terms {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #ccc;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-top: 6px;
   }
-  .hero-proof-brands {
-    font-family: 'Oswald', 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 900;
-    letter-spacing: 0.22em;
-    color: var(--teal);
+
+  .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
+    margin: 14px auto 6px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--yellow);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    max-width: 720px;
+  }
+  .hero-trust span { white-space: nowrap; }
+
+  /* Tighten the hero CTA */
+  .hero-block .cta-main { margin: 8px auto 4px; max-width: 480px; }
+
+  /* Smaller VSL — it's below the fold-critical content */
+  .hero-block .vsl-wrap {
+    max-width: 460px;
+    margin: 18px auto 8px;
+    border: 3px solid var(--yellow);
+    border-radius: 0;
   }
 
   /* ========== PRIMARY CTA ========== */
@@ -1719,39 +1764,48 @@
 <div class="hero-block">
   <div class="brand-line"><span class="red">Attention:</span> All <span class="teal">Long Island</span> Trades &amp; Home Service Owners</div>
 
-  <!-- 1. STOP — preserve the original punch -->
+  <!-- 1. STOP — the punch -->
   <h1 class="hero-headline">
     You Are <span class="em">Getting Robbed.</span>
   </h1>
 
+  <!-- 2. PROMISE — outcome + guarantee in one line -->
   <p class="hero-subhead">
-    Not by criminals. <strong>By invisibility.</strong> We fix that in one day. <strong>Or we come back and reshoot the whole thing free.</strong>
+    <strong>10&ndash;30 inbound calls in 60 days.</strong> Or we reshoot the whole thing free.
   </p>
 
-  <!-- 2. CLARIFY — plain trades language -->
-  <p class="hero-sub">
-    We show up to your shop with a full crew. <strong>8 hours.</strong> We shoot everything you need to make your phone ring. 3 ads. 48 videos. We launch them. We post them 4 times a week for 12 weeks. <strong>You show up for one day and go back to running your business.</strong>
-  </p>
-
-  <div class="straight-line">8 Hours. 60-Day Guarantee. No Retainer.</div>
-
-  <!-- 3. PROOF — VSL -->
-  <div class="watch-badge">
-    Watch this. 2 minutes.
+  <!-- 3. WHAT YOU GET — 4 quick bullets above the fold -->
+  <div class="hero-bullets">
+    <span>&#10003; 8-hour shoot at your shop</span>
+    <span>&#10003; 3 ads + 48 videos</span>
+    <span>&#10003; 12 weeks of posting</span>
+    <span>&#10003; You own every frame forever</span>
   </div>
 
-  <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
+  <!-- 4. PRICE — big and clear -->
+  <div class="hero-price">
+    <div class="price-amount">$6,500</div>
+    <div class="price-terms">All-In &middot; 50% To Book &middot; 50% On Delivery &middot; No Retainer</div>
+  </div>
+
+  <!-- 5. CTA — yellow, right under the price -->
+  <button class="cta-main cta-main-big" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    Book My Shoot Day &rarr;
+  </button>
+
+  <!-- 6. TRUST + GUARANTEE one-liner -->
+  <div class="hero-trust">
+    <span>&#9733; 60-Day Guarantee</span>
+    <span>&#9733; Phone Ringing Or We Reshoot Free</span>
+    <span>&#9733; DreamSeat-Credited Production</span>
+  </div>
+
+  <!-- VSL — placed below the CTA (still visible / quick scroll) -->
   <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
     <div class="vsl-soon">Founder Walkthrough &middot; Live Soon</div>
     <div class="play-btn" id="playBtn">
       <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
     </div>
-  </div>
-
-  <!-- Proof strip directly under the VSL — DreamSeat only -->
-  <div class="hero-proof">
-    <div class="hero-proof-text">Production Credit</div>
-    <div class="hero-proof-brands">DREAMSEAT</div>
   </div>
 </div>
 
