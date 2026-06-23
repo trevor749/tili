@@ -25,9 +25,9 @@
   ::selection { background: #4A8B8C; color: #FFFFFF; }
 
   :root {
-    --navy: #14213A;
-    --navy-deep: #0B1626;
-    --navy-soft: #1F2E4D;
+    --navy: #1B3258;
+    --navy-deep: #15294A;
+    --navy-soft: #2A4070;
     --navy-mute: #3D4C68;
     --cream: #F3EFE3;
     --cream-warm: #EBE5D2;
@@ -383,7 +383,7 @@
   .offer-price .teal {
     color: var(--teal);
     font-weight: 800;
-    font-style: italic;
+    font-style: normal;
   }
 
   .vsl-disc {
@@ -459,8 +459,8 @@
   }
   .section-h .teal {
     color: var(--teal);
-    font-style: italic;
-    font-weight: 600;
+    font-style: normal;
+    font-weight: 700;
   }
   .section-body { max-width: 680px; margin: 0 auto; text-align: left; }
   .section-body p {
@@ -982,44 +982,56 @@
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    background: none;
-    border: none;
-    border-top: 1px solid rgba(74, 139, 140, 0.45);
-    border-bottom: 1px solid rgba(74, 139, 140, 0.45);
-    padding: 11px 28px;
-    border-radius: 0;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.34em;
+    background: linear-gradient(180deg, rgba(74,139,140,0.18) 0%, rgba(74,139,140,0.10) 100%);
+    border: 1px solid rgba(93, 160, 161, 0.55);
+    padding: 13px 28px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: rgba(243, 239, 227, 0.78);
-    margin-bottom: 36px;
+    color: var(--cream);
+    margin-bottom: 40px;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.06) inset,
+      0 0 0 1px rgba(93, 160, 161, 0.10),
+      0 6px 24px -8px rgba(74, 139, 140, 0.45);
   }
-  .attention-chip .pulse { display: none; }
+  .attention-chip .pulse {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--teal-bright);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(93, 160, 161, 0.9);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 12px rgba(93, 160, 161, 0.9); opacity: 1; }
+    50% { box-shadow: 0 0 20px rgba(93, 160, 161, 1); opacity: 0.75; }
+  }
   .attention-chip .red {
     color: var(--teal-bright);
-    font-weight: 700;
-    letter-spacing: 0.36em;
+    font-weight: 800;
+    letter-spacing: 0.22em;
   }
 
   .hero-headline .hl {
     color: var(--teal-bright);
-    font-weight: 700;
-    font-style: italic;
+    font-weight: 800;
+    font-style: normal;
     background: none;
-    padding: 0 4px 0 2px;
+    padding: 0 2px;
     position: relative;
     display: inline-block;
   }
   .hero-headline .hl::after {
     content: '';
     position: absolute;
-    left: 4px; right: 4px;
-    bottom: -8px;
-    height: 3px;
-    background: var(--teal);
+    left: 0; right: 0;
+    bottom: -10px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal-bright) 0%, var(--teal) 100%);
     border-radius: 2px;
-    opacity: 0.95;
   }
 
   .hero-body p .hl-bg,
@@ -1027,7 +1039,7 @@
     background: none;
     color: var(--teal-bright);
     font-weight: 700;
-    font-style: italic;
+    font-style: normal;
     padding: 0;
     border-radius: 0;
     white-space: normal;
@@ -1045,10 +1057,10 @@
   }
   .statement-big .hl-strike {
     color: var(--teal-bright);
-    font-style: italic;
-    font-weight: 700;
+    font-style: normal;
+    font-weight: 800;
     background: none;
-    padding: 0 6px 0 3px;
+    padding: 0 2px;
     border-radius: 0;
     box-shadow: none;
     position: relative;
@@ -1057,12 +1069,11 @@
   .statement-big .hl-strike::after {
     content: '';
     position: absolute;
-    left: 6px; right: 6px;
-    bottom: -10px;
-    height: 4px;
-    background: var(--teal);
-    border-radius: 2px;
-    opacity: 0.95;
+    left: 0; right: 0;
+    bottom: -12px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--teal-bright) 0%, var(--teal) 100%);
+    border-radius: 3px;
   }
 
   .hero-closer {
@@ -1077,7 +1088,7 @@
   }
   .hero-closer .teal {
     color: var(--teal-bright);
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
   }
 
