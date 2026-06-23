@@ -7,7 +7,7 @@
 <meta name="description" content="If your phone isn't ringing enough — this is why. One-day shoot. 3 ads + 48 videos + 12 weeks posted. More calls in 60 days or we shoot again free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -58,12 +58,55 @@
   .wrap-tight { max-width: 640px; margin: 0 auto; padding: 0 28px; }
 
   /* =========================================================
-     BRAND WORDMARK + image swap-in
+     BRAND WORDMARK (text only — no logo)
   ========================================================= */
-  .brand-img { display: block; height: auto; }
-  .brand-img.lg { width: 220px; margin: 0 auto 36px; }
-  .brand-img.sm { width: 52px; }
-  .brand-img.footer-img { width: 92px; margin: 0 auto 18px; }
+  .display {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  .nav-wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: var(--cream);
+  }
+  .nav-wordmark .lite {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .nav-wordmark .main {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+  }
+
+  .footer-wordmark {
+    text-align: center;
+  }
+  .footer-wordmark .lite {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--cream);
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+  .footer-wordmark .main {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.045em;
+    line-height: 1;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
 
   .wordmark { text-align: center; }
   .wordmark .top, .wordmark .bot {
@@ -204,13 +247,15 @@
   .hero-inner { position: relative; z-index: 2; }
 
   .hero-headline {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
     font-weight: 800;
-    font-size: clamp(40px, 6vw, 72px);
-    line-height: 1.05;
+    font-size: clamp(46px, 7.2vw, 96px);
+    line-height: 0.98;
     color: var(--cream);
-    letter-spacing: -0.04em;
-    margin: 0 auto 36px;
-    max-width: 960px;
+    letter-spacing: -0.05em;
+    margin: 0 auto 40px;
+    max-width: 1000px;
     text-align: center;
   }
   .hero-headline .teal { color: var(--teal-bright); }
@@ -285,8 +330,8 @@
     opacity: 0.6;
   }
   .vsl-eyebrow {
-    font-weight: 600;
-    font-size: 11px;
+    font-weight: 700;
+    font-size: 12px;
     color: var(--teal);
     letter-spacing: 0.34em;
     text-transform: uppercase;
@@ -294,6 +339,16 @@
     position: relative;
     display: inline-block;
     padding: 4px 0;
+  }
+  .vsl-h {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
   }
   .vsl-video {
     aspect-ratio: 16 / 9;
@@ -370,15 +425,18 @@
   }
 
   .offer-price {
-    padding: 24px 28px;
-    margin-bottom: 32px;
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    padding: 28px 28px;
+    margin-bottom: 36px;
     font-weight: 700;
-    font-size: 24px;
+    font-size: clamp(26px, 3.4vw, 32px);
     color: var(--navy);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.035em;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     position: relative;
+    line-height: 1.15;
   }
   .offer-price .teal {
     color: var(--teal);
@@ -399,34 +457,36 @@
   ========================================================= */
   .btn-pill {
     display: inline-block;
-    padding: 20px 42px;
+    padding: 22px 48px;
     background: linear-gradient(180deg, var(--teal-bright) 0%, var(--teal) 55%, var(--teal-deep) 100%);
     color: var(--white);
-    font-weight: 700;
-    font-size: 15.5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
     border-radius: 999px;
     border: none;
     cursor: pointer;
     transition: all 0.25s ease;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.18) inset,
-      0 -1px 0 rgba(10, 22, 40, 0.2) inset,
-      0 10px 28px -8px rgba(74, 139, 140, 0.55),
-      0 4px 12px -2px rgba(10, 22, 40, 0.25);
+      0 1px 0 rgba(255, 255, 255, 0.22) inset,
+      0 -1px 0 rgba(10, 22, 40, 0.22) inset,
+      0 10px 28px -8px rgba(74, 139, 140, 0.6),
+      0 4px 12px -2px rgba(10, 22, 40, 0.28);
   }
   .btn-pill:hover {
-    background: linear-gradient(180deg, var(--teal) 0%, var(--teal-deep) 55%, #245A5B 100%);
+    background: linear-gradient(180deg, var(--teal) 0%, var(--teal-deep) 55%, #1F5253 100%);
     transform: translateY(-2px);
     box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.18) inset,
-      0 -1px 0 rgba(10, 22, 40, 0.2) inset,
-      0 14px 36px -8px rgba(74, 139, 140, 0.6),
-      0 6px 16px -2px rgba(10, 22, 40, 0.3);
+      0 1px 0 rgba(255, 255, 255, 0.22) inset,
+      0 -1px 0 rgba(10, 22, 40, 0.22) inset,
+      0 14px 36px -8px rgba(74, 139, 140, 0.65),
+      0 6px 16px -2px rgba(10, 22, 40, 0.32);
   }
-  .btn-pill .arrow { display: inline-block; margin-left: 10px; transition: transform 0.2s; }
-  .btn-pill:hover .arrow { transform: translateX(4px); }
-  .btn-pill-lg { padding: 24px 52px; font-size: 16.5px; }
+  .btn-pill .arrow { display: inline-block; margin-left: 12px; transition: transform 0.2s; }
+  .btn-pill:hover .arrow { transform: translateX(5px); }
+  .btn-pill-lg { padding: 26px 58px; font-size: 16px; }
 
   /* =========================================================
      SECTIONS
@@ -450,11 +510,13 @@
     opacity: 0.55;
   }
   .section-h {
-    font-weight: 700;
-    font-size: clamp(32px, 4.6vw, 58px);
-    line-height: 1.08;
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: clamp(36px, 5.6vw, 76px);
+    line-height: 1.0;
     color: var(--navy);
-    letter-spacing: -0.04em;
+    letter-spacing: -0.05em;
     margin-bottom: 28px;
   }
   .section-h .teal {
@@ -610,10 +672,12 @@
   }
   .stack-card.featured .ck { background: var(--teal); color: var(--white); }
   .stack-card h4 {
-    font-weight: 800;
-    font-size: 19px;
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 21px;
     color: var(--navy);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
   }
   .stack-card h4 .tm { font-size: 0.55em; vertical-align: super; color: var(--teal); margin-left: 2px; }
   .stack-card .bonus-badge {
@@ -674,11 +738,13 @@
     opacity: 0.6;
   }
   .guarantee-seal .big {
-    font-weight: 900;
-    font-size: 76px;
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: 92px;
     color: var(--navy);
-    line-height: 0.9;
-    letter-spacing: -0.03em;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
   }
   .guarantee-seal .day {
     font-weight: 700;
@@ -717,12 +783,14 @@
   .math-list .item:last-child { border-bottom: none; }
   .math-list .arrow { color: var(--teal); font-weight: 900; font-size: 22px; line-height: 1; }
   .math-close {
-    font-weight: 800;
-    font-size: clamp(22px, 3vw, 30px);
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: clamp(26px, 3.6vw, 38px);
     color: var(--navy);
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-top: 20px;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    margin-top: 24px;
     text-align: center;
   }
   .math-close .teal { color: var(--teal); }
@@ -790,11 +858,13 @@
     box-shadow: var(--shadow-card-xl);
   }
   .investment-card .total {
-    font-weight: 900;
-    font-size: clamp(72px, 9vw, 96px);
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: clamp(84px, 11vw, 132px);
     color: var(--teal);
-    line-height: 1;
-    letter-spacing: -0.03em;
+    line-height: 0.92;
+    letter-spacing: -0.055em;
     margin-bottom: 10px;
   }
   .investment-card .total-lbl {
@@ -1046,14 +1116,16 @@
   }
 
   .statement-big {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
     font-weight: 800;
-    font-size: clamp(44px, 6.4vw, 84px);
-    line-height: 1.02;
+    font-size: clamp(52px, 8.4vw, 116px);
+    line-height: 0.95;
     color: var(--cream);
-    letter-spacing: -0.045em;
-    margin: 56px auto 48px;
+    letter-spacing: -0.055em;
+    margin: 60px auto 56px;
     text-align: center;
-    max-width: 880px;
+    max-width: 960px;
   }
   .statement-big .hl-strike {
     color: var(--teal-bright);
@@ -1136,21 +1208,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 14px 40px;
-    margin-top: 44px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(74, 139, 140, 0.28);
-    font-weight: 600;
-    font-size: 11px;
-    color: rgba(243, 239, 227, 0.78);
-    letter-spacing: 0.26em;
+    gap: 14px 36px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(74, 139, 140, 0.32);
+    font-weight: 700;
+    font-size: 11.5px;
+    color: var(--cream);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
   .hero-trust .item { display: inline-flex; align-items: center; }
   .hero-trust .star {
     color: var(--teal-bright);
     margin-right: 10px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   @media (max-width: 760px) {
@@ -1203,7 +1275,11 @@
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="nav-left">
-    <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img sm">
+    <div class="nav-wordmark">
+      <span class="lite">This Is</span>
+      <span class="main">Long Island</span>
+      <span class="lite">Marketing</span>
+    </div>
   </div>
   <a href="#apply" class="nav-cta">Book A Call</a>
 </nav>
@@ -1216,8 +1292,6 @@
       <span class="pulse"></span>
       <span><span class="red">Attention:</span> Long Island HVAC, Plumbing, Roofing &amp; Trades Owners</span>
     </div>
-
-    <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img lg">
 
     <h1 class="hero-headline">
       If Your Phone Isn't Ringing Enough — <span class="hl">This Is Why.</span>
@@ -1586,8 +1660,12 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
-  <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img footer-img">
-  <div class="address">Northport, Long Island</div>
+  <div class="footer-wordmark">
+    <div class="lite">This Is</div>
+    <div class="main">Long Island</div>
+    <div class="lite">Marketing</div>
+  </div>
+  <div class="address" style="margin-top: 22px;">Northport, Long Island</div>
   <div class="address"><a href="https://thisislongisland.com">thisislongisland.com</a></div>
   <div class="address"><a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
   <div class="links">
