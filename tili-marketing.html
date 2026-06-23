@@ -60,9 +60,10 @@
   /* =========================================================
      BRAND WORDMARK + image swap-in
   ========================================================= */
-  .brand-img { display: block; }
-  .brand-img.lg { width: 200px; margin: 0 auto 36px; }
-  .brand-img.sm { width: 36px; }
+  .brand-img { display: block; height: auto; }
+  .brand-img.lg { width: 220px; margin: 0 auto 36px; }
+  .brand-img.sm { width: 52px; }
+  .brand-img.footer-img { width: 92px; margin: 0 auto 18px; }
 
   .wordmark { text-align: center; }
   .wordmark .top, .wordmark .bot {
@@ -1166,6 +1167,9 @@
     .investment-card { padding: 40px 28px; }
     .form-card { padding: 32px 24px; }
     .brand-mark.lg { width: 160px; margin-bottom: 28px; }
+    .brand-img.lg { width: 170px; margin-bottom: 28px; }
+    .brand-img.sm { width: 44px; }
+    .brand-img.footer-img { width: 80px; }
   }
 </style>
 </head>
@@ -1186,15 +1190,9 @@
 -->
 
 <!-- ============ NAV ============ -->
-<!-- LOGO: replace the <div class="wordmark nav-mark"> block with:
-     <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img sm"> -->
 <nav class="nav">
   <div class="nav-left">
-    <div class="wordmark nav-mark">
-      <span class="pre">This Is</span>
-      <span class="main"><span class="accent">Long Island</span></span>
-      <span class="post">Marketing</span>
-    </div>
+    <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img sm">
   </div>
   <a href="#apply" class="nav-cta">Book A Call</a>
 </nav>
@@ -1208,13 +1206,7 @@
       <span><span class="red">Attention:</span> Long Island HVAC, Plumbing, Roofing &amp; Trades Owners</span>
     </div>
 
-    <!-- LOGO: replace this <div class="wordmark hero-mark"> block with:
-         <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img lg"> -->
-    <div class="wordmark hero-mark">
-      <div class="top"><span class="rule"></span>This Is<span class="rule"></span></div>
-      <div class="main">Long Island</div>
-      <div class="bot"><span class="rule"></span>Marketing<span class="rule"></span></div>
-    </div>
+    <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img lg">
 
     <h1 class="hero-headline">
       If Your Phone Isn't Ringing Enough — <span class="hl">This Is Why.</span>
@@ -1582,15 +1574,8 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
-<!-- LOGO: replace the <div class="wordmark footer-mark"> block with:
-     <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img" style="width:80px;margin:0 auto 14px;"> -->
 <footer class="footer">
-  <div class="wordmark footer-mark">
-    <div class="top"><span class="rule"></span>This Is<span class="rule"></span></div>
-    <div class="main">Long Island</div>
-    <div class="bot"><span class="rule"></span>Marketing<span class="rule"></span></div>
-  </div>
-  <div style="height: 22px;"></div>
+  <img src="tili-logo.png" alt="This Is Long Island Marketing" class="brand-img footer-img">
   <div class="address">Northport, Long Island</div>
   <div class="address"><a href="https://thisislongisland.com">thisislongisland.com</a></div>
   <div class="address"><a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
