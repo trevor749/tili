@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$6,500. One Day. Your Phone Ringing. | This Is Long Island Marketing</title>
-<meta name="description" content="For Long Island HVAC, plumbing, roofing, electrical & GCs. One-day shoot. 3 ads + 48 videos + 12 weeks posted. More calls in 60 days or we reshoot free.">
+<title>$6,500. One Day. Your Phone Ringing. Guaranteed. | This Is Long Island Marketing</title>
+<meta name="description" content="One-day shoot. 3 ads + 48 videos + 12 weeks posted. More calls in 60 days or we reshoot the whole thing free. For Long Island trades.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #1B2B4B;
-    color: #F0E8D5;
+    background: #0a0a0a;
+    color: #fff;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -22,40 +22,47 @@
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-  ::selection { background: #4A8B8C; color: #F0E8D5; }
+  ::selection { background: #ffcc00; color: #000; }
 
   :root {
-    /* Brand palette */
-    --bg: #1B2B4B;            /* Navy — primary background */
-    --bg-alt: #152340;         /* Deeper navy — alternating sections */
-    --bg-card: #22355a;        /* Lifted navy — card surfaces */
+    --bg: #0a0a0a;
+    --bg-alt: #131313;
+    --bg-card: #1a1a1a;
     --white: #ffffff;
-    --cream: #F0E8D5;          /* Cream — primary text, headlines */
-    --cream-dim: #c9c0aa;       /* Dimmed cream — secondary text */
-    --grey: #8a93a3;            /* Cool grey — tertiary text */
-    --grey-dark: #4d5566;
-    --teal: #4A8B8C;            /* Muted teal — accent, CTAs */
-    --teal-bright: #5DA0A1;     /* Lighter teal — bright accent */
-    --teal-dark: #2D6B6C;       /* Dark teal — hovers, strong borders */
-    --yellow: #E8B85C;          /* Warm gold — small marquee accent */
-    --line: #25375c;            /* Subtle navy-tinted line */
-    --line-strong: #2D6B6C;     /* Dark teal — strong dividers */
+    --cream: #f4f1ea;
+    --grey: #888;
+    --grey-dark: #555;
+    --teal: #1bb0ce;
+    --teal-bright: #22e8ff;
+    --yellow: #ffcc00;
+    --yellow-bright: #ffd633;
+    --red: #e74c3c;
+    --green: #2ecc71;
+    --line: #1f1f1f;
+    --line-strong: #2a2a2a;
   }
 
+  .hi { background: var(--yellow); color: #000; padding: 0 6px; font-weight: 900; }
+  .strike { text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 3px; color: #777; }
   .italic { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; color: var(--teal); }
 
-  @keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 6px 0 #b8a500, 0 0 0 0 rgba(255,204,0,0); }
+    50% { box-shadow: 0 6px 0 #b8a500, 0 0 0 18px rgba(255,204,0,0); }
   }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  @keyframes wiggle { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+  @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
 
   /* ===== TOP MARQUEE ===== */
   .marquee {
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    background: var(--teal);
+    color: #000;
     padding: 12px 0;
     overflow: hidden;
     white-space: nowrap;
+    border-bottom: 2px solid #000;
   }
   .marquee-track {
     display: inline-block;
@@ -67,67 +74,69 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 14px;
     letter-spacing: 0.22em;
-    color: var(--white);
+    text-transform: uppercase;
     padding: 0 18px;
+    font-weight: 700;
   }
-  .marquee-track .star {
-    color: var(--yellow);
-    font-size: 12px;
-    padding: 0 6px;
-    vertical-align: middle;
-  }
+  .marquee-track .star { color: #000; opacity: 0.6; padding: 0 4px; }
 
   /* ===== NAV ===== */
   .nav {
     background: var(--bg);
     border-bottom: 1px solid var(--line);
-    padding: 18px 28px;
+    padding: 16px 28px;
     display: flex; justify-content: space-between; align-items: center;
     position: sticky; top: 0; z-index: 50;
-    backdrop-filter: blur(20px);
-    background: rgba(5,5,5,0.95);
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(14px);
   }
   .nav-brand {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     color: var(--white);
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
   .nav-brand .teal { color: var(--teal); }
-  .nav-meta {
+  .nav-cta {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--yellow);
+    color: #000;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
-    color: var(--grey);
-    letter-spacing: 0.22em;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    border: 2px solid #000;
+    transition: background 0.2s, transform 0.15s;
   }
+  .nav-cta:hover { background: var(--yellow-bright); transform: translateY(-1px); }
 
   /* ===== WRAPPERS ===== */
   .wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
-  .wrap-narrow { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+  .wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  .wrap-wide { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
   /* ===== HERO ===== */
-  .hero {
-    padding: 60px 0 70px;
-    text-align: center;
-    background: var(--bg);
-  }
+  .hero { padding: 56px 0 70px; text-align: center; background: var(--bg); }
   .hero-eyebrow {
     display: inline-block;
-    padding: 9px 20px;
-    border: 2px solid var(--teal);
+    padding: 10px 22px;
+    background: var(--red);
+    color: var(--white);
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+    border: 2px solid var(--white);
+    font-weight: 700;
   }
 
   .hero-headline {
     font-family: 'Anton', 'Bebas Neue', sans-serif;
-    font-size: clamp(56px, 9vw, 116px);
+    font-size: clamp(52px, 8.5vw, 108px);
     line-height: 0.95;
     color: var(--white);
     letter-spacing: 0;
@@ -135,6 +144,7 @@
     max-width: 1080px;
     text-transform: uppercase;
   }
+  .hero-headline .hi { padding: 0 10px 4px; line-height: 1.05; display: inline-block; }
   .hero-headline .italic {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
@@ -149,134 +159,174 @@
     max-width: 760px;
     margin: 0 auto 36px;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(17px, 2vw, 19px);
+    font-size: clamp(17px, 2vw, 20px);
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.55;
     color: var(--cream);
   }
   .hero-subline strong { color: var(--white); font-weight: 700; }
+  .hero-subline .hi { padding: 0 4px; }
 
   /* ===== VSL ===== */
   .vsl-wrap {
     max-width: 720px;
-    margin: 0 auto 18px;
+    margin: 0 auto 12px;
     aspect-ratio: 16/9;
     background: #000;
-    border: 1px solid var(--line-strong);
+    border: 4px solid var(--yellow);
     position: relative;
     cursor: pointer;
     overflow: hidden;
+    box-shadow: 0 8px 0 #b8a500;
   }
-  .vsl-wrap:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); background: var(--teal-bright); }
+  .vsl-wrap:hover .play-btn { transform: translate(-50%,-50%) scale(1.08); background: var(--red); }
   .vsl-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .play-btn {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%,-50%);
-    width: 88px; height: 88px;
-    background: var(--teal);
+    width: 92px; height: 92px;
+    background: var(--yellow);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.2s, background 0.2s;
     z-index: 2;
+    border: 4px solid var(--white);
   }
-  .play-btn svg { width: 32px; height: 32px; fill: var(--white); margin-left: 4px; }
+  .play-btn svg { width: 32px; height: 32px; fill: #000; margin-left: 4px; }
   .vsl-caption {
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.28em;
+    font-size: 14px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--grey);
+    color: var(--yellow);
+    margin-top: 18px;
   }
+  .vsl-caption .red { color: var(--red); font-weight: 700; }
 
-  /* ===== HERO BULLETS (above the fold) ===== */
+  /* ===== HERO BULLETS ===== */
   .hero-bullets {
     max-width: 980px;
-    margin: 0 auto 40px;
+    margin: 0 auto 36px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px 32px;
+    gap: 22px 32px;
     padding: 0 24px;
   }
   .hero-bullet {
     text-align: left;
-    padding-left: 32px;
+    padding-left: 36px;
     position: relative;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--white);
-    line-height: 1.25;
+    line-height: 1.3;
   }
   .hero-bullet::before {
     content: '✓';
     position: absolute;
     left: 0;
-    top: 0;
-    color: var(--teal);
-    font-size: 22px;
+    top: -3px;
+    width: 26px; height: 26px;
+    background: var(--green);
+    color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
     font-weight: 900;
-    line-height: 1;
     font-family: 'Inter', sans-serif;
+    border-radius: 50%;
   }
 
   /* ===== HERO PRICE + CTA ===== */
-  .hero-action {
+  .hero-pricing {
+    max-width: 580px;
+    margin: 0 auto 18px;
     text-align: center;
-    max-width: 720px;
-    margin: 0 auto;
-    padding-top: 18px;
-    border-top: 1px solid var(--line-strong);
+    padding: 22px 28px;
+    background: var(--bg-card);
+    border: 3px solid var(--yellow);
   }
-  .hero-action-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px 30px;
-    margin-top: 28px;
-  }
-  .hero-price-tag {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(40px, 5vw, 56px);
-    color: var(--teal);
-    line-height: 1;
-  }
-  .hero-price-tag-sub {
+  .hero-pricing .strike-line {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+  .hero-pricing .strike-line .struck {
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 3px;
+    color: #999;
+    margin: 0 6px;
+  }
+  .hero-pricing .real-price {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(56px, 8vw, 84px);
+    color: var(--yellow);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .hero-pricing .price-sub {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--grey);
-    margin-top: 4px;
+    color: var(--cream);
+    margin-top: 6px;
   }
 
-  /* CTA */
+  /* Hand-drawn red arrow (Brunson signature) */
+  .hand-arrow {
+    color: var(--red);
+    font-size: 36px;
+    font-weight: 900;
+    margin: 4px 0;
+    animation: wiggle 1.5s ease-in-out infinite;
+    line-height: 1;
+    display: block;
+    text-align: center;
+  }
+  .scribble {
+    color: var(--yellow);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* MASSIVE CTA — Hormozi style */
   .btn-primary {
     display: inline-block;
-    padding: 20px 42px;
-    background: var(--teal);
-    color: var(--bg);
+    padding: 26px 50px;
+    background: var(--yellow);
+    color: #000;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
-    letter-spacing: 0.22em;
+    font-size: 24px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    border: 2px solid var(--teal);
+    border: 3px solid #000;
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 6px 0 #b8a500;
+    animation: pulse-glow 2.5s ease-in-out infinite;
+    font-weight: 700;
   }
-  .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); transform: translateY(-2px); }
-  .btn-primary .arrow { display: inline-block; margin-left: 10px; transition: transform 0.2s; }
-  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-primary:hover { background: var(--yellow-bright); transform: translateY(2px); box-shadow: 0 4px 0 #b8a500; }
+  .btn-primary:active { transform: translateY(6px); box-shadow: 0 0 0 #b8a500; }
+  .btn-primary .arrow { display: inline-block; margin-left: 10px; }
 
   .btn-sub {
-    margin-top: 16px;
+    margin-top: 18px;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
-    font-weight: 500;
-    color: var(--grey);
+    color: var(--cream);
     line-height: 1.5;
     font-style: italic;
     max-width: 460px;
@@ -284,39 +334,63 @@
     margin-right: auto;
   }
 
+  /* ===== TRUST BADGES ===== */
+  .trust-row {
+    max-width: 760px;
+    margin: 36px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 26px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line-strong);
+  }
+  .trust-badge {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-badge .icon { color: var(--green); font-size: 18px; font-weight: 900; }
+
   /* ===== PROOF BAND ===== */
   .proof-band {
     background: var(--bg-alt);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 38px 24px;
+    border-top: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    padding: 40px 24px;
     text-align: center;
   }
-  .proof-stars { color: var(--yellow); font-size: 18px; letter-spacing: 5px; margin-bottom: 12px; }
+  .proof-stars { color: var(--yellow); font-size: 22px; letter-spacing: 6px; margin-bottom: 12px; }
   .proof-quote {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
     color: var(--white);
-    max-width: 580px;
-    margin: 0 auto 10px;
+    max-width: 620px;
+    margin: 0 auto 12px;
     line-height: 1.5;
     font-weight: 500;
   }
-  .proof-quote strong { color: var(--teal); font-style: normal; font-weight: 700; }
+  .proof-quote strong { color: var(--yellow); font-style: normal; font-weight: 800; }
   .proof-attr {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--teal);
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    font-weight: 700;
   }
   .proof-credits {
     padding-top: 18px;
     border-top: 1px solid var(--line-strong);
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.26em;
     text-transform: uppercase;
     color: var(--cream);
@@ -324,295 +398,354 @@
   .proof-credits .lbl { color: var(--grey); margin-right: 8px; }
 
   /* ===== SECTIONS ===== */
-  section { padding: 90px 0; position: relative; }
+  section { padding: 80px 0; position: relative; }
 
   .section-eyebrow {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--teal);
-    text-align: center;
-    margin-bottom: 16px;
-  }
-  .section-eyebrow::before, .section-eyebrow::after {
-    content: '';
     display: inline-block;
-    width: 28px;
-    height: 1px;
-    background: var(--teal);
-    vertical-align: middle;
-    margin: 0 14px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #000;
+    background: var(--yellow);
+    padding: 8px 18px;
+    margin-bottom: 18px;
+    font-weight: 700;
   }
-
   .section-h {
     font-family: 'Anton', 'Bebas Neue', sans-serif;
-    font-size: clamp(40px, 6vw, 68px);
+    font-size: clamp(40px, 6vw, 72px);
     color: var(--white);
     text-align: center;
     line-height: 1;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     text-transform: uppercase;
   }
-  .section-h .italic {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 0.94em;
-    color: var(--teal);
-  }
+  .section-h .hi { padding: 0 8px; line-height: 1.1; display: inline-block; }
+  .section-h .italic { font-size: 0.95em; }
+  .section-h .yellow { color: var(--yellow); }
+  .section-top-center { text-align: center; }
 
-  /* ===== PROBLEM ===== */
-  .problem-section { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .problem-body { max-width: 640px; margin: 0 auto; text-align: center; }
-  .problem-body p { font-size: 19px; line-height: 1.65; color: var(--cream); margin-bottom: 16px; }
-  .problem-body p.dim { color: var(--grey); }
-  .problem-body p.punch { font-weight: 700; font-size: 21px; color: var(--white); }
-  .problem-body p.punch strong { color: var(--teal); }
-  .problem-body p.close {
-    margin-top: 24px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--teal);
+  /* ===== STORY (problem) ===== */
+  .story-section { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .story-body { max-width: 660px; margin: 0 auto; text-align: center; }
+  .story-body p {
+    font-size: 20px;
+    line-height: 1.65;
+    color: var(--cream);
+    margin-bottom: 18px;
+  }
+  .story-body p.dim { color: var(--grey); }
+  .story-body p.punch {
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--white);
     line-height: 1.4;
   }
-
-  /* ===== WHAT HAPPENS ===== */
-  .happens-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); }
-  .happens-body { max-width: 680px; margin: 0 auto; text-align: center; }
-  .happens-body p { font-size: 18px; line-height: 1.65; color: var(--cream); margin-bottom: 12px; }
-  .happens-body p.lead {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    letter-spacing: 0.06em;
+  .story-body p.punch strong { background: var(--yellow); color: #000; padding: 0 6px; font-weight: 900; }
+  .story-body p.close {
+    margin-top: 30px;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--yellow);
+    line-height: 1.2;
     text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 20px;
-  }
-  .happens-body p.dim { color: var(--grey); }
-  .happens-body p .key {
-    color: var(--teal);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.15em;
-    letter-spacing: 0.04em;
-    margin-right: 4px;
-  }
-  .happens-body p strong { color: var(--white); font-weight: 700; }
-  .happens-divider { width: 50px; height: 2px; background: var(--teal); margin: 28px auto; }
-  .happens-list-3 { max-width: 560px; margin: 16px auto; text-align: left; }
-  .happens-list-3 li {
-    list-style: none;
-    padding: 10px 0 10px 32px;
-    position: relative;
-    color: var(--cream);
-    font-size: 17px;
-    line-height: 1.55;
-  }
-  .happens-list-3 li::before {
-    content: '→';
-    position: absolute; left: 0; top: 8px;
-    color: var(--teal);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-  }
-  .happens-finisher {
-    margin-top: 22px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--teal);
   }
 
-  /* ===== WHAT YOU GET ===== */
-  .stack-section { background: var(--bg); border-bottom: 1px solid var(--line); }
-  .stack-list { max-width: 760px; margin: 0 auto; }
+  /* ===== WHAT YOU GET (value stack) — HORMOZI STYLE ===== */
+  .stack-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); }
+  .stack-list { max-width: 780px; margin: 0 auto; }
   .stack-item {
     display: grid;
-    grid-template-columns: 32px 1fr;
-    gap: 22px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--line);
-    transition: padding-left 0.2s;
+    grid-template-columns: 36px 1fr auto;
+    gap: 20px;
+    align-items: start;
+    padding: 22px 0;
+    border-bottom: 1px dashed var(--line-strong);
   }
   .stack-item:last-child { border-bottom: 0; }
-  .stack-item:hover { padding-left: 8px; }
   .stack-item .ck {
-    width: 26px; height: 26px;
-    background: var(--teal);
-    color: var(--bg);
+    width: 32px; height: 32px;
+    background: var(--green);
+    color: #000;
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 900;
-    margin-top: 4px;
+    border-radius: 50%;
+    margin-top: 2px;
   }
   .stack-item h4 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     color: var(--white);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
   .stack-item p {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     color: var(--grey);
-    line-height: 1.6;
+    line-height: 1.55;
   }
-  .stack-item p strong { color: var(--cream); font-weight: 600; }
-
-  /* ===== BONUS ===== */
-  .bonus-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); text-align: center; }
-  .bonus-tag {
-    display: inline-block;
-    padding: 9px 20px;
-    border: 2px solid var(--teal);
+  .stack-item p strong { color: var(--cream); font-weight: 700; }
+  .stack-item .value-tag {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.28em;
+    font-size: 14px;
+    color: #000;
+    background: var(--yellow);
+    padding: 6px 12px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--teal);
+    white-space: nowrap;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .stack-item .value-tag.priceless { background: var(--teal); color: #000; }
+
+  /* TOTAL VALUE REVEAL — Hormozi signature */
+  .total-reveal {
+    max-width: 580px;
+    margin: 50px auto 0;
+    padding: 40px 30px;
+    background: var(--bg);
+    border: 4px solid var(--yellow);
+    text-align: center;
+    box-shadow: 0 8px 0 #b8a500;
+  }
+  .total-reveal .total-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--cream);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .total-reveal .total-amount {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(64px, 8vw, 88px);
+    color: #999;
+    line-height: 1;
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 5px;
     margin-bottom: 22px;
   }
+  .total-reveal .today-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--yellow);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .total-reveal .today-amount {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(80px, 10vw, 120px);
+    color: var(--yellow);
+    line-height: 1;
+    background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow-bright) 50%, var(--yellow) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  .total-reveal .save-line {
+    margin-top: 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--green);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* ===== BONUS — Hormozi style stamp ===== */
+  .bonus-section { background: var(--bg); border-bottom: 1px solid var(--line); text-align: center; }
+  .bonus-stamp {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 10px 22px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    transform: rotate(-2deg);
+    border: 2px solid var(--white);
+    font-weight: 700;
+  }
   .bonus-section h2 {
-    font-family: 'Anton', 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5.5vw, 60px);
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(38px, 5.5vw, 62px);
     color: var(--white);
     line-height: 1;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
     text-transform: uppercase;
   }
-  .bonus-section h2 .italic {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 0.95em;
-    color: var(--teal);
-  }
+  .bonus-section h2 .yellow { color: var(--yellow); }
   .bonus-section h2 .tm {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.28em;
+    font-size: 0.32em;
     vertical-align: super;
-    color: var(--teal);
+    color: var(--yellow);
     margin-left: 2px;
     font-weight: 700;
-    font-style: normal;
+    font-family: 'Inter', sans-serif;
   }
-  .bonus-body { max-width: 620px; margin: 0 auto; }
+  .bonus-value-tag {
+    display: inline-block;
+    margin-bottom: 28px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--yellow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 2px dashed var(--yellow);
+    padding: 8px 18px;
+  }
+  .bonus-value-tag .struck {
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 2px;
+    color: var(--grey);
+    margin-right: 8px;
+  }
+  .bonus-value-tag .free { color: var(--green); font-weight: 900; }
+  .bonus-body { max-width: 640px; margin: 0 auto; }
   .bonus-body p { font-size: 18px; line-height: 1.65; color: var(--cream); margin-bottom: 16px; }
   .bonus-body p.dim { color: var(--grey); }
   .bonus-body p strong { color: var(--white); font-weight: 700; }
-  .bonus-callout {
-    margin-top: 28px;
-    padding: 20px 28px;
-    background: var(--bg);
-    border: 1px solid var(--teal);
-    font-size: 15px;
-    color: var(--cream);
-    line-height: 1.65;
-    display: inline-block;
-    text-align: left;
-  }
-  .bonus-callout strong { color: var(--teal); font-weight: 700; }
+  .bonus-body p .hi { padding: 0 4px; }
 
-  /* ===== GUARANTEE ===== */
-  .guarantee-section { background: var(--bg); border-bottom: 1px solid var(--line); text-align: center; }
+  /* ===== GUARANTEE — BIG SEAL ===== */
+  .guarantee-section {
+    background: var(--bg-alt);
+    border-top: 4px solid var(--yellow);
+    border-bottom: 4px solid var(--yellow);
+    text-align: center;
+  }
   .guarantee-seal {
-    display: inline-block;
-    padding: 18px 36px;
-    background: var(--bg-card);
-    border: 2px solid var(--teal);
-    margin: 0 auto 32px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    color: var(--teal);
+    width: 240px; height: 240px;
+    margin: 0 auto 36px;
+    background: var(--bg);
+    border: 6px solid var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 8px 8px 0 #b8a500;
+    transform: rotate(-3deg);
+    padding: 20px;
   }
   .guarantee-seal .big {
     font-family: 'Anton', sans-serif;
-    font-size: 36px;
-    color: var(--white);
-    margin-right: 14px;
-    vertical-align: middle;
-    line-height: 1;
+    font-size: 72px;
+    color: var(--yellow);
+    line-height: 0.85;
   }
-  .guarantee-body { max-width: 620px; margin: 0 auto; }
-  .guarantee-body p { font-size: 18px; line-height: 1.65; color: var(--cream); margin-bottom: 16px; }
-  .guarantee-body p.bold { font-weight: 700; font-size: 20px; color: var(--white); }
-  .guarantee-body p.bold strong { color: var(--teal); }
+  .guarantee-seal .day {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--white);
+    letter-spacing: 0.24em;
+    margin-top: 4px;
+  }
+  .guarantee-seal .promise {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--yellow);
+    letter-spacing: 0.2em;
+    margin-top: 10px;
+    border-top: 2px solid var(--yellow);
+    padding-top: 8px;
+  }
+  .guarantee-body { max-width: 640px; margin: 0 auto; }
+  .guarantee-body p { font-size: 19px; line-height: 1.65; color: var(--cream); margin-bottom: 16px; }
+  .guarantee-body p.bold { font-weight: 700; font-size: 21px; color: var(--white); }
+  .guarantee-body p.bold strong { background: var(--yellow); color: #000; padding: 0 6px; font-weight: 900; }
   .guarantee-body p.dim { color: var(--grey); }
   .guarantee-rules {
-    max-width: 580px;
+    max-width: 600px;
     margin: 32px auto 0;
-    padding: 24px 28px;
-    border: 1px solid var(--line-strong);
-    background: var(--bg-alt);
+    padding: 22px 28px;
+    border-left: 4px solid var(--red);
+    background: var(--bg);
     text-align: left;
   }
   .guarantee-rules .lbl {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.28em;
+    font-size: 13px;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 14px;
+    color: var(--red);
+    margin-bottom: 12px;
+    font-weight: 700;
   }
-  .guarantee-rules p { font-size: 15px; color: var(--grey); line-height: 1.65; margin-bottom: 8px; }
-  .guarantee-rules p strong { color: var(--white); }
+  .guarantee-rules p { font-size: 15px; color: var(--cream); line-height: 1.65; margin-bottom: 8px; }
+  .guarantee-rules p strong { color: var(--yellow); font-weight: 700; }
+
+  /* ===== MID CTA (mid-page push) ===== */
+  .mid-cta {
+    text-align: center;
+    padding: 60px 24px;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .mid-cta h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(30px, 4vw, 44px);
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.05;
+  }
+  .mid-cta h3 .yellow { color: var(--yellow); }
 
   /* ===== MATH ===== */
   .math-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); text-align: center; }
   .math-body { max-width: 580px; margin: 0 auto; }
-  .math-body p { font-size: 19px; line-height: 1.6; color: var(--cream); margin-bottom: 8px; }
+  .math-body p { font-size: 20px; line-height: 1.6; color: var(--cream); margin-bottom: 8px; }
   .math-body p.intro { color: var(--grey); margin-bottom: 22px; }
   .math-body p.intro strong { color: var(--white); font-weight: 700; }
   .math-body p.list {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     color: var(--white);
     margin-bottom: 4px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
-  .math-body p.list .key { color: var(--teal); font-size: 1.2em; margin-right: 6px; }
+  .math-body p.list .key { color: var(--yellow); font-size: 1.2em; margin-right: 6px; }
   .math-body p.close {
-    margin-top: 32px;
+    margin-top: 36px;
     font-family: 'Anton', sans-serif;
-    font-size: clamp(28px, 4vw, 38px);
-    color: var(--white);
+    font-size: clamp(30px, 4.5vw, 44px);
+    color: var(--yellow);
     line-height: 1.15;
     text-transform: uppercase;
   }
-  .math-body p.close .italic { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 0.95em; color: var(--teal); }
 
   /* ===== WHO ===== */
   .who-section { background: var(--bg); border-bottom: 1px solid var(--line); text-align: center; }
-  .who-intro {
-    max-width: 620px;
-    margin: 0 auto 36px;
-    font-size: 19px;
-    color: var(--cream);
-    line-height: 1.6;
-    font-weight: 500;
-  }
-  .who-intro strong { color: var(--teal); font-weight: 700; }
   .who-grid {
     max-width: 580px;
-    margin: 0 auto 36px;
+    margin: 32px auto 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 14px 36px;
   }
   .who-item {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 19px;
+    font-size: 20px;
     color: var(--white);
     text-align: left;
-    padding-left: 32px;
+    padding-left: 36px;
     position: relative;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -621,187 +754,200 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--teal);
+    top: -3px;
+    width: 26px; height: 26px;
+    background: var(--green);
+    color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
     font-weight: 900;
-    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50%;
   }
   .who-region {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--grey);
+    color: var(--cream);
     margin-bottom: 22px;
   }
-  .who-region strong { color: var(--teal); }
+  .who-region strong { background: var(--yellow); color: #000; padding: 0 6px; font-weight: 900; }
   .who-sweet {
-    max-width: 580px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 22px 28px;
-    border: 1px solid var(--teal);
-    background: var(--bg-alt);
-    font-size: 16px;
+    border: 2px dashed var(--teal);
+    background: var(--bg-card);
+    font-size: 17px;
     color: var(--cream);
     line-height: 1.65;
   }
-  .who-sweet strong { color: var(--teal); font-weight: 700; }
-  .who-sweet .italic { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; font-size: 1em; color: var(--teal); }
+  .who-sweet strong { color: var(--yellow); font-weight: 800; }
 
-  /* ===== INVESTMENT ===== */
-  .investment-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); text-align: center; }
-  .investment-card {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 44px 40px;
-    border: 1px solid var(--teal);
+  /* ===== FAQ ===== */
+  .faq-section { background: var(--bg-alt); border-bottom: 1px solid var(--line); }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item {
     background: var(--bg);
-  }
-  .investment-card .total {
-    font-family: 'Anton', sans-serif;
-    font-size: clamp(72px, 9vw, 96px);
-    color: var(--teal);
-    line-height: 1;
+    border: 2px solid var(--line-strong);
     margin-bottom: 12px;
+    transition: border-color 0.2s;
   }
-  .investment-card .total-lbl {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--grey);
-    margin-bottom: 30px;
-  }
-  .investment-card .split {
+  .faq-item[open] { border-color: var(--yellow); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    padding: 16px 0;
-    border-top: 1px solid var(--line-strong);
+    align-items: center;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    color: var(--cream);
-    letter-spacing: 0.08em;
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-  .investment-card .split:last-of-type { border-bottom: 1px solid var(--line-strong); }
-  .investment-card .split .amount {
-    color: var(--teal);
-    font-family: 'Anton', sans-serif;
-    font-size: 24px;
-    letter-spacing: 0;
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    color: var(--yellow);
+    font-size: 28px;
+    font-weight: 900;
+    margin-left: 14px;
+    line-height: 1;
   }
-  .investment-card .after {
-    margin-top: 24px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: var(--grey);
-    line-height: 1.7;
-  }
-  .investment-card .after strong { color: var(--teal); font-weight: 700; }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item .answer { padding: 0 22px 22px; font-size: 16px; color: var(--cream); line-height: 1.7; }
+  .faq-item .answer strong { color: var(--yellow); font-weight: 700; }
 
   /* ===== FORM ===== */
   .form-section { background: var(--bg); text-align: center; padding: 90px 0; }
-  .form-block { max-width: 540px; margin: 0 auto; }
+  .form-block { max-width: 560px; margin: 0 auto; }
   .form-block .lead {
-    max-width: 480px;
+    max-width: 500px;
     margin: 0 auto 36px;
-    font-size: 17px;
-    color: var(--grey);
+    font-size: 18px;
+    color: var(--cream);
     line-height: 1.65;
   }
-  .form-block .lead strong { color: var(--cream); font-weight: 600; }
+  .form-block .lead strong { color: var(--white); font-weight: 700; }
   .form-card {
     background: var(--bg-alt);
-    border: 1px solid var(--line-strong);
+    border: 3px solid var(--yellow);
     padding: 38px 34px;
     text-align: left;
+    box-shadow: 0 8px 0 #b8a500;
   }
   .fg { margin-bottom: 16px; }
   .fg label {
     display: block;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 12px;
-    color: var(--teal);
+    font-size: 13px;
+    color: var(--yellow);
     letter-spacing: 0.22em;
     text-transform: uppercase;
     margin-bottom: 8px;
+    font-weight: 700;
   }
   .fg input, .fg select, .fg textarea {
     width: 100%;
     padding: 14px 16px;
     background: var(--bg);
-    border: 1px solid var(--line-strong);
-    color: var(--cream);
+    border: 2px solid var(--line-strong);
+    color: var(--white);
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     font-weight: 500;
     outline: none;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s;
   }
   .fg input::placeholder, .fg textarea::placeholder { color: var(--grey-dark); }
-  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--teal); }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--yellow); }
   .fg select {
     appearance: none;
     cursor: pointer;
-    color: var(--cream);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%234A8B8C' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    color: var(--white);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%23ffcc00' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
   }
-  .fg select option { background: var(--bg); color: var(--cream); }
+  .fg select option { background: var(--bg); color: var(--white); }
   .fg textarea { min-height: 90px; resize: vertical; }
 
   .form-cta {
     display: block;
     width: 100%;
-    margin-top: 10px;
-    padding: 20px;
-    background: var(--teal);
-    color: var(--bg);
+    margin-top: 12px;
+    padding: 22px;
+    background: var(--yellow);
+    color: #000;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 17px;
-    letter-spacing: 0.22em;
+    font-size: 22px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    border: 2px solid var(--teal);
+    border: 3px solid #000;
     cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, transform 0.15s;
+    font-weight: 700;
+    box-shadow: 0 6px 0 #b8a500;
   }
-  .form-cta:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+  .form-cta:hover { background: var(--yellow-bright); transform: translateY(2px); box-shadow: 0 4px 0 #b8a500; }
   .form-cta:disabled { opacity: 0.6; cursor: wait; }
-  .form-disc {
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--grey);
-    line-height: 1.6;
-    text-align: center;
-    font-style: italic;
-  }
+  .form-disc { margin-top: 16px; font-size: 13px; color: var(--grey); line-height: 1.6; text-align: center; font-style: italic; }
 
   .form-success { display: none; text-align: center; padding: 18px 0; }
   .form-success.show { display: block; }
   .form-success .check {
-    width: 60px; height: 60px;
+    width: 70px; height: 70px;
     margin: 0 auto 16px;
-    background: var(--teal);
-    color: var(--bg);
+    background: var(--green);
+    color: #000;
+    border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 900;
   }
   .form-success h4 {
     font-family: 'Anton', sans-serif;
-    font-size: 28px;
+    font-size: 30px;
     color: var(--white);
     margin-bottom: 10px;
     text-transform: uppercase;
   }
-  .form-success p { font-size: 15px; color: var(--grey); line-height: 1.6; max-width: 400px; margin: 0 auto; }
+  .form-success p { font-size: 16px; color: var(--cream); line-height: 1.6; max-width: 400px; margin: 0 auto; }
+
+  /* ===== P.S. (Hormozi close) ===== */
+  .ps-section {
+    background: var(--bg-alt);
+    border-top: 3px solid var(--yellow);
+    padding: 60px 0;
+  }
+  .ps-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg);
+    border-left: 6px solid var(--yellow);
+    padding: 32px 36px;
+  }
+  .ps-card .ps-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--yellow);
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .ps-card p { font-size: 17px; color: var(--cream); line-height: 1.75; margin-bottom: 14px; }
+  .ps-card p strong { color: var(--white); font-weight: 700; }
+  .ps-card p .hi { padding: 0 4px; }
 
   /* ===== FOOTER ===== */
   .footer {
     background: var(--bg);
-    border-top: 1px solid var(--line);
-    padding: 56px 24px 100px;
+    border-top: 2px solid var(--yellow);
+    padding: 50px 24px 100px;
     text-align: center;
   }
   .footer .brand {
@@ -813,15 +959,8 @@
     margin-bottom: 8px;
   }
   .footer .brand .teal { color: var(--teal); }
-  .footer .tagline {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: var(--teal);
-    margin-bottom: 22px;
-  }
   .footer .address { font-size: 13px; color: var(--grey); margin-bottom: 8px; }
-  .footer .address a { color: var(--teal); }
+  .footer .address a { color: var(--yellow); }
   .footer .links {
     font-size: 12px;
     color: var(--grey-dark);
@@ -836,9 +975,9 @@
   /* ===== STICKY BAR ===== */
   .sticky-bar {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: rgba(5,5,5,0.97);
-    backdrop-filter: blur(20px);
-    border-top: 2px solid var(--teal);
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(14px);
+    border-top: 3px solid var(--yellow);
     padding: 12px 20px;
     display: flex; justify-content: center; align-items: center; gap: 18px;
     transform: translateY(100%);
@@ -852,18 +991,20 @@
     display: none;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    font-weight: 700;
   }
-  .sticky-text .teal { color: var(--teal); font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0; vertical-align: middle; }
+  .sticky-text .yellow { color: var(--yellow); font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0; vertical-align: middle; }
   .sticky-btn {
-    padding: 12px 26px;
-    background: var(--teal); color: var(--bg);
+    padding: 14px 28px;
+    background: var(--yellow); color: #000;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.2em; text-transform: uppercase;
-    border: 2px solid var(--teal); cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
+    border: 2px solid #000; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    font-weight: 700;
   }
-  .sticky-btn:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
+  .sticky-btn:hover { background: var(--yellow-bright); transform: translateY(-1px); }
   .sticky-x {
     position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
     background: none; border: none; color: var(--grey-dark); font-size: 20px; cursor: pointer;
@@ -873,15 +1014,19 @@
   @media (min-width: 640px) { .sticky-text { display: block; } }
   @media (max-width: 720px) {
     .hero-bullets { grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+    .stack-item { grid-template-columns: 28px 1fr; }
+    .stack-item .value-tag { grid-column: 2 / 3; margin-top: 6px; justify-self: start; }
   }
   @media (max-width: 480px) {
-    section { padding: 64px 0; }
+    section { padding: 60px 0; }
     .hero { padding: 50px 0 50px; }
     .hero-bullets { grid-template-columns: 1fr; }
     .who-grid { grid-template-columns: 1fr; gap: 12px; }
     .nav { padding: 12px 18px; }
     .nav-brand { font-size: 14px; letter-spacing: 0.14em; }
-    .nav-meta { display: none; }
+    .nav-cta { font-size: 11px; padding: 9px 14px; letter-spacing: 0.14em; }
+    .guarantee-seal { width: 200px; height: 200px; }
+    .guarantee-seal .big { font-size: 56px; }
   }
 </style>
 </head>
@@ -891,10 +1036,10 @@
 <div class="marquee">
   <div class="marquee-track">
     <span>Your Phone Ringing In 12 Business Days</span><span class="star">★</span>
-    <span>Guaranteed In 60 Days</span><span class="star">★</span>
+    <span>10–30 New Calls Or We Reshoot Free</span><span class="star">★</span>
     <span>No Retainer. Ever.</span><span class="star">★</span>
     <span>Your Phone Ringing In 12 Business Days</span><span class="star">★</span>
-    <span>Guaranteed In 60 Days</span><span class="star">★</span>
+    <span>10–30 New Calls Or We Reshoot Free</span><span class="star">★</span>
     <span>No Retainer. Ever.</span><span class="star">★</span>
   </div>
 </div>
@@ -902,50 +1047,57 @@
 <!-- ============ NAV ============ -->
 <nav class="nav">
   <div class="nav-brand">This Is <span class="teal">Long Island</span> Marketing</div>
-  <div class="nav-meta">Northport, NY</div>
+  <a href="#apply" class="nav-cta">Book A Call</a>
 </nav>
 
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">Attention: Long Island Trades &amp; Home Service Owners</div>
+    <div class="hero-eyebrow">⚠ Attention Long Island Trades Owners</div>
 
     <h1 class="hero-headline">
-      We Get Your Phone Ringing. <span class="italic">In One Day.</span>
+      We Get Your Phone <span class="hi">Ringing</span>. <span class="italic">In One Day.</span>
     </h1>
 
     <p class="hero-subline">
-      One 8-hour shoot at your location. <strong>3 ads + 48 videos.</strong> Fully edited. Fully posted. Live in 12 business days. Measurable results in writing &mdash; or we come back and reshoot free.
+      One 8-hour shoot at your shop. <strong>3 ads + 48 videos.</strong> Fully edited. Fully posted. Live in 12 business days. <span class="hi">10–30 new calls in 60 days</span> &mdash; or we come back and reshoot the whole thing <strong>free</strong>.
     </p>
 
-    <!-- VSL placeholder — swap VIDEO_ID with your YouTube ID -->
+    <!-- VSL -->
     <div class="vsl-wrap" id="videoWrapper" onclick="playVideo()">
       <div class="play-btn" id="playBtn">
         <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
       </div>
     </div>
-    <div class="vsl-caption">Watch This First &middot; 90 Seconds</div>
+    <div class="vsl-caption"><span class="red">▶</span> Watch This Before You Leave &middot; 90 Seconds <span class="red">◀</span></div>
 
-    <!-- 4-bullet row above the fold -->
+    <!-- 4 bullets -->
     <div class="hero-bullets">
-      <div class="hero-bullet">8-Hour Shoot At Your Location</div>
+      <div class="hero-bullet">8-Hour Shoot At Your Shop</div>
       <div class="hero-bullet">3 Ads + 48 Original Videos</div>
-      <div class="hero-bullet">12 Weeks Of Posting &mdash; Handled</div>
+      <div class="hero-bullet">12 Weeks Of Posting — Done</div>
       <div class="hero-bullet">60-Day Reshoot Guarantee</div>
     </div>
 
-    <!-- Price + CTA action row -->
-    <div class="hero-action">
-      <div class="hero-action-row">
-        <div>
-          <div class="hero-price-tag">$6,500</div>
-          <div class="hero-price-tag-sub">All-In &middot; 50% To Book</div>
-        </div>
-        <div>
-          <a href="#apply" class="btn-primary">Book A 15-Minute Call <span class="arrow">→</span></a>
-        </div>
-      </div>
-      <div class="btn-sub">No pitch. No pressure. If this isn't a fit, we'll tell you that too.</div>
+    <!-- Pricing reveal -->
+    <div class="hero-pricing">
+      <div class="strike-line">Total Value <span class="struck">$13,500</span></div>
+      <div class="real-price">$6,500</div>
+      <div class="price-sub">All-In · 50% To Book · No Retainer</div>
+    </div>
+
+    <div class="scribble">Get the production system that finally works ↓</div>
+    <div class="hand-arrow">▼</div>
+
+    <a href="#apply" class="btn-primary">YES! Book My 15-Min Call <span class="arrow">→</span></a>
+
+    <div class="btn-sub">No pitch. No pressure. If it's not a fit, we'll tell you that too.</div>
+
+    <div class="trust-row">
+      <div class="trust-badge"><span class="icon">✓</span> 60-Day Guarantee</div>
+      <div class="trust-badge"><span class="icon">✓</span> You Own Everything</div>
+      <div class="trust-badge"><span class="icon">✓</span> No Retainer</div>
+      <div class="trust-badge"><span class="icon">✓</span> Northport, NY</div>
     </div>
   </div>
 </section>
@@ -963,62 +1115,33 @@
   </div>
 </div>
 
-<!-- ============ THE PROBLEM ============ -->
-<section class="problem-section">
-  <div class="wrap-narrow">
-    <div class="section-eyebrow">The Problem</div>
-    <h2 class="section-h">Homeowners Stopped <span class="italic">Asking Neighbors.</span></h2>
+<!-- ============ THE PROBLEM (story) ============ -->
+<section class="story-section">
+  <div class="wrap-narrow section-top-center">
+    <div class="section-eyebrow">⚠ Here's The Problem</div>
+    <h2 class="section-h">Homeowners <span class="hi">Stopped</span> Asking Neighbors.</h2>
 
-    <div class="problem-body">
+    <div class="story-body">
       <p>Homeowners on Long Island are not asking their neighbors anymore.</p>
-      <p class="dim">They open their phone. They scroll Facebook. They search Google. And in thirty seconds they pick the company that looks the most trustworthy on their screen.</p>
+      <p class="dim">They open their phone. They scroll Facebook. They search Google. And in <strong>thirty seconds</strong> they pick the company that looks the most trustworthy on their screen.</p>
       <p class="punch">Not the best company. Not the most experienced. <strong>The one that showed up.</strong></p>
-      <p class="dim">If they have never seen your face &mdash; if there is nothing that makes them feel like they already know you &mdash; they call someone else. And you never know the job existed.</p>
-      <p class="close">That is happening in your service area right now. Every single day.</p>
+      <p class="dim">If they have never seen your face &mdash; if there is nothing that makes them feel like they already know you &mdash; they call someone else. <strong>And you never know the job existed.</strong></p>
+      <p class="close">That is happening in your service area right now. Every. Single. Day.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ WHAT HAPPENS ============ -->
-<section class="happens-section">
-  <div class="wrap">
-    <div class="section-eyebrow">What Happens In One Day</div>
-    <h2 class="section-h">We Show Up. <span class="italic">You Don't Lift A Finger.</span></h2>
+<!-- ============ MID CTA ============ -->
+<div class="mid-cta">
+  <h3>Here's How <span class="yellow">We Fix It</span> &mdash; In One Day.</h3>
+  <a href="#apply" class="btn-primary">YES! Show Me What I Get <span class="arrow">→</span></a>
+</div>
 
-    <div class="happens-body">
-      <p class="lead">We show up to your business with a full production crew.</p>
-      <p class="dim">We spend the first part of the day figuring out three things.</p>
-
-      <ul class="happens-list-3">
-        <li>What makes your business different from every other trades company on Long Island.</li>
-        <li>What homeowners always ask before they hire someone like you.</li>
-        <li>What a stranger needs to see and hear before they trust you enough to pick up the phone.</li>
-      </ul>
-
-      <p class="dim" style="margin-top: 20px;">Then we put it all on camera.</p>
-
-      <div class="happens-divider"></div>
-
-      <p>We shoot <span class="key">3 ads</span> built to make your phone ring on <strong>Facebook, Instagram, and Google</strong>.</p>
-      <p>We shoot <span class="key">48 short videos</span> &mdash; not random clips &mdash; <strong>filmed on purpose to answer the questions homeowners are already asking</strong>.</p>
-
-      <div class="happens-divider"></div>
-
-      <p class="dim">You do <strong>not</strong> film yourself on your own time.</p>
-      <p class="dim">You do <strong>not</strong> figure out what to say.</p>
-      <p class="dim">You do <strong>not</strong> post anything.</p>
-      <p class="dim">You do <strong>not</strong> learn ads, editing, scripts, or content strategy.</p>
-
-      <p class="happens-finisher">We Handle Every Part Of It.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHAT YOU GET ============ -->
+<!-- ============ WHAT YOU GET (value stack) ============ -->
 <section class="stack-section">
-  <div class="wrap">
-    <div class="section-eyebrow">What You Get</div>
-    <h2 class="section-h">Everything You Need. <span class="italic">Nothing You Don't.</span></h2>
+  <div class="wrap section-top-center">
+    <div class="section-eyebrow">What You Get For $6,500</div>
+    <h2 class="section-h">Everything You Need. <span class="yellow">Nothing You Don't.</span></h2>
 
     <div class="stack-list">
       <div class="stack-item">
@@ -1027,6 +1150,7 @@
           <h4>3 Authority Ads</h4>
           <p>Built to drive real calls on Facebook, Instagram, and Google. <strong>Not boosted posts. Real ads with a real strategy.</strong></p>
         </div>
+        <span class="value-tag">$2,500 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1035,6 +1159,7 @@
           <h4>48 Original Videos</h4>
           <p>Four posts a week for twelve straight weeks. Every one filmed individually. <strong>Every one with a specific job.</strong></p>
         </div>
+        <span class="value-tag">$4,800 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1043,6 +1168,7 @@
           <h4>12 Weeks Of Posting</h4>
           <p>Fully handled. We schedule and post everything. <strong>Your social media runs without you touching it.</strong></p>
         </div>
+        <span class="value-tag">$1,800 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1051,6 +1177,7 @@
           <h4>Facebook + Instagram Ads</h4>
           <p>Set up, launched, and managed. <strong>You pay Meta directly. No markup. No middleman.</strong></p>
         </div>
+        <span class="value-tag">$1,500 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1059,6 +1186,7 @@
           <h4>Google Ads</h4>
           <p>Same deal. <strong>You pay Google directly.</strong> We build and run the campaign.</p>
         </div>
+        <span class="value-tag">$1,500 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1067,6 +1195,7 @@
           <h4>Google Business Profile</h4>
           <p>Set up or cleaned up so you show up when someone searches for what you do at <strong>9pm on a Tuesday</strong>.</p>
         </div>
+        <span class="value-tag">$500 Value</span>
       </div>
 
       <div class="stack-item">
@@ -1075,14 +1204,16 @@
           <h4>Full Editing</h4>
           <p>Every video. Every ad. <strong>All of it.</strong></p>
         </div>
+        <span class="value-tag">$900 Value</span>
       </div>
 
       <div class="stack-item">
         <span class="ck">✓</span>
         <div>
-          <h4>Full Ownership</h4>
+          <h4>Full Ownership Of Everything</h4>
           <p>Every video, every ad, every account. Yours permanently. <strong>We never hold anything over you.</strong></p>
         </div>
+        <span class="value-tag priceless">Priceless</span>
       </div>
 
       <div class="stack-item">
@@ -1091,59 +1222,77 @@
           <h4>No Forced Retainer</h4>
           <p>Keep running it yourself after 12 weeks or keep us involved. <strong>Your choice.</strong></p>
         </div>
+        <span class="value-tag priceless">Priceless</span>
       </div>
+    </div>
+
+    <!-- TOTAL VALUE REVEAL -->
+    <div class="total-reveal">
+      <div class="total-label">Total Real Value</div>
+      <div class="total-amount">$13,500</div>
+      <div class="today-label">You Pay Today</div>
+      <div class="today-amount">$6,500</div>
+      <div class="save-line">★ You Save $7,000 ★</div>
     </div>
   </div>
 </section>
 
-<!-- ============ BONUS — AUTHORITY SIT-DOWN ============ -->
+<!-- ============ BONUS — Authority Sit-Down ============ -->
 <section class="bonus-section">
   <div class="wrap-narrow">
-    <div class="bonus-tag">The Bonus &middot; Free With Your First Shoot</div>
+    <div class="bonus-stamp">★ Free Bonus With Your First Shoot ★</div>
     <h2>The Authority <span class="italic">Sit-Down</span><span class="tm">TM</span></h2>
+    <div class="bonus-value-tag">
+      <span class="struck">$2,500 Value</span>
+      <span class="free">Yours FREE Today</span>
+    </div>
 
     <div class="bonus-body">
-      <p>We sit you down on camera for thirty minutes and capture <strong>who you are, what you do, why you are different, and why homeowners should trust you over every other trades company on Long Island</strong>.</p>
+      <p>We sit you down on camera for thirty minutes and capture <strong>who you are, what you do, why you are different, and why homeowners should trust you</strong> over every other trades company on Long Island.</p>
       <p class="dim">We turn that into clips for YouTube, your website, and your ads.</p>
-      <p>A homeowner who watches ten minutes of you talking before they call <strong>already trusts you before you pick up the phone</strong>. That level of credibility used to take years to build. We build it in one conversation.</p>
-
-      <div class="bonus-callout">
-        This is a standalone product that costs thousands anywhere else. <br><strong>It is included because it makes everything else on this page work better.</strong>
-      </div>
+      <p>A homeowner who watches ten minutes of you talking before they call <strong>already trusts you before you pick up the phone.</strong> <span class="hi">That credibility used to take years to build. We build it in one conversation.</span></p>
     </div>
   </div>
 </section>
 
-<!-- ============ GUARANTEE ============ -->
+<!-- ============ GUARANTEE (BIG SEAL) ============ -->
 <section class="guarantee-section">
   <div class="wrap-narrow">
-    <div class="section-eyebrow">The Guarantee</div>
-    <h2 class="section-h">More Calls In 60 Days. <span class="italic">Or We Shoot Again Free.</span></h2>
+    <div class="section-eyebrow">★ Iron-Clad Guarantee ★</div>
+    <h2 class="section-h">More Calls In 60 Days. <span class="yellow">Or We Shoot Again. Free.</span></h2>
 
     <div class="guarantee-seal">
-      <span class="big">60</span> Day Reshoot Promise
+      <div class="big">60</div>
+      <div class="day">Day Reshoot</div>
+      <div class="promise">Promise</div>
     </div>
 
     <div class="guarantee-body">
       <p>Before we shoot a single frame we sit down and agree on <strong>one clear goal in writing</strong>.</p>
       <p class="dim">Calls. Form submissions. Booked jobs. Whatever matters most to your business. We write it down. We both sign off on it.</p>
-      <p class="bold">If we do not hit the agreed goal within 60 days of your ads going live &mdash; <strong>we come back one time and shoot brand new content at no charge.</strong></p>
+      <p class="bold">If we do not hit the agreed goal within 60 days of your ads going live &mdash; <strong>we come back and reshoot the whole thing at no charge.</strong></p>
     </div>
 
     <div class="guarantee-rules">
-      <div class="lbl">Simple Rules</div>
+      <div class="lbl">⚠ Simple Rules</div>
       <p>Tracking must be active.</p>
-      <p>Your agreed ad budget must be running &mdash; usually <strong>$30 to $50 a day</strong> depending on your trade and service area.</p>
+      <p>Your agreed ad budget must be running &mdash; usually <strong>$30 to $50 a day</strong>.</p>
       <p>Your team must call leads back <strong>within 24 hours</strong>.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ THE MATH ============ -->
+<!-- ============ MID CTA 2 ============ -->
+<div class="mid-cta">
+  <h3>Ready To <span class="yellow">Stop Being Invisible</span>?</h3>
+  <a href="#apply" class="btn-primary">YES! Book My 15-Min Call <span class="arrow">→</span></a>
+</div>
+
+<!-- ============ MATH ============ -->
 <section class="math-section">
-  <div class="wrap-narrow">
+  <div class="wrap-narrow section-top-center">
     <div class="section-eyebrow">The Math</div>
-    <h2 class="section-h">One Job. <span class="italic">Everything's Paid For.</span></h2>
+    <h2 class="section-h">One Job. <span class="yellow">Everything's Paid For.</span></h2>
 
     <div class="math-body">
       <p class="intro">For most trades businesses on Long Island <strong>one serious job covers the entire investment</strong>.</p>
@@ -1159,13 +1308,11 @@
   </div>
 </section>
 
-<!-- ============ WHO THIS IS FOR ============ -->
+<!-- ============ WHO ============ -->
 <section class="who-section">
-  <div class="wrap-narrow">
+  <div class="wrap-narrow section-top-center">
     <div class="section-eyebrow">Who This Is For</div>
-    <h2 class="section-h">Ready To <span class="italic">Stop Being Invisible.</span></h2>
-
-    <p class="who-intro">This is for trades and home service businesses on Long Island <strong>ready to stop being invisible online</strong>.</p>
+    <h2 class="section-h">Ready To <span class="yellow">Stop Being Invisible.</span></h2>
 
     <div class="who-grid">
       <div class="who-item">HVAC</div>
@@ -1178,7 +1325,7 @@
       <div class="who-item">Home Remodelers</div>
     </div>
 
-    <div class="who-region"><strong>Nassau and Suffolk County only.</strong></div>
+    <div class="who-region"><strong>Nassau and Suffolk County Only.</strong></div>
 
     <div class="who-sweet">
       Revenue sweet spot: <strong>$500K to $3M per year</strong>. You do good work. <span class="italic">You just need more people to know you exist.</span>
@@ -1186,30 +1333,37 @@
   </div>
 </section>
 
-<!-- ============ INVESTMENT ============ -->
-<section class="investment-section">
-  <div class="wrap-narrow">
-    <div class="section-eyebrow">The Investment</div>
-    <h2 class="section-h">One Flat Fee. <span class="italic">No Surprises.</span></h2>
+<!-- ============ FAQ ============ -->
+<section class="faq-section">
+  <div class="wrap-narrow section-top-center">
+    <div class="section-eyebrow">Questions Owners Always Ask</div>
+    <h2 class="section-h">Frequently Asked <span class="yellow">Questions.</span></h2>
 
-    <div class="investment-card">
-      <div class="total">$6,500</div>
-      <div class="total-lbl">Total. All In.</div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What's the total cost? Anything else after?</summary>
+        <div class="answer"><strong>$6,500 all-in.</strong> Split 50/50: half upfront, half on delivery. Nothing after. Only additional spend is your $30–$50/day Meta + Google ad budget which you pay the platforms directly. We never touch your ad budget.</div>
+      </details>
 
-      <div class="split">
-        <span>To Book Your Shoot Day</span>
-        <span class="amount">$3,250</span>
-      </div>
-      <div class="split">
-        <span>When We Deliver Your Content</span>
-        <span class="amount">$3,250</span>
-      </div>
+      <details class="faq-item">
+        <summary>Do I really own everything?</summary>
+        <div class="answer"><strong>Every frame. Every ad. Every account.</strong> Yours forever. No usage windows. No licensing fees. No "use it 12 months then pay again." That's not how we operate.</div>
+      </details>
 
-      <div class="after">
-        <strong>Nothing after that.</strong><br>
-        No forced retainer. No long-term contract.<br>
-        No monthly fees. No one holding your content hostage.
-      </div>
+      <details class="faq-item">
+        <summary>What does the guarantee actually cover?</summary>
+        <div class="answer">Before we shoot, we agree in writing on one specific number — calls, form submits, or jobs booked. <strong>If we miss it in 60 days, we come back and reshoot the entire 3-ad + 48-video package free.</strong> Conditions: ads running at recommended budget + 24hr lead response.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I've never run ads before. Am I a fit?</summary>
+        <div class="answer"><strong>Perfect.</strong> You're exactly who this is for. We set up everything — pixel, tracking, audiences, campaigns. You just need to commit to $30–$50/day and call your leads back within 24 hours.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How fast can we actually shoot?</summary>
+        <div class="answer">Deposit-in to shoot day is typically 2–3 weeks. <strong>Live ads + posting feed in 12 business days of the shoot.</strong> Roughly 4–5 weeks from "yes" to "phone ringing."</div>
+      </details>
     </div>
   </div>
 </section>
@@ -1217,10 +1371,10 @@
 <!-- ============ FORM ============ -->
 <section class="form-section" id="apply">
   <div class="form-block">
-    <div class="section-eyebrow">Ready To Find Out?</div>
-    <h2 class="section-h" style="margin-bottom: 18px;">Book A 15-Minute <span class="italic">Call.</span></h2>
+    <div class="section-eyebrow">Ready? Let's Talk.</div>
+    <h2 class="section-h" style="margin-bottom: 18px;">Book A 15-Minute <span class="yellow">Call.</span></h2>
     <p class="lead">
-      We will look at your market, your competitors, and your current online presence and tell you honestly whether this is the right move for your business right now. <strong>If it is not &mdash; we will tell you that too.</strong> No pitch. No pressure.
+      We'll look at your market, your competitors, and your current online presence and tell you honestly whether this is the right move for your business. <strong>If it's not — we'll tell you that too.</strong> No pitch. No pressure.
     </p>
 
     <div class="form-card">
@@ -1269,15 +1423,27 @@
           <textarea name="goal" placeholder="A few words on what would make this worth it" rows="3"></textarea>
         </div>
 
-        <button type="submit" class="form-cta">Book My 15-Minute Call →</button>
+        <button type="submit" class="form-cta">YES! Book My 15-Min Call →</button>
         <div class="form-disc">No payment now. We just talk first.</div>
       </form>
 
       <div class="form-success" id="formSuccess">
         <div class="check">✓</div>
-        <h4>Got It. We'll Be In Touch.</h4>
+        <h4>You're In. We'll Be In Touch.</h4>
         <p>Expect a reply within 24 hours to schedule your 15-minute call.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ P.S. ============ -->
+<section class="ps-section">
+  <div class="wrap-narrow">
+    <div class="ps-card">
+      <div class="ps-label">P.S. — Read This Part</div>
+      <p>One install. One roof. One system replacement. One serious job — <span class="hi">pays for this whole investment</span>. <strong>Twice.</strong> And you still own every frame forever.</p>
+      <p>The trades businesses winning Facebook and Google in your zip code didn't get there by accident. <strong>They booked the shoot. They got on camera. They showed up where homeowners look at 9pm.</strong></p>
+      <p>You can keep waiting on referrals while they take the next ten jobs in your zip code &mdash; or you can book the shoot.</p>
     </div>
   </div>
 </section>
@@ -1285,7 +1451,6 @@
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="brand">This Is <span class="teal">Long Island</span> Marketing</div>
-  <div class="tagline">Built on Long Island. Built for businesses that need results.</div>
   <div class="address">Northport, NY &middot; <a href="https://thisislongisland.com">thisislongisland.com</a></div>
   <div class="address"><a href="mailto:trevor@thisislongisland.com">trevor@thisislongisland.com</a></div>
   <div class="links">
@@ -1298,8 +1463,8 @@
 
 <!-- ============ STICKY BAR ============ -->
 <div class="sticky-bar" id="stickyBar">
-  <span class="sticky-text"><span class="teal">$6,500</span> &middot; One Day &middot; More Calls Or We Shoot Again Free</span>
-  <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Book A Call →</button>
+  <span class="sticky-text"><span class="yellow">$6,500</span> &middot; 60-Day Guarantee &middot; <span class="yellow">SAVE $7,000</span></span>
+  <button class="sticky-btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Book My Call →</button>
   <button class="sticky-x" onclick="closeStickyBar()" aria-label="Close">&times;</button>
 </div>
 
