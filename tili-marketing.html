@@ -46,7 +46,8 @@
     --cream-deep: var(--bg-card);
   }
 
-  .italic { color: var(--yellow); font-family: inherit; font-style: normal; font-weight: inherit; }
+  .italic { color: var(--yellow); font-family: inherit !important; font-style: normal !important; font-weight: inherit; position: relative; }
+  .italic::after { display: none !important; }
   .mark { background: var(--navy); color: var(--cream); padding: 0 8px 2px; font-weight: 800; }
   .struck { text-decoration: line-through; text-decoration-color: var(--cream); text-decoration-thickness: 2px; opacity: 0.5; }
 
@@ -126,55 +127,51 @@
   .hero-eyebrow {
     display: inline-block;
     padding: 10px 22px;
-    background: var(--navy);
+    background: transparent;
     color: var(--cream);
     font-family: 'Bebas Neue', sans-serif;
     font-size: 13px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    margin-bottom: 34px;
+    margin-bottom: 36px;
     font-weight: 700;
+    border: 1px solid var(--yellow);
   }
+  .hero-eyebrow .red { color: #ef4444; }
+  .hero-eyebrow .yellow { color: var(--yellow); }
 
   .hero-headline {
     font-family: 'Anton', 'Bebas Neue', sans-serif;
-    font-size: clamp(56px, 9vw, 116px);
-    line-height: 0.95;
+    font-size: clamp(54px, 8.5vw, 108px);
+    line-height: 0.92;
     color: var(--cream);
     letter-spacing: 0;
     margin: 0 auto 28px;
-    max-width: 1080px;
+    max-width: 1100px;
     text-transform: uppercase;
   }
-  .hero-headline .italic {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 700;
-    font-size: 0.94em;
-    color: var(--cream);
-    letter-spacing: -0.01em;
-    margin-left: 0.1em;
-    position: relative;
+  .hero-headline .accent {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--yellow);
+    letter-spacing: 0;
   }
-  .hero-headline .italic::after {
-    content: '';
-    position: absolute;
-    bottom: -0.05em; left: 0; right: 0;
-    height: 4px;
-    background: var(--navy);
-    opacity: 0.85;
-  }
+  /* Kill any italic styling on hero-headline children */
+  .hero-headline .italic { font-family: 'Anton','Bebas Neue',sans-serif; font-style: normal; color: var(--yellow); font-weight: 400; }
+  .hero-headline .italic::after { display: none; }
 
   .hero-subline {
     max-width: 760px;
-    margin: 0 auto 40px;
+    margin: 0 auto 42px;
     font-family: 'Inter', sans-serif;
     font-size: clamp(17px, 2vw, 20px);
     font-weight: 500;
     line-height: 1.55;
     color: var(--cream);
   }
-  .hero-subline strong { color: var(--cream); font-weight: 800; }
+  .hero-subline strong { color: var(--white); font-weight: 800; }
+  .hero-subline .key { color: var(--yellow); font-weight: 700; }
 
   /* ===== VSL ===== */
   .vsl-wrap {
@@ -1070,14 +1067,14 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-eyebrow">For Long Island Trades &amp; Home Service Owners</div>
+    <div class="hero-eyebrow"><span class="red">Attention:</span> All <span class="yellow">Long Island</span> Trades &amp; Home Service Owners</div>
 
     <h1 class="hero-headline">
-      We Get Your Phone Ringing. <span class="italic">In One Day.</span>
+      We Get Your Phone Ringing. <span class="accent">In One Day.</span>
     </h1>
 
     <p class="hero-subline">
-      One 8-hour shoot at your shop. <strong>3 ads + 48 videos.</strong> Fully edited. Fully posted. Live in 12 business days. <strong>10–30 new calls in 60 days &mdash; or we come back and reshoot the whole thing free.</strong>
+      One 8-hour shoot at your shop produces <strong>3 ads + 48 videos</strong>. We launch on <span class="key">Facebook + Google</span>, post for <strong>12 weeks</strong>, and track every call. <strong><span class="key">10&ndash;30 new calls in 60 days</span> &mdash; or we come back and reshoot the whole thing free.</strong>
     </p>
 
     <!-- VSL -->
