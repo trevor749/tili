@@ -166,6 +166,18 @@
   .brand-line .red { color: var(--red-bright); font-weight: 700; }
   .brand-line .teal { color: var(--yellow); font-weight: 700; }
 
+  /* Problem-aware line — sits between brand line + headline */
+  .problem-line {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 2.4vw, 18px);
+    font-weight: 500;
+    font-style: italic;
+    color: #aaa;
+    max-width: 580px;
+    margin: 0 auto 10px;
+    line-height: 1.4;
+  }
+
   /* Founding 5 badge — industrial stamp */
   .founding-badge {
     display: inline-flex;
@@ -1810,17 +1822,20 @@
      4. CTA — what they get + how they get it
 ============================================= -->
 <div class="hero-block">
-  <div class="brand-line"><span class="red">Attention:</span> All <span class="teal">Long Island</span> Trades &amp; Home Service Owners</div>
+  <div class="brand-line"><span class="red">For:</span> <span class="teal">Long Island</span> HVAC, Plumbing, Roofing, Electrical &amp; Trades</div>
 
-  <!-- HEADLINE — what we do + how we solve the problem -->
+  <!-- PROBLEM-AWARE eyebrow tells them this is for someone in their exact situation -->
+  <div class="problem-line">Your phone should be ringing with new jobs &mdash; but it isn't.</div>
+
+  <!-- HEADLINE — what we do + the outcome they want -->
   <h1 class="hero-headline">
-    We Get Your Phone Ringing.<br>
-    <span class="em">In One Day. Guaranteed.</span>
+    We Make Ads + Videos That Get<br>
+    <span class="em">Your Phone Ringing.</span>
   </h1>
 
-  <!-- SUBLINE — company name + the specific process that backs it up -->
+  <!-- SUBLINE — company + specific process + guarantee -->
   <p class="hero-subhead">
-    <strong>This Is Long Island Marketing.</strong> One 8-hour shoot at your shop produces 3 ads + 48 videos. We launch them on Facebook + Google and post for 12 weeks. <strong>10&ndash;30 inbound calls in 60 days &mdash; or we come back and reshoot the whole thing free.</strong>
+    <strong>This Is Long Island Marketing.</strong> Our 5-person crew shoots <strong>3 ads + 48 videos</strong> at your shop in one 8-hour day. We launch them on <strong>Facebook + Google</strong>. We post them 4x a week for 12 weeks. <strong>10&ndash;30 new inbound calls in 60 days &mdash; or we come back and reshoot the whole thing free.</strong>
   </p>
 
   <!-- 3. WHAT YOU GET — 4 quick bullets above the fold -->
