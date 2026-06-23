@@ -224,6 +224,7 @@
     position: relative;
     overflow: hidden;
   }
+  .hero .wrap { max-width: 1520px; padding: 0 36px; }
   /* OPTIONAL: hero background image. Drop a .jpg/.png at /tili-hero.jpg
      and uncomment the .hero-bg-image rule below — gets auto-graded teal. */
   .hero-bg-image {
@@ -282,15 +283,19 @@
     font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-size: clamp(54px, 8.8vw, 124px);
+    font-size: clamp(54px, 9.4vw, 140px);
     line-height: 0.92;
     color: var(--cream);
-    letter-spacing: -0.058em;
+    letter-spacing: -0.062em;
     margin: 0 auto 48px;
-    max-width: 1120px;
+    max-width: 1480px;
+    width: 100%;
     text-align: center;
+    text-wrap: balance;
+    padding: 0 12px;
   }
-  .hero-headline .teal { color: var(--teal-bright); }
+  .hero-headline .teal { color: var(--teal-bright); display: inline-block; }
+  .hero-headline .break { display: block; }
 
   .hero-body { max-width: 560px; margin: 0 auto; text-align: center; }
   .hero-body p {
@@ -1299,13 +1304,16 @@
     font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
-    font-size: clamp(64px, 11vw, 168px);
+    font-size: clamp(64px, 12vw, 192px);
     line-height: 0.88;
     color: var(--cream);
-    letter-spacing: -0.065em;
+    letter-spacing: -0.07em;
     margin: 72px auto 64px;
     text-align: center;
-    max-width: 1180px;
+    max-width: 1480px;
+    width: 100%;
+    text-wrap: balance;
+    padding: 0 12px;
   }
   .statement-big .hl-strike {
     color: var(--teal-bright);
@@ -1479,7 +1487,7 @@
     </div>
 
     <h1 class="hero-headline">
-      If Your Phone Isn't Ringing Enough — <span class="hl">This Is Why.</span>
+      If Your Phone Isn't Ringing Enough —<span class="break"></span><span class="hl">This Is Why.</span>
     </h1>
 
     <div class="hero-body">
