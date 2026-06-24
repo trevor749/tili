@@ -324,7 +324,7 @@
   .hero-headline .teal { color: var(--teal-bright); display: inline-block; }
   .hero-headline .break { display: block; }
 
-  .hero-body { max-width: 580px; margin: 0 auto; text-align: center; }
+  .hero-body { max-width: 600px; margin: 0 auto; text-align: center; }
   .hero-body p {
     font-size: 17px;
     font-weight: 400;
@@ -332,8 +332,27 @@
     color: rgba(243, 239, 227, 0.78);
     margin-bottom: 14px;
     letter-spacing: -0.005em;
+    text-wrap: pretty;
   }
   .hero-body p strong { color: var(--white); font-weight: 700; }
+  .hero-body p.punch {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.4;
+    margin: 22px auto;
+    max-width: 540px;
+    letter-spacing: -0.015em;
+  }
+  .hero-body p.punch strong { color: var(--white); font-weight: 800; }
+  .hero-body p.beat {
+    font-size: 17px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-body p.statement {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
@@ -1692,10 +1711,13 @@
     </h1>
 
     <div class="hero-body">
-      <p>Most HVAC, plumbing, roofing, and home service companies don't have a work problem. <strong>They have a trust problem.</strong></p>
-      <p>Not in real life. <span class="hl-bg">Online.</span></p>
-      <p>A homeowner needs help right now. Their AC is dead. Their pipe is leaking. Their roof looks shot. Their basement smells like a crime scene. They grab their phone. They check Google. They look at your reviews, your photos, your website. They compare you to three other companies.</p>
-      <p><strong>In less than a minute, they decide who feels safest to call.</strong></p>
+      <p>Most HVAC, plumbing, roofing, and home service companies don't have a work problem.</p>
+      <p class="punch"><strong>They have a trust problem.</strong></p>
+      <p class="punch">Not in real life. <span class="hl-bg">Online.</span></p>
+      <p class="beat">A homeowner needs help right now. Their AC is dead. Their pipe is leaking. Their roof looks shot.</p>
+      <p class="beat">They grab their phone. They check Google. They look at your reviews, your photos, your website.</p>
+      <p class="beat">They compare you to three other companies.</p>
+      <p class="punch"><strong>In less than a minute, they decide who feels safest to call.</strong></p>
     </div>
 
     <div class="statement-big">
