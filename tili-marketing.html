@@ -697,6 +697,139 @@
   }
 
   /* =========================================================
+     PRICING SECTION (Founding Client)
+  ========================================================= */
+  .pricing-grid {
+    max-width: 920px;
+    margin: 0 auto 48px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .pricing-card {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 44px 40px;
+    box-shadow: var(--shadow-card-xl);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-card.founding {
+    border: 2px solid var(--teal);
+    background:
+      linear-gradient(180deg, var(--white) 0%, var(--white) 70%, rgba(74,139,140,0.08) 100%);
+  }
+  .pricing-card.founding::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 32px; right: 32px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  }
+  .pricing-card.standard {
+    background: var(--cream-warm);
+    opacity: 0.85;
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 auto 28px;
+  }
+  .pricing-card.standard .pricing-badge {
+    background: rgba(20, 33, 58, 0.2);
+    color: var(--navy);
+  }
+  .pricing-price {
+    margin-bottom: 26px;
+  }
+  .pricing-price .from {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy-mute);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pricing-price .amount {
+    font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-size: clamp(60px, 8vw, 92px);
+    color: var(--teal);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    display: inline-block;
+  }
+  .pricing-card.standard .pricing-price .amount {
+    color: var(--navy-mute);
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 3px;
+    opacity: 0.7;
+  }
+  .pricing-includes {
+    font-size: 14.5px;
+    color: var(--navy-mute);
+    line-height: 1.65;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .pricing-includes strong { color: var(--navy); font-weight: 700; }
+  .founding-terms {
+    max-width: 640px;
+    margin: 48px auto 0;
+    text-align: center;
+  }
+  .founding-terms p {
+    font-size: 16.5px;
+    color: var(--navy-mute);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .founding-terms p.lead {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 18px;
+  }
+  .founding-terms strong { color: var(--navy); font-weight: 700; }
+  .founding-terms .teal { color: var(--teal); font-weight: 800; }
+  .scarcity-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(196, 82, 58, 0.08);
+    border: 1px solid rgba(196, 82, 58, 0.35);
+    padding: 12px 22px;
+    border-radius: 999px;
+    margin: 0 auto 32px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .scarcity-strip .dot {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse 1.8s infinite;
+  }
+  @media (max-width: 760px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+
+  /* =========================================================
      OVERSIZED STAT BACKDROP (math section "1")
   ========================================================= */
   .has-stat-bg { position: relative; overflow: hidden; }
@@ -1555,25 +1688,26 @@
 
     <h1 class="hero-headline">
       <span class="lead-in">Long Island Contractors</span>
-      Homeowners Are <span class="hl">Judging You</span> Before They Ever Call.
+      You're Losing Jobs To Companies That Just <span class="hl">Look More Trustworthy.</span>
     </h1>
 
     <div class="hero-body">
-      <p>Most HVAC, plumbing, roofing, and home service companies don't have a quality problem. <strong>They have a visibility problem.</strong></p>
-      <p>A homeowner needs your service right now. Before they call, they're checking your <span class="hl-bg">Google reviews</span>, your photos, your website, your videos, your social media — and comparing you to three other companies.</p>
-      <p><strong>If your business looks outdated, invisible, or the same as everyone else, that call goes somewhere else.</strong></p>
+      <p>Most HVAC, plumbing, roofing, and home service companies don't have a work problem. <strong>They have a trust problem.</strong></p>
+      <p>Not in real life. <span class="hl-bg">Online.</span></p>
+      <p>A homeowner needs help right now. Their AC is dead. Their pipe is leaking. Their roof looks shot. Their basement smells like a crime scene. They grab their phone. They check Google. They look at your reviews, your photos, your website. They compare you to three other companies.</p>
+      <p><strong>In less than a minute, they decide who feels safest to call.</strong></p>
     </div>
 
     <div class="statement-big">
-      We <span class="hl-strike">Fix That.</span>
+      That's What <span class="hl-strike">We Fix.</span>
     </div>
 
     <div class="hero-body">
-      <p>This Is Long Island Marketing helps contractors turn <strong>one shoot day</strong> into a full <span class="hl-bg-wrap">local trust campaign</span> — ads, short videos, Google Business content, and credibility assets designed to help homeowners trust you faster and call you first.</p>
+      <p>This Is Long Island Marketing helps home service businesses turn <strong>one shoot day</strong> into a full <span class="hl-bg-wrap">local trust campaign</span> — video ads, short-form content, Google Business assets, website proof, social content, and credibility pieces.</p>
     </div>
 
     <p class="hero-closer">
-      You don't need to become an influencer. <span class="teal">You need to look like the safest, most trusted company to call.</span>
+      Not social media management. Not influencer fluff. <span class="teal">Just making your business look like the company homeowners should have called in the first place.</span>
     </p>
 
     <div class="hero-bullets">
@@ -1694,18 +1828,18 @@
   </div>
 </div>
 
-<!-- ============ THE PROBLEM ============ -->
+<!-- ============ THE TRUTH ============ -->
 <section style="padding-top: 40px;">
   <div class="wrap-narrow center">
-    <div class="section-eyebrow"><span class="idx">01</span> The Problem</div>
-    <h2 class="section-h">Your Company May Do Great Work. <span class="teal">Online, Homeowners Might Not Be Seeing That.</span></h2>
+    <div class="section-eyebrow"><span class="idx">01</span> The Truth</div>
+    <h2 class="section-h">Your Competitors May Not Be Better Than You. <span class="teal">They May Just Look Better Than You Online.</span></h2>
 
     <div class="section-body">
-      <p class="lead">They might see:</p>
-      <p>Old photos. No videos. A weak Google Business profile. A website that does not build trust. No clear reason to choose you. No owner or team presence. No recent proof of work. <strong>Competitors who look more professional online.</strong></p>
-      <p>And whether it is fair or not, <strong>homeowners judge fast.</strong></p>
-      <p>They do not always choose the best contractor.</p>
-      <p><strong>They choose the contractor they trust the fastest.</strong></p>
+      <p class="lead">That's a problem.</p>
+      <p>Because homeowners <strong>do not always hire the best contractor.</strong></p>
+      <p>They hire the contractor who looks the most trusted, the most active, the most professional, and <strong>the easiest to believe.</strong></p>
+      <p>If your Google profile has weak photos, your website looks old, your social media is dead, and there's no video proof of your work — <strong>you are asking strangers to trust you blind.</strong></p>
+      <p class="lead"><strong>Most won't. They'll call the company that showed them more proof.</strong></p>
     </div>
   </div>
 </section>
@@ -1800,7 +1934,8 @@
     </div>
 
     <div class="stack-no-retainer">
-      <strong>Optional add-ons:</strong> ad setup for Meta or Google, call tracking, and monthly reporting. Available if you want them.
+      <strong>Also included:</strong> review &amp; credibility content · social media posts · ad-ready creative · a 30-day local visibility campaign.<br>
+      <strong>Optional add-ons:</strong> Meta or Google ad setup · call tracking · monthly reporting.
     </div>
   </div>
 </section>
@@ -1912,10 +2047,58 @@
   </div>
 </section>
 
+<!-- ============ THE TRUST SPRINT (PRICING) ============ -->
+<section>
+  <div class="wrap center">
+    <div class="section-eyebrow"><span class="idx">08</span> The Long Island Trust Sprint</div>
+
+    <div class="scarcity-strip">
+      <span class="dot"></span>
+      Founding Client Pricing · First 3 Spots Only
+    </div>
+
+    <h2 class="section-h">One Shoot Day. <span class="teal">A Full Trust Campaign.</span></h2>
+    <p class="section-lead" style="max-width: 620px; margin: 0 auto 56px; color: var(--navy-mute); font-size: 17px; line-height: 1.7;">
+      Taking the <strong style="color: var(--navy);">first 3 Long Island home service businesses</strong> at founding client pricing. After that, standard pricing applies.
+    </p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card founding">
+        <div class="pricing-badge">★ Founding Client · 3 Spots</div>
+        <div class="pricing-price">
+          <span class="from">Starts At</span>
+          <span class="amount">$3,500</span>
+        </div>
+        <div class="pricing-includes">
+          One shoot day + <strong>video ads, short-form content, Google Business assets, photo content, FAQ videos,</strong> and a 30-day local visibility campaign.
+        </div>
+      </div>
+
+      <div class="pricing-card standard">
+        <div class="pricing-badge">Standard · After Founding</div>
+        <div class="pricing-price">
+          <span class="from">Regular Price</span>
+          <span class="amount">$6,500</span>
+        </div>
+        <div class="pricing-includes">
+          Same full campaign — <strong>without the founding-client discount or the case-study trade.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="founding-terms">
+      <p>Paid ad spend is separate.</p>
+      <p>In exchange for the founding client price, we ask for <strong>honest feedback, permission to use the campaign as a case study, and a testimonial</strong> — if we do great work.</p>
+      <p class="lead">No fake pressure. No long-term contract. <span class="teal">No agency nonsense.</span></p>
+      <p>Just one shoot day turned into the trust assets your business should already have.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FORM ============ -->
 <section class="form-section" id="apply">
   <div class="wrap-tight center">
-    <div class="section-eyebrow"><span class="idx">08</span> The Offer</div>
+    <div class="section-eyebrow"><span class="idx">09</span> The Offer</div>
     <h2 class="section-h">Book Your Free <span class="teal">Long Island Contractor Visibility Audit.</span></h2>
 
     <div class="section-body" style="text-align: center;">
